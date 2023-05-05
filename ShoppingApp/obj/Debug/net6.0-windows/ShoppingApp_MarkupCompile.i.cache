@@ -1,0 +1,20 @@
+﻿ShoppingApp
+1.0.0.0
+
+winexe
+C#
+.cs
+D:\SISZARP NAUKA\asd\ShoppingApp\obj\Debug\net6.0-windows\
+ShoppingApp
+none
+false
+TRACE;DEBUG;NET;NET6_0;NETCOREAPP
+D:\SISZARP NAUKA\asd\ShoppingApp\App.xaml
+10-1283180624
+
+1398063645
+196-1469201376
+Controls\MealName.xaml;Controls\MealRecipe.xaml;Controls\MealType.xaml;MainWindow.xaml;Pages\AddMeal.xaml;Pages\CheckAndGenerateList.xaml;Pages\CreateList.xaml;Pages\EditDeleteMeal.xaml;Pages\MainPage.xaml;Styles\Buttons.xaml;
+
+True
+
