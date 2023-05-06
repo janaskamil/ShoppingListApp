@@ -6,6 +6,6 @@
              xmlns:local="clr-namespace:ShoppingApp"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <ComboBox IsEditable="True" IsReadOnly="False" ItemsSource="{Binding MealsList}" Text ="{Binding NewMealName}" DisplayMemberPath="MealName" SelectedItem="{Binding SelectedMeal, Mode=TwoWay}">
+    <ComboBox IsEditable="True" IsReadOnly="False" ItemsSource="{Binding MealsList}" DisplayMemberPath="MealName" Text="{Binding AddMealName}" SelectedItem="{Binding SelectedMeal, Mode=TwoWay}">
     </ComboBox>
 </UserControl>

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "45ZgnJhLbxogqJgfV60GE/X+mPVL+j9MMdr/pn4cJkpIbIN1yewP6gnnB+DA3EpGRZM7arubKJhrrZZw2qlFog==",
+  "dgSpecHash": "WWfNRNK0h/kvhwORS27y7DwkOzqKq0xotroXTsel4KFxWMXY1H6zgDyk2Sa3Hij8fIaBudOk3QTDETeIC6y5eA==",
   "success": true,
-  "projectFilePath": "D:\\SISZARP NAUKA\\asd\\ShoppingApp.Core\\ShoppingApp.Core.csproj",
+  "projectFilePath": "D:\\SISZARP NAUKA\\ShoppingListApp\\ShoppingApp.Core\\ShoppingApp.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kjanas\\.nuget\\packages\\fody\\6.6.4\\fody.6.6.4.nupkg.sha512",
     "C:\\Users\\kjanas\\.nuget\\packages\\microsoft.data.sqlite.core\\7.0.5\\microsoft.data.sqlite.core.7.0.5.nupkg.sha512",

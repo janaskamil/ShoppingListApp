@@ -10,3 +10,15 @@ D:\SISZARP NAUKA\ShoppingApp\ShoppingApp.Database\obj\Debug\net6.0\ShoppingApp.D
 D:\SISZARP NAUKA\ShoppingApp\ShoppingApp.Database\obj\Debug\net6.0\refint\ShoppingApp.Database.dll
 D:\SISZARP NAUKA\ShoppingApp\ShoppingApp.Database\obj\Debug\net6.0\ShoppingApp.Database.pdb
 D:\SISZARP NAUKA\ShoppingApp\ShoppingApp.Database\obj\Debug\net6.0\ref\ShoppingApp.Database.dll
+D:\SISZARP NAUKA\ShoppingListApp\ShoppingApp.Database\bin\Debug\net6.0\ShoppingApp.Database.deps.json
+D:\SISZARP NAUKA\ShoppingListApp\ShoppingApp.Database\bin\Debug\net6.0\ShoppingApp.Database.dll
+D:\SISZARP NAUKA\ShoppingListApp\ShoppingApp.Database\bin\Debug\net6.0\ShoppingApp.Database.pdb
+D:\SISZARP NAUKA\ShoppingListApp\ShoppingApp.Database\obj\Debug\net6.0\ShoppingApp.Database.csproj.AssemblyReference.cache
+D:\SISZARP NAUKA\ShoppingListApp\ShoppingApp.Database\obj\Debug\net6.0\ShoppingApp.Database.GeneratedMSBuildEditorConfig.editorconfig
+D:\SISZARP NAUKA\ShoppingListApp\ShoppingApp.Database\obj\Debug\net6.0\ShoppingApp.Database.AssemblyInfoInputs.cache
+D:\SISZARP NAUKA\ShoppingListApp\ShoppingApp.Database\obj\Debug\net6.0\ShoppingApp.Database.AssemblyInfo.cs
+D:\SISZARP NAUKA\ShoppingListApp\ShoppingApp.Database\obj\Debug\net6.0\ShoppingApp.Database.csproj.CoreCompileInputs.cache
+D:\SISZARP NAUKA\ShoppingListApp\ShoppingApp.Database\obj\Debug\net6.0\ShoppingApp.Database.dll
+D:\SISZARP NAUKA\ShoppingListApp\ShoppingApp.Database\obj\Debug\net6.0\refint\ShoppingApp.Database.dll
+D:\SISZARP NAUKA\ShoppingListApp\ShoppingApp.Database\obj\Debug\net6.0\ShoppingApp.Database.pdb
+D:\SISZARP NAUKA\ShoppingListApp\ShoppingApp.Database\obj\Debug\net6.0\ref\ShoppingApp.Database.dll

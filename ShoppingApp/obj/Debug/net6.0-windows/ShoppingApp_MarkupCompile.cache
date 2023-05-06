@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-D:\SISZARP NAUKA\ShoppingApp\ShoppingApp\obj\Debug\net6.0-windows\
+D:\SISZARP NAUKA\ShoppingListApp\ShoppingApp\obj\Debug\net6.0-windows\
 ShoppingApp
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-D:\SISZARP NAUKA\ShoppingApp\ShoppingApp\App.xaml
+D:\SISZARP NAUKA\ShoppingListApp\ShoppingApp\App.xaml
 10-1283180624
 
 11-995173652
-2151244190772
+215-824347517
 Controls\MealName.xaml;Controls\MealRecipe.xaml;Controls\MealType.xaml;MainWindow.xaml;Pages\AddMeal.xaml;Pages\CheckAndGenerateList.xaml;Pages\CreateList.xaml;Pages\EditDeleteMeal.xaml;Pages\MainPage.xaml;Styles\Buttons.xaml;
 
 False

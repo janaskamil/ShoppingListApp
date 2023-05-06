@@ -13,16 +13,18 @@ namespace ShoppingApp.Core
     public class AddMealViewModel : BaseViewModel
     {
         public ObservableCollection<MealViewModel> MealsList { get; set; } = new ObservableCollection<MealViewModel>();
-        public string NewMealName { get; set; }
-        public string NewMealRecipe { get; set; }
-        public string NewMealType { get; set; }
+        public string[] MealTypesList { get; set; } = new string[] {"Breakfast", "Lunch", "Dinner", "Tea", "Supper"};
+
+        public string AddMealName { get; set; }
+        public string AddMealType { get; set; }
+        public string AddMealRecipe { get; set; }
         public ICommand SaveMealCommand { get; set; }
         public AddMealViewModel()
         {
             DatabaseCreationTool.MyDatabase.Meals.ToList();
+            SaveMealCommand = new RelayCommand(SaveMeal);
             foreach (var meal in DatabaseCreationTool.MyDatabase.Meals.ToList())
-            {
-                SaveMealCommand = new RelayCommand(SaveMeal);
+            {           
                 MealsList.Add(new MealViewModel
                 {
                     Id = meal.Id,
@@ -30,7 +32,7 @@ namespace ShoppingApp.Core
                     MealRecipe = meal.MealRecipe,
                     MealType = meal.MealType
                 });
-            }
+            }           
         }
         public MealViewModel SelectedMeal { get; set; }
 
@@ -38,7 +40,15 @@ namespace ShoppingApp.Core
         {
             get
             {
-                return SelectedMeal?.MealRecipe;
+                if(SelectedMeal != null)
+                {
+                    return SelectedMeal.MealRecipe;
+                }
+                else
+                {
+                    return AddMealRecipe;
+                }
+                          
             }
             set
             {
@@ -46,6 +56,11 @@ namespace ShoppingApp.Core
                 {
                     SelectedMeal.MealRecipe = value;
                 }
+                else
+                {
+                    AddMealRecipe = value;
+                }
+  
             }
         }
 
@@ -53,53 +68,80 @@ namespace ShoppingApp.Core
         {
             get
             {
-                return SelectedMeal?.MealType;
+                if (SelectedMeal != null)
+                {
+                    return SelectedMeal.MealType;
+                }
+                else
+                {
+                    return AddMealType;
+                }
             }
-            set
+            set 
             {
                 if (SelectedMeal != null)
                 {
                     SelectedMeal.MealType = value;
+                }
+                else
+                {
+                    AddMealType = value;
                 }
             }
         }
 
         public void SaveMeal()
         {
-            var countedMealsId = MealsList.ToList();
-            int IdTemp;
-            if (countedMealsId.Count > 0)
+            //update existing recipe
+            if (AddMealName.Equals(SelectedMeal?.MealName.ToString()))
             {
-                IdTemp = DatabaseCreationTool.MyDatabase.Meals.OrderByDescending(m => m.Id).First().Id + 1;
+                var mealToUpdate = DatabaseCreationTool.MyDatabase.Meals.Find(SelectedMeal.Id);
+                mealToUpdate.MealRecipe = SelectedMeal.MealRecipe;
+                mealToUpdate.MealType = SelectedMeal.MealType;
+                DatabaseCreationTool.MyDatabase.SaveChanges();
+                AddMealName = null;
+                AddMealRecipe = null;
+                AddMealType = null;
             }
+            //save new recipe
             else
             {
-                IdTemp = 1;
-            }
-            if (!String.IsNullOrEmpty(NewMealName))
-            {
-                var NewMeal = new MealViewModel
+                var countedMealsId = MealsList.ToList();
+                int IdTemp;
+                if (countedMealsId.Count > 0)
                 {
-                    Id = IdTemp,
-                    MealName = NewMealName,
-                    MealRecipe = NewMealRecipe,
-                    MealType = NewMealType
-                };
-
-                MealsList.Add(NewMeal);
-                DatabaseCreationTool.MyDatabase.Meals.Add(new Database.Meal
+                    IdTemp = DatabaseCreationTool.MyDatabase.Meals.OrderByDescending(m => m.Id).First().Id + 1;
+                }
+                else
                 {
-                    Id = NewMeal.Id,
-                    MealName = NewMeal.MealName,
-                    MealRecipe = NewMeal.MealRecipe,
-                    MealType = NewMeal.MealType
-                });
+                    IdTemp = 1;
+                }
+                if (!String.IsNullOrEmpty(AddMealName))
+                {
+                    var NewMeal = new MealViewModel
+                    {
+                        Id = IdTemp,
+                        MealName = AddMealName,
+                        MealRecipe = AddMealRecipe,
+                        MealType = AddMealType
+                    };
 
-                DatabaseCreationTool.MyDatabase.SaveChanges();
-                NewMealName = null;
-                NewMealRecipe = null;
-                NewMealType = null;
+                    MealsList.Add(NewMeal);
+                    DatabaseCreationTool.MyDatabase.Meals.Add(new Database.Meal
+                    {
+                        Id = NewMeal.Id,
+                        MealName = NewMeal.MealName,
+                        MealRecipe = NewMeal.MealRecipe,
+                        MealType = NewMeal.MealType
+                    });
+
+                    DatabaseCreationTool.MyDatabase.SaveChanges();
+                    AddMealName = null;
+                    AddMealRecipe = null;
+                    AddMealType = null;
+                }
             }
+            
         }
 
     }
