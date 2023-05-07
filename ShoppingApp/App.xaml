@@ -16,9 +16,6 @@
             <DataTemplate DataType="{x:Type view:CheckAndGenerateListViewModel}">
                 <local:CheckAndGenerateList />
             </DataTemplate>
-            <DataTemplate DataType="{x:Type view:EditDeleteMealViewModel}">
-                <local:EditDeleteMeal />
-            </DataTemplate>
             <DataTemplate DataType="{x:Type view:GenerateListViewModel}">
                 <local:CreateList />
             </DataTemplate>

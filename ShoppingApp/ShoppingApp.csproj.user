@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Controls\IngredientsList.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Controls\MealName.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -25,11 +28,11 @@
     <Compile Update="Pages\CreateList.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Pages\EditDeleteMeal.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Controls\IngredientsList.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Controls\MealName.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -49,9 +52,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\CreateList.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Pages\EditDeleteMeal.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Styles\Buttons.xaml">

@@ -21,34 +21,7 @@
         <!--ingredients-->     
         <Border BorderBrush="Black" BorderThickness="2" Height="450" Margin="20, 10, 20, 10" >
             <ScrollViewer>
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition></RowDefinition>
-                        <!--1-->
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <!--11-->
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <!--21-->
-                    </Grid.RowDefinitions>
-                </Grid>
+                
             </ScrollViewer>
         </Border>
         <Grid Height="30">
@@ -57,8 +30,8 @@
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="1" Margin="8,8,8,8" Command="{Binding SaveMealCommand}"></Button>
-            <Button Grid.Column="2" Margin="8,8,8,8"></Button>
+            <Button Grid.Column="1" Margin="8,8,8,8" Command="{Binding SaveMealCommand}" Background="Green"></Button>
+            <Button Grid.Column="2" Margin="8,8,8,8" Command="{Binding DeleteMealCommand}" Background="Red"></Button>
         </Grid>
     </StackPanel>
     

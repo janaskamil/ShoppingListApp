@@ -1,4 +1,5 @@
-﻿using ShoppingApp.Database;
+﻿using Microsoft.EntityFrameworkCore;
+using ShoppingApp.Database;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -19,10 +20,12 @@ namespace ShoppingApp.Core
         public string AddMealType { get; set; }
         public string AddMealRecipe { get; set; }
         public ICommand SaveMealCommand { get; set; }
+        public ICommand DeleteMealCommand { get; set; }
         public AddMealViewModel()
         {
             DatabaseCreationTool.MyDatabase.Meals.ToList();
             SaveMealCommand = new RelayCommand(SaveMeal);
+            DeleteMealCommand = new RelayCommand(DeleteMeal);
             foreach (var meal in DatabaseCreationTool.MyDatabase.Meals.ToList())
             {           
                 MealsList.Add(new MealViewModel
@@ -32,7 +35,7 @@ namespace ShoppingApp.Core
                     MealRecipe = meal.MealRecipe,
                     MealType = meal.MealType
                 });
-            }           
+            }
         }
         public MealViewModel SelectedMeal { get; set; }
 
@@ -89,35 +92,36 @@ namespace ShoppingApp.Core
                 }
             }
         }
-
+        //method to save new and existing meals
         public void SaveMeal()
         {
-            //update existing recipe
-            if (AddMealName.Equals(SelectedMeal?.MealName.ToString()))
+            if ((!String.IsNullOrEmpty(AddMealName)))
             {
-                var mealToUpdate = DatabaseCreationTool.MyDatabase.Meals.Find(SelectedMeal.Id);
-                mealToUpdate.MealRecipe = SelectedMeal.MealRecipe;
-                mealToUpdate.MealType = SelectedMeal.MealType;
-                DatabaseCreationTool.MyDatabase.SaveChanges();
-                AddMealName = null;
-                AddMealRecipe = null;
-                AddMealType = null;
-            }
-            //save new recipe
-            else
-            {
-                var countedMealsId = MealsList.ToList();
-                int IdTemp;
-                if (countedMealsId.Count > 0)
+                if (AddMealName.Equals(SelectedMeal?.MealName.ToString()))
                 {
-                    IdTemp = DatabaseCreationTool.MyDatabase.Meals.OrderByDescending(m => m.Id).First().Id + 1;
+                    var mealToUpdate = DatabaseCreationTool.MyDatabase.Meals.Find(SelectedMeal.Id);
+                    mealToUpdate.MealRecipe = SelectedMeal.MealRecipe;
+                    mealToUpdate.MealType = SelectedMeal.MealType;
+                    DatabaseCreationTool.MyDatabase.SaveChanges();
+                    //clear everything to force user to select new meal to create/edit after saving
+                    AddMealName = null;
+                    AddMealRecipe = null;
+                    AddMealType = null;
                 }
+                //save new recipe
                 else
                 {
-                    IdTemp = 1;
-                }
-                if (!String.IsNullOrEmpty(AddMealName))
-                {
+                    var countedMealsId = MealsList.ToList();
+                    int IdTemp;
+                    if (countedMealsId.Count > 0)
+                    {
+                        IdTemp = DatabaseCreationTool.MyDatabase.Meals.OrderByDescending(m => m.Id).First().Id + 1;
+                    }
+                    else
+                    {
+                        IdTemp = 1;
+                    }
+                    
                     var NewMeal = new MealViewModel
                     {
                         Id = IdTemp,
@@ -136,13 +140,37 @@ namespace ShoppingApp.Core
                     });
 
                     DatabaseCreationTool.MyDatabase.SaveChanges();
+                    //clear everything to force user to select new meal to create/edit after saving
                     AddMealName = null;
                     AddMealRecipe = null;
                     AddMealType = null;
+
                 }
-            }
-            
+            }                    
         }
 
-    }
+        //deleting existing meals
+        public void DeleteMeal()
+        {
+            if (SelectedMeal != null)
+            {
+                var mealToDelete = DatabaseCreationTool.MyDatabase.Meals.Find(SelectedMeal.Id);
+                DatabaseCreationTool.MyDatabase.Meals.Remove(mealToDelete);
+                DatabaseCreationTool.MyDatabase.SaveChanges();
+                MealsList.Remove(SelectedMeal);
+                //clear everything to force user to select new meal after deleting
+                AddMealName = null;
+                AddMealRecipe = null;
+                AddMealType = null;
+            }
+            else
+            {
+                //temporary - messagebox eventually
+                AddMealName = null;
+                AddMealRecipe = null;
+                AddMealType = null;
+            }
+                
+        }
+    }          
 }

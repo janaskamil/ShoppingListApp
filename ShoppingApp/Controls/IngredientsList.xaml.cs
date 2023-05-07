@@ -12,19 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using ShoppingApp.Core;
 
 namespace ShoppingApp
-{ 
+{
     /// <summary>
-    /// Interaction logic for EditDeleteMeal.xaml
+    /// Interaction logic for IngredientsList.xaml
     /// </summary>
-    public partial class EditDeleteMeal : UserControl
+    public partial class IngredientsList : UserControl
     {
-        public EditDeleteMeal()
+        public IngredientsList()
         {
             InitializeComponent();
-            DataContext = new EditDeleteMealViewModel();
         }
     }
 }

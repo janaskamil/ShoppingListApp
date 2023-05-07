@@ -15,7 +15,6 @@ namespace ShoppingApp.Core
         public ICommand CloseApp { get; set; }
         public ICommand MinimalizeApp { get; set; }
         public ICommand ShowAddMeal { get; set; }
-        public ICommand ShowEdditDeleteMeal { get; set; }
         public ICommand ShowCheckAndGenerateList { get; set; }
         public ICommand ShowGenerateList { get; set; }
 
@@ -37,18 +36,12 @@ namespace ShoppingApp.Core
             CloseApp = new RelayCommand(CloseApplicationMainPageViewModel);
             MinimalizeApp = new RelayCommand(MinimizeApplicationMainPageViewModel);
             ShowAddMeal = new RelayCommand(ShowAddMealViewCommand);
-            ShowEdditDeleteMeal = new RelayCommand(EditDeleteViewCommand);
             ShowCheckAndGenerateList = new RelayCommand(ShowCheckAndGenerateViewCommand);
             ShowGenerateList = new RelayCommand(ShowGenerateViewCommand);        
         }        
         private void ShowAddMealViewCommand()
         {
             CurrentChildView = new AddMealViewModel();
-        }
-
-        private void EditDeleteViewCommand()
-        {
-            CurrentChildView = new EditDeleteMealViewModel();
         }
 
         private void ShowCheckAndGenerateViewCommand()
