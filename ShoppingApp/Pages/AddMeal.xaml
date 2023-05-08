@@ -21,7 +21,7 @@
         <!--ingredients-->     
         <Border BorderBrush="Black" BorderThickness="2" Height="450" Margin="20, 10, 20, 10" >
             <ScrollViewer>
-                
+                <local:IngredientsList/>
             </ScrollViewer>
         </Border>
         <Grid Height="30">

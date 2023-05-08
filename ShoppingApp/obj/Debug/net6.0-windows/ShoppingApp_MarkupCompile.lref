@@ -1,5 +1,6 @@
 ﻿
 FD:\SISZARP NAUKA\ShoppingListApp\ShoppingApp\App.xaml;;
+FD:\SISZARP NAUKA\ShoppingListApp\ShoppingApp\Controls\IngredientsList.xaml;;
 FD:\SISZARP NAUKA\ShoppingListApp\ShoppingApp\Controls\MealName.xaml;;
 FD:\SISZARP NAUKA\ShoppingListApp\ShoppingApp\Controls\MealRecipe.xaml;;
 FD:\SISZARP NAUKA\ShoppingListApp\ShoppingApp\Controls\MealType.xaml;;
@@ -9,5 +10,4 @@ FD:\SISZARP NAUKA\ShoppingListApp\ShoppingApp\Pages\CheckAndGenerateList.xaml;;
 FD:\SISZARP NAUKA\ShoppingListApp\ShoppingApp\Pages\CreateList.xaml;;
 FD:\SISZARP NAUKA\ShoppingListApp\ShoppingApp\Pages\MainPage.xaml;;
 FD:\SISZARP NAUKA\ShoppingListApp\ShoppingApp\Styles\Buttons.xaml;;
-FD:\SISZARP NAUKA\ShoppingListApp\ShoppingApp\Controls\IngredientsList.xaml;;
 
