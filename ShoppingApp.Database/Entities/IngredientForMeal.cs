@@ -13,10 +13,10 @@ namespace ShoppingApp.Database
         [Key][DatabaseGenerated(DatabaseGeneratedOption.None)] public int Id { get; set; }
         
         [ForeignKey("Meal")] 
-        public Meal MealId { get; set; }
+        public int MealId { get; set; }
         
         [ForeignKey("Ingredient")] 
-        public Ingredient IngredientId { get; set; }
+        public int IngredientId { get; set; }
         public int Quantity { get; set; }
         public string Unit { get; set; }
     }

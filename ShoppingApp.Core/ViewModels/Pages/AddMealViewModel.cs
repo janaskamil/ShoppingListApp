@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,8 @@ namespace ShoppingApp.Core
     public class AddMealViewModel : BaseViewModel
     {
         public ObservableCollection<MealViewModel> MealsList { get; set; } = new ObservableCollection<MealViewModel>();
+        public ObservableCollection<IngreditenViewModel> IngedientsListVM { get; set; } = new ObservableCollection<IngreditenViewModel>();
+        public ObservableCollection<IngredientForMealViewModel> IngredientsForMealVM { get; set; } = new ObservableCollection<IngredientForMealViewModel>();
         public string[] MealTypesList { get; set; } = new string[] {"Breakfast", "Lunch", "Dinner", "Tea", "Supper"};
 
         public string AddMealName { get; set; }
@@ -36,8 +39,32 @@ namespace ShoppingApp.Core
                     MealType = meal.MealType
                 });
             }
+            foreach (var ingredient in DatabaseCreationTool.MyDatabase.Ingredients.ToList())
+            {
+                IngedientsListVM.Add(new IngreditenViewModel
+                {
+                    Id = ingredient.Id,
+                    Name = ingredient.Name
+                });
+
+            }
+            foreach (var ingredientformeal in DatabaseCreationTool.MyDatabase.IngredientForMeal.ToList())
+            {
+                IngredientsForMealVM.Add(new IngredientForMealViewModel
+                {
+                    Id = ingredientformeal.Id,
+                    MealId = ingredientformeal.MealId,
+                    IngredientId = ingredientformeal.IngredientId,
+                    Quantity = ingredientformeal.Quantity,
+                    Unit = ingredientformeal.Unit
+                });
+                   
+            }
         }
         public MealViewModel SelectedMeal { get; set; }
+        public IngredientForMealViewModel IngredientsForSelectedMeal { get; set; }
+
+
 
         public string MealRecipe
         {
@@ -171,6 +198,76 @@ namespace ShoppingApp.Core
                 AddMealType = null;
             }
                 
+        }
+
+        //shitcode
+        public string IngredientForMeal1
+        {
+            get
+            {
+                if (SelectedMeal != null)
+                {
+                    var ingredient1 = DatabaseCreationTool.MyDatabase.Ingredients
+                        .Join(DatabaseCreationTool.MyDatabase.IngredientForMeal)
+
+
+
+                    // Pobierz pierwszy składnik przypisany do wybranego posiłku
+                    var ingredientForMeal = DatabaseCreationTool.MyDatabase.IngredientForMeal
+                .Join(DatabaseCreationTool.MyDatabase.Ingredients,
+                      im => im.IngredientId,
+                      i => i.Id,
+                      (im, i) => new { IngredientForMeal = im, Ingredient = i })
+                .Where(joinedTable => joinedTable.IngredientForMeal.MealId == SelectedMeal.Id)
+                .Select(joinedTable => joinedTable.Ingredient.Name)
+                .First();
+
+                    if (ingredientForMeal != null)
+                    {
+
+                        return ingredientForMeal.ToString();
+                    }
+                    else
+                    {
+                        return "Brak składników dla wybranego posiłku.";
+                    }
+                }
+                else
+                {
+                    return "Nie wybrano posiłku.";
+                }
+
+            }
+            set
+            {
+                if (SelectedMeal != null)
+                {
+                    SelectedMeal.MealType = value;
+                }
+                else
+                {
+                    AddMealType = value;
+                }
+            }
+        }
+        public string IngredientForMeal2
+        {
+            get
+            {
+                if (SelectedMeal != null)
+                {
+                    return "skladnik2";
+                }
+                else
+                {
+                    return "puste";
+                }
+
+            }
+            set
+            {
+                ;
+            }
         }
     }          
 }

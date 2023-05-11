@@ -9,12 +9,12 @@ using ShoppingApp.Database;
 
 namespace ShoppingApp.Core
 {
-    internal class IngredientForMealViewModel : BaseViewModel
+    public class IngredientForMealViewModel : BaseViewModel
     {
         public int Id { get; set; }
         public int MealId { get; set; }
         public int IngredientId { get; set; }
         public int Quantity { get; set; }
-        public int Unit { get; set; }
+        public string Unit { get; set; }
     }
 }
