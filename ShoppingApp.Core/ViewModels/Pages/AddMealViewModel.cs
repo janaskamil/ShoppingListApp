@@ -17,6 +17,7 @@ namespace ShoppingApp.Core
         public ObservableCollection<MealViewModel> MealsList { get; set; } = new ObservableCollection<MealViewModel>();
         public ObservableCollection<IngreditenViewModel> IngedientsListVM { get; set; } = new ObservableCollection<IngreditenViewModel>();
         public ObservableCollection<IngredientForMealViewModel> IngredientsForMealVM { get; set; } = new ObservableCollection<IngredientForMealViewModel>();
+        public MealViewModel SelectedMeal { get; set; }
         public string[] MealTypesList { get; set; } = new string[] {"Breakfast", "Lunch", "Dinner", "Tea", "Supper"};
 
         public string AddMealName { get; set; }
@@ -48,22 +49,40 @@ namespace ShoppingApp.Core
                 });
 
             }
-            foreach (var ingredientformeal in DatabaseCreationTool.MyDatabase.IngredientForMeal.ToList())
-            {
-                IngredientsForMealVM.Add(new IngredientForMealViewModel
-                {
-                    Id = ingredientformeal.Id,
-                    MealId = ingredientformeal.MealId,
-                    IngredientId = ingredientformeal.IngredientId,
-                    Quantity = ingredientformeal.Quantity,
-                    Unit = ingredientformeal.Unit
-                });
-                   
-            }
-        }
-        public MealViewModel SelectedMeal { get; set; }
-        public IngredientForMealViewModel IngredientsForSelectedMeal { get; set; }
 
+            foreach(var meal in MealsList)
+            {
+                int tempId = 1;
+                var query = from ingredientForMeal in DatabaseCreationTool.MyDatabase.IngredientForMeal
+                            join ingredient in DatabaseCreationTool.MyDatabase.Ingredients
+                            on ingredientForMeal.IngredientId equals ingredient.Id
+                            where ingredientForMeal.MealId == meal.Id
+                            select new
+                            {
+                                ingredientForMeal.Id,
+                                ingredientForMeal.MealId,
+                                ingredientForMeal.IngredientId,
+                                IngredientName = ingredient.Name,
+                                ingredientForMeal.Quantity,
+                                ingredientForMeal.Unit
+                            };
+
+                foreach (var item in query)
+                {
+                    IngredientsForMealVM.Add(new IngredientForMealViewModel
+                    {
+                        tempId = tempId,
+                        Id = item.Id,
+                        MealId = item.MealId,
+                        IngredientId = item.IngredientId,
+                        IngredientName = item.IngredientName,
+                        Quantity = item.Quantity,
+                        Unit = item.Unit
+                    });
+                    tempId++;
+                }
+            }          
+        }
 
 
         public string MealRecipe
@@ -207,36 +226,13 @@ namespace ShoppingApp.Core
             {
                 if (SelectedMeal != null)
                 {
-                    var ingredient1 = DatabaseCreationTool.MyDatabase.Ingredients
-                        .Join(DatabaseCreationTool.MyDatabase.IngredientForMeal)
-
-
-
-                    // Pobierz pierwszy składnik przypisany do wybranego posiłku
-                    var ingredientForMeal = DatabaseCreationTool.MyDatabase.IngredientForMeal
-                .Join(DatabaseCreationTool.MyDatabase.Ingredients,
-                      im => im.IngredientId,
-                      i => i.Id,
-                      (im, i) => new { IngredientForMeal = im, Ingredient = i })
-                .Where(joinedTable => joinedTable.IngredientForMeal.MealId == SelectedMeal.Id)
-                .Select(joinedTable => joinedTable.Ingredient.Name)
-                .First();
-
-                    if (ingredientForMeal != null)
-                    {
-
-                        return ingredientForMeal.ToString();
-                    }
-                    else
-                    {
-                        return "Brak składników dla wybranego posiłku.";
-                    }
+                    string ingredient1Name = IngredientsForMealVM.FirstOrDefault(i => i.tempId == 1 && i.MealId == SelectedMeal.Id)?.IngredientName;
+                    return ingredient1Name ?? null;
                 }
                 else
                 {
-                    return "Nie wybrano posiłku.";
+                    return null;
                 }
-
             }
             set
             {
@@ -256,18 +252,26 @@ namespace ShoppingApp.Core
             {
                 if (SelectedMeal != null)
                 {
-                    return "skladnik2";
+                    string ingredient2Name = IngredientsForMealVM.FirstOrDefault(i => i.tempId == 2 && i.MealId == SelectedMeal.Id)?.IngredientName;
+                    return ingredient2Name ?? null;
                 }
                 else
                 {
-                    return "puste";
+                    return null;
                 }
-
             }
             set
             {
-                ;
+                if (SelectedMeal != null)
+                {
+                    SelectedMeal.MealType = value;
+                }
+                else
+                {
+                    AddMealType = value;
+                }
             }
         }
+
     }          
 }
