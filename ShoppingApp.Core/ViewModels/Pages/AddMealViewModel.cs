@@ -23,6 +23,7 @@ namespace ShoppingApp.Core
         public string AddMealName { get; set; }
         public string AddMealType { get; set; }
         public string AddMealRecipe { get; set; }
+        public string AddIngredientForMeal1 { get; set; }
         public ICommand SaveMealCommand { get; set; }
         public ICommand DeleteMealCommand { get; set; }
         public AddMealViewModel()
@@ -219,59 +220,53 @@ namespace ShoppingApp.Core
                 
         }
 
-        //shitcode
-        public string IngredientForMeal1
+        public string IngredientForSelectedMeal1
         {
             get
             {
                 if (SelectedMeal != null)
                 {
-                    string ingredient1Name = IngredientsForMealVM.FirstOrDefault(i => i.tempId == 1 && i.MealId == SelectedMeal.Id)?.IngredientName;
-                    return ingredient1Name ?? null;
+                    var ingredient = IngredientsForMealVM.FirstOrDefault(i => i.tempId == 1 && i.MealId == SelectedMeal.Id);
+                    if (ingredient != null)
+                    {
+                        return ingredient.IngredientName.ToString();
+                    }
+                    else
+                    {
+                        return AddIngredientForMeal1;
+                    }              
                 }
                 else
                 {
-                    return null;
+                    return AddIngredientForMeal1;
                 }
             }
             set
-            {
+            {              
                 if (SelectedMeal != null)
                 {
-                    SelectedMeal.MealType = value;
+                    var ingredient = IngredientsForMealVM.FirstOrDefault(i => i.tempId == 1 && i.MealId == SelectedMeal.Id);
+                    if(ingredient != null)
+                    {
+                        int? ingredientId = ingredient.Id;
+                        int? ingedient1IngId = ingredient.IngredientId;
+                        string? ingedient1Name = ingredient.IngredientName;
+                    }
+                    else
+                    {
+
+                    }
+                    AddIngredientForMeal1 = value;
+
                 }
                 else
                 {
-                    AddMealType = value;
+                    AddIngredientForMeal1 = value;
                 }
             }
         }
-        public string IngredientForMeal2
-        {
-            get
-            {
-                if (SelectedMeal != null)
-                {
-                    string ingredient2Name = IngredientsForMealVM.FirstOrDefault(i => i.tempId == 2 && i.MealId == SelectedMeal.Id)?.IngredientName;
-                    return ingredient2Name ?? null;
-                }
-                else
-                {
-                    return null;
-                }
-            }
-            set
-            {
-                if (SelectedMeal != null)
-                {
-                    SelectedMeal.MealType = value;
-                }
-                else
-                {
-                    AddMealType = value;
-                }
-            }
-        }
+        public string IngredientForMeal2 { get; set; }
+       
 
     }          
 }

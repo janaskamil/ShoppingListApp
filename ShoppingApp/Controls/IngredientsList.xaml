@@ -13,7 +13,7 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0" Text="Ingredient" Height="20" Width="80" Margin="51,25,413,55" />
-            <ComboBox Grid.Column="0" Margin="51,50,33,26" IsEditable="True" IsReadOnly="False" ItemsSource="{Binding IngedientsListVM}" DisplayMemberPath="Name" SelectedItem="{Binding IngredientsForSelectedMeal}" Text="{Binding IngredientForMeal1}"></ComboBox>
+            <ComboBox Grid.Column="0" Margin="51,50,33,26" IsEditable="True" IsReadOnly="False" ItemsSource="{Binding IngedientsListVM}" DisplayMemberPath="Name" SelectedItem="{Binding IngredientForSelectedMeal1}" Text="{Binding AddIngredientForMeal1}"></ComboBox>
             <TextBlock Grid.Column="1" Text="Quantity" Height="20" Width="80" Margin="30,25,26,55"/>
             <TextBox Grid.Column="1" Margin="0,50,0,26" HorizontalAlignment="Center" Width="76"/>
             <TextBlock Grid.Column="2" Text="Units" Margin="38,22,36,58"/>
