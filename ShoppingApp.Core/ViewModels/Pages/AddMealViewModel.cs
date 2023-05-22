@@ -17,13 +17,34 @@ namespace ShoppingApp.Core
         public ObservableCollection<MealViewModel> MealsList { get; set; } = new ObservableCollection<MealViewModel>();
         public ObservableCollection<IngreditenViewModel> IngedientsListVM { get; set; } = new ObservableCollection<IngreditenViewModel>();
         public ObservableCollection<IngredientForMealViewModel> IngredientsForMealVM { get; set; } = new ObservableCollection<IngredientForMealViewModel>();
-        public MealViewModel SelectedMeal { get; set; }
+
+        private MealViewModel selectedMeal { get; set; }
+
+        public MealViewModel SelectedMeal
+        {
+            get { return selectedMeal; }
+            set
+            {
+                selectedMeal = value;
+                if (selectedMeal != null)
+                {
+                    var temp = IngredientsForMealVM.FirstOrDefault(i => i.MealId == selectedMeal.Id && i.tempId == 1);
+                    if (temp != null)
+                    {
+                        SelectedIngredient1ForMeal = IngedientsListVM.First(i => i.Id == temp.MealId);
+                    }
+                    else
+                        SelectedIngredient1ForMeal = null;
+                }
+            }
+        }
+
+        public IngreditenViewModel SelectedIngredient1ForMeal { get; set; }
         public string[] MealTypesList { get; set; } = new string[] {"Breakfast", "Lunch", "Dinner", "Tea", "Supper"};
 
         public string AddMealName { get; set; }
-        public string AddMealType { get; set; }
-        public string AddMealRecipe { get; set; }
-        public string AddIngredientForMeal1 { get; set; }
+        private string AddMealType { get; set; }
+        private string AddMealRecipe { get; set; }
         public ICommand SaveMealCommand { get; set; }
         public ICommand DeleteMealCommand { get; set; }
         public AddMealViewModel()
@@ -220,53 +241,62 @@ namespace ShoppingApp.Core
                 
         }
 
-        public string IngredientForSelectedMeal1
+        private string AddStringIngredient1ForMeal;
+
+        public string StringIngredient1ForMeal
         {
             get
             {
-                if (SelectedMeal != null)
+                if (SelectedMeal != null && SelectedIngredient1ForMeal != null)
                 {
-                    var ingredient = IngredientsForMealVM.FirstOrDefault(i => i.tempId == 1 && i.MealId == SelectedMeal.Id);
-                    if (ingredient != null)
+                    var ingredientForMeal = IngredientsForMealVM.FirstOrDefault(i => i.tempId == 1 && i.MealId == SelectedMeal.Id);
+                    if (ingredientForMeal != null)
                     {
-                        return ingredient.IngredientName.ToString();
+                        var ingredient = IngedientsListVM.FirstOrDefault(i => i.Id == ingredientForMeal.IngredientId);
+                        if (ingredient != null)
+                        {
+                            return ingredient.Name;
+                        }
                     }
                     else
-                    {
-                        return AddIngredientForMeal1;
-                    }              
+                        return SelectedIngredient1ForMeal.Name;
                 }
-                else
+
+                if (SelectedMeal == null)
                 {
-                    return AddIngredientForMeal1;
+                    return "No Meal Selected";
                 }
+
+                return AddStringIngredient1ForMeal;
             }
             set
-            {              
+            {
                 if (SelectedMeal != null)
                 {
-                    var ingredient = IngredientsForMealVM.FirstOrDefault(i => i.tempId == 1 && i.MealId == SelectedMeal.Id);
-                    if(ingredient != null)
+                    if(SelectedIngredient1ForMeal != null)
                     {
-                        int? ingredientId = ingredient.Id;
-                        int? ingedient1IngId = ingredient.IngredientId;
-                        string? ingedient1Name = ingredient.IngredientName;
+                        var ingredientForMeal = IngredientsForMealVM.FirstOrDefault(i => i.tempId == 1 && i.MealId == SelectedMeal.Id);
+                        if (ingredientForMeal != null)
+                        {
+                            var ingredient = IngedientsListVM.FirstOrDefault(i => i.Name == value);
+                            if (ingredient != null)
+                            {
+                                ingredientForMeal.IngredientId = ingredient.Id;
+                            }
+                        }
                     }
                     else
                     {
-
+                        SelectedIngredient1ForMeal.Name = value;
                     }
-                    AddIngredientForMeal1 = value;
-
                 }
                 else
                 {
-                    AddIngredientForMeal1 = value;
+                    SelectedIngredient1ForMeal.Name = value;
                 }
             }
         }
-        public string IngredientForMeal2 { get; set; }
-       
+      
 
-    }          
+    }
 }
