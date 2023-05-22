@@ -28,6 +28,7 @@ namespace ShoppingApp.Core
                 selectedMeal = value;
                 if (selectedMeal != null)
                 {
+                    AddStringIngredient1ForMeal = null;
                     var temp = IngredientsForMealVM.FirstOrDefault(i => i.MealId == selectedMeal.Id && i.tempId == 1);
                     if (temp != null)
                     {
@@ -165,41 +166,46 @@ namespace ShoppingApp.Core
         {
             if ((!String.IsNullOrEmpty(AddMealName)))
             {
+                //update existing recipe
                 if (AddMealName.Equals(SelectedMeal?.MealName.ToString()))
                 {
                     var mealToUpdate = DatabaseCreationTool.MyDatabase.Meals.Find(SelectedMeal.Id);
                     mealToUpdate.MealRecipe = SelectedMeal.MealRecipe;
                     mealToUpdate.MealType = SelectedMeal.MealType;
+                    TempName(SelectedIngredient1ForMeal);
+
+
                     DatabaseCreationTool.MyDatabase.SaveChanges();
                     //clear everything to force user to select new meal to create/edit after saving
                     AddMealName = null;
                     AddMealRecipe = null;
                     AddMealType = null;
+                    AddStringIngredient1ForMeal = null;
                 }
                 //save new recipe
                 else
                 {
                     var countedMealsId = MealsList.ToList();
-                    int IdTemp;
+                    int mealIdInsert;
                     if (countedMealsId.Count > 0)
                     {
-                        IdTemp = DatabaseCreationTool.MyDatabase.Meals.OrderByDescending(m => m.Id).First().Id + 1;
+                        mealIdInsert = DatabaseCreationTool.MyDatabase.Meals.OrderByDescending(m => m.Id).First().Id + 1;
                     }
                     else
                     {
-                        IdTemp = 1;
+                        mealIdInsert = 1;
                     }
                     
                     var NewMeal = new MealViewModel
                     {
-                        Id = IdTemp,
+                        Id = mealIdInsert,
                         MealName = AddMealName,
                         MealRecipe = AddMealRecipe,
                         MealType = AddMealType
                     };
 
                     MealsList.Add(NewMeal);
-                    DatabaseCreationTool.MyDatabase.Meals.Add(new Database.Meal
+                    DatabaseCreationTool.MyDatabase.Meals.Add(new Meal
                     {
                         Id = NewMeal.Id,
                         MealName = NewMeal.MealName,
@@ -261,7 +267,7 @@ namespace ShoppingApp.Core
                     else
                         return SelectedIngredient1ForMeal.Name;
                 }
-
+                //only for 1st ingredient to inform user
                 if (SelectedMeal == null)
                 {
                     return "No Meal Selected";
@@ -275,6 +281,7 @@ namespace ShoppingApp.Core
                 {
                     if(SelectedIngredient1ForMeal != null)
                     {
+
                         var ingredientForMeal = IngredientsForMealVM.FirstOrDefault(i => i.tempId == 1 && i.MealId == SelectedMeal.Id);
                         if (ingredientForMeal != null)
                         {
@@ -286,17 +293,158 @@ namespace ShoppingApp.Core
                         }
                     }
                     else
-                    {
-                        SelectedIngredient1ForMeal.Name = value;
+                    {                       
+                        AddStringIngredient1ForMeal = value;
                     }
                 }
                 else
                 {
-                    SelectedIngredient1ForMeal.Name = value;
+                    AddStringIngredient1ForMeal = value;
                 }
             }
         }
-      
 
+        public void TempName(IngreditenViewModel ingredientToUpdate)
+        {
+            var ingredient1toUpdateLocal = IngredientsForMealVM.FirstOrDefault(il => il.MealId == SelectedMeal.Id && il.tempId == 1);
+            //if ingredient FOR MEAL exists
+            if (ingredient1toUpdateLocal != null)
+            {
+                //if ingredient already exists
+                var ingredient1ToUpdateDB = DatabaseCreationTool.MyDatabase.IngredientForMeal.FirstOrDefault(idb => idb.Id == ingredient1toUpdateLocal.Id);
+                var ingredientCheck = IngedientsListVM.FirstOrDefault(i => i.Name == AddStringIngredient1ForMeal);
+                if (ingredientCheck != null)
+                {
+                    ingredient1toUpdateLocal.IngredientId = SelectedIngredient1ForMeal.Id;
+                    ingredient1ToUpdateDB.IngredientId = SelectedIngredient1ForMeal.Id;
+                }
+                //new ingredient
+                else
+                {
+                    var countedIngredients = IngedientsListVM.ToList();
+                    int countedIngredientsInsertId;
+                    if (countedIngredients.Count > 0)
+                    {
+                        countedIngredientsInsertId = DatabaseCreationTool.MyDatabase.Ingredients.OrderByDescending(i => i.Id).First().Id + 1;
+                    }
+                    else
+                    {
+                        countedIngredientsInsertId = 1;
+                    }
+
+                    var newIngredient1 = new IngreditenViewModel
+                    {
+                        Id = countedIngredientsInsertId,
+                        Name = AddStringIngredient1ForMeal
+                    };
+                    IngedientsListVM.Add(newIngredient1);
+                    DatabaseCreationTool.MyDatabase.Ingredients.Add(new Ingredient
+                    {
+                        Id = newIngredient1.Id,
+                        Name = newIngredient1.Name
+                    });
+
+                    ingredient1toUpdateLocal.IngredientId = newIngredient1.Id;
+                    ingredient1ToUpdateDB.IngredientId = newIngredient1.Id;
+                }
+            }
+            //if ingredient FOR MEAL is new
+            else
+            {
+                var countedIngredientsForMeals = IngredientsForMealVM.Where(i => i.MealId == SelectedMeal.Id).ToList();
+                int countedIngredientsForMealsInsertId;
+                if (countedIngredientsForMeals.Count > 0)
+                {
+                    countedIngredientsForMealsInsertId = DatabaseCreationTool.MyDatabase.IngredientForMeal.OrderByDescending(m => m.Id).First().Id + 1;
+                }
+                else
+                {
+                    countedIngredientsForMealsInsertId = 1;
+                }
+                var ingredientCheck = IngedientsListVM.FirstOrDefault(i => i.Name == AddStringIngredient1ForMeal);
+                //if ingredient already exists
+                if (ingredientCheck != null)
+                {
+                    var newIngredient1FromMeal = new IngredientForMealViewModel
+                    {
+                        tempId = 1,
+                        Id = countedIngredientsForMealsInsertId,
+                        MealId = SelectedMeal.Id,
+                        IngredientId = SelectedIngredient1ForMeal.Id,
+                        IngredientName = AddStringIngredient1ForMeal,
+                        Quantity = 0,
+                        Unit = "test"
+                    };
+                    IngredientsForMealVM.Add(newIngredient1FromMeal);
+                    DatabaseCreationTool.MyDatabase.IngredientForMeal.Add(new IngredientForMeal
+                    {
+                        Id = newIngredient1FromMeal.Id,
+                        MealId = newIngredient1FromMeal.MealId,
+                        IngredientId = 10,
+                        Quantity = 0,
+                        Unit = "test"
+                    });
+                }
+                //new ingredient
+                else
+                {
+                    var countedIngredients = IngedientsListVM.ToList();
+                    int countedIngredientsInsertId;
+                    if (countedIngredients.Count > 0)
+                    {
+                        countedIngredientsInsertId = DatabaseCreationTool.MyDatabase.Ingredients.OrderByDescending(i => i.Id).First().Id + 1;
+                    }
+                    else
+                    {
+                        countedIngredientsInsertId = 1;
+                    }
+
+                    var newIngredient1 = new IngreditenViewModel
+                    {
+                        Id = countedIngredientsInsertId,
+                        Name = AddStringIngredient1ForMeal
+                    };
+                    IngedientsListVM.Add(newIngredient1);
+                    DatabaseCreationTool.MyDatabase.Ingredients.Add(new Ingredient
+                    {
+                        Id= newIngredient1.Id,
+                        Name = newIngredient1.Name
+                    });
+
+                    var xd = IngredientsForMealVM.ToList();
+                    int xdint;
+                    if (xd.Count > 0)
+                    {
+                        xdint = DatabaseCreationTool.MyDatabase.IngredientForMeal.OrderByDescending(m => m.Id).First().Id + 1;
+                    }
+                    else
+                    {
+                        xdint = 1;
+                    }
+
+                    var newIngredient1FromMeal = new IngredientForMealViewModel
+                    {
+                        tempId = countedIngredientsForMealsInsertId,
+                        Id = xdint,
+                        MealId = SelectedMeal.Id,
+                        IngredientId = countedIngredientsInsertId,
+                        IngredientName = AddStringIngredient1ForMeal,
+                        Quantity = 0,
+                        Unit = "testnew"
+                    };
+                    IngredientsForMealVM.Add(newIngredient1FromMeal);
+                    DatabaseCreationTool.MyDatabase.IngredientForMeal.Add(new IngredientForMeal
+                    {
+                        Id = newIngredient1FromMeal.Id,
+                        MealId = newIngredient1FromMeal.MealId,
+                        IngredientId = newIngredient1FromMeal.IngredientId,
+                        Quantity = 0,
+                        Unit = "testnew"
+                    });
+                   
+                }
+               
+            }
+        }    
     }
 }
