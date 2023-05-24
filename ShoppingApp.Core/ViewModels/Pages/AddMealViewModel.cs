@@ -161,7 +161,41 @@ namespace ShoppingApp.Core
                 }
             }
         }
-        //method to save new and existing meals
+
+        public int? AddQuantityIngredient1ForMeal { get; set; }
+        public int? QuantityIngredient1ForMeal
+        {
+            get
+            {
+                //if there is selected meal
+                if (SelectedMeal != null)
+                {
+                    var quantityIngredient1ForMeal = IngredientsForMealVM.FirstOrDefault(i => i.tempId == 1 && i.MealId == SelectedMeal.Id);
+                    //always returns quantity beacuse column is not null in database
+                    return quantityIngredient1ForMeal.Quantity;
+                }
+                else
+                    return null;
+            }
+            set
+            {
+                //if there is selected meal
+                if (SelectedMeal != null)
+                {
+                    var quantityIngredient1ForMeal = IngredientsForMealVM.FirstOrDefault(i => i.tempId == 1 && i.MealId == SelectedMeal.Id);
+                    if (value != null)
+                    {
+                        quantityIngredient1ForMeal.Quantity = (int)value;
+                    }
+                    else
+                        quantityIngredient1ForMeal.Quantity = 0;
+
+                }
+                else
+                    AddQuantityIngredient1ForMeal = value;
+            }
+        }
+        //method to save completly new and changes to existing meals
         public void SaveMeal()
         {
             if ((!String.IsNullOrEmpty(AddMealName)))
@@ -264,16 +298,12 @@ namespace ShoppingApp.Core
                             return ingredient.Name;
                         }
                     }
-                    else
-                        return SelectedIngredient1ForMeal.Name;
-                }
-                //only for 1st ingredient to inform user
-                if (SelectedMeal == null)
+                    return "No Meal Selected";
+                }                
+                else 
                 {
                     return "No Meal Selected";
                 }
-
-                return AddStringIngredient1ForMeal;
             }
             set
             {
