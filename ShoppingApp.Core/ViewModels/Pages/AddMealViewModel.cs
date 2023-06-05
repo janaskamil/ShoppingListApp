@@ -16,9 +16,7 @@ namespace ShoppingApp.Core
     {
         public ObservableCollection<MealViewModel> MealsList { get; set; } = new ObservableCollection<MealViewModel>();        
         public ObservableCollection<IngreditenViewModel> IngedientsListVM { get; set; } = new ObservableCollection<IngreditenViewModel>();
-        //collection of Ingredients for Meals to edit
         public ObservableCollection<IngredientForMealViewModel> IngredientsForMealVM { get; set; } = new ObservableCollection<IngredientForMealViewModel>();
-        //collection of Ingredients for Meals to reference (check for changes)
         private List<IngredientForMealViewModel> IngredientsForMealToReference { get; set; } = new List<IngredientForMealViewModel>();
 
         private MealViewModel selectedMeal { get; set; }
@@ -42,7 +40,7 @@ namespace ShoppingApp.Core
                     var temp1 = IngredientsForMealVM.FirstOrDefault(i => i.tempId == 1 && i.MealId == selectedMeal.Id);
                     if (temp1 != null)
                     {
-                        selectedIngredient1ForMeal = IngedientsListVM.First(i => i.Id == temp1.Id);
+                        selectedIngredient1ForMeal = IngedientsListVM.First(i => i.Id == temp1.IngredientId);
                     }
                     else
                         selectedIngredient1ForMeal = null;
@@ -205,12 +203,14 @@ namespace ShoppingApp.Core
                     {
                         if (quantityIngredient1ForMeal.IngredientId == selectedIngredient1ForMeal.Id)
                         {
-                            return quantityIngredient1ForMeal.Quantity;
+                            return quantityIngredient1ForMealReference.Quantity;
                         }
 
+                        AddQuantityIngredient1ForMeal = 0;
                         return AddQuantityIngredient1ForMeal;
                     }
                     else
+                        AddQuantityIngredient1ForMeal = 0;
                         return AddQuantityIngredient1ForMeal;
                 }
                 else
@@ -227,12 +227,13 @@ namespace ShoppingApp.Core
                     //if ingredient 1 for selected meal has value
                     if (quantityIngredient1ForMeal != null)
                     {
-                        if (quantityIngredient1ForMealReference.IngredientId == SelectedIngredient1ForMeal.Id)
+                        if (quantityIngredient1ForMealReference.IngredientId == selectedIngredient1ForMeal.Id)
                         {
                             quantityIngredient1ForMealReference.Quantity = (int)value;
+                            AddQuantityIngredient1ForMeal = (int)value;
                         }
                         else
-                        AddQuantityIngredient1ForMeal = (int)value;
+                            AddQuantityIngredient1ForMeal = (int)value;
                     }
 
 
@@ -246,12 +247,12 @@ namespace ShoppingApp.Core
             if ((!String.IsNullOrEmpty(AddMealName)))
             {
                 //update existing recipe
-                if (AddMealName.Equals(SelectedMeal?.MealName.ToString()))
+                if (AddMealName.Equals(selectedMeal?.MealName.ToString()))
                 {
-                    var mealToUpdate = DatabaseCreationTool.MyDatabase.Meals.Find(SelectedMeal.Id);
-                    mealToUpdate.MealRecipe = SelectedMeal.MealRecipe;
-                    mealToUpdate.MealType = SelectedMeal.MealType;
-                    TempName(SelectedIngredient1ForMeal);
+                    var mealToUpdate = DatabaseCreationTool.MyDatabase.Meals.Find(selectedMeal.Id);
+                    mealToUpdate.MealRecipe = selectedMeal.MealRecipe;
+                    mealToUpdate.MealType = selectedMeal.MealType;
+                    TempName(selectedIngredient1ForMeal);
 
 
                     DatabaseCreationTool.MyDatabase.SaveChanges();
@@ -260,6 +261,7 @@ namespace ShoppingApp.Core
                     AddMealRecipe = null;
                     AddMealType = null;
                     AddStringIngredient1ForMeal = null;
+
                 }
                 //save new recipe
                 else
@@ -305,12 +307,12 @@ namespace ShoppingApp.Core
         //deleting existing meals
         public void DeleteMeal()
         {
-            if (SelectedMeal != null)
+            if (selectedMeal != null)
             {
-                var mealToDelete = DatabaseCreationTool.MyDatabase.Meals.Find(SelectedMeal.Id);
+                var mealToDelete = DatabaseCreationTool.MyDatabase.Meals.Find(selectedMeal.Id);
                 DatabaseCreationTool.MyDatabase.Meals.Remove(mealToDelete);
                 DatabaseCreationTool.MyDatabase.SaveChanges();
-                MealsList.Remove(SelectedMeal);
+                MealsList.Remove(selectedMeal);
                 //clear everything to force user to select new meal after deleting
                 AddMealName = null;
                 AddMealRecipe = null;
@@ -334,7 +336,16 @@ namespace ShoppingApp.Core
             {
                 if (selectedMeal != null && selectedIngredient1ForMeal != null)
                 {
-                    return selectedIngredient1ForMeal.Name;                      
+                    var asdasd = IngredientsForMealToReference.FirstOrDefault(i => i.IngredientId == selectedIngredient1ForMeal.Id);
+                    if (asdasd != null)
+                    {
+                        AddStringIngredient1ForMeal = null;
+                        return selectedIngredient1ForMeal.Name;                       
+                    }
+                    else
+                    {
+                        return AddStringIngredient1ForMeal;
+                    }                                        
                 }                
                 else 
                 {
@@ -347,12 +358,12 @@ namespace ShoppingApp.Core
                 {
                     if (selectedIngredient1ForMeal != null)
                     {
-                        var xd = IngredientsForMealToReference.FirstOrDefault(i => i.IngredientId == selectedIngredient1ForMeal.Id);
-                        var xd2 = IngedientsListVM.FirstOrDefault(i => i.Name == value);
-                        if(xd2 != null)
+                        var tempIngredientforMeal = IngredientsForMealToReference.FirstOrDefault(i => i.tempId == 1);
+                        var existingIngredient = IngedientsListVM.FirstOrDefault(i => i.Name == value);
+                        if(existingIngredient != null)
                         {
-                            xd.IngredientName = value;
-                            xd.IngredientId = xd2.Id;
+                            tempIngredientforMeal.IngredientName = value;
+                            tempIngredientforMeal.IngredientId = existingIngredient.Id;
                         }
                         else
                             AddStringIngredient1ForMeal = value;
@@ -368,17 +379,20 @@ namespace ShoppingApp.Core
 
         public void TempName(IngreditenViewModel ingredientToUpdate)
         {
-            var ingredient1toUpdateLocal = IngredientsForMealVM.FirstOrDefault(il => il.MealId == selectedMeal.Id && il.tempId == 1);
-            //if ingredient FOR MEAL exists
+            int jeden = 1;
+            var ingredient1toUpdateLocal = IngredientsForMealVM.FirstOrDefault(il => il.MealId == selectedMeal.Id && il.tempId == jeden);
+            //check for existing ingredient for meal
             if (ingredient1toUpdateLocal != null)
             {
                 //if ingredient already exists
                 var ingredient1ToUpdateDB = DatabaseCreationTool.MyDatabase.IngredientForMeal.FirstOrDefault(idb => idb.Id == ingredient1toUpdateLocal.Id);
-                var ingredientCheck = IngedientsListVM.FirstOrDefault(i => i.Name == AddStringIngredient1ForMeal);
+                var ingredientCheck = IngredientsForMealToReference.FirstOrDefault(i => i.Id == ingredient1toUpdateLocal.Id);
                 if (ingredientCheck != null)
                 {
-                    ingredient1toUpdateLocal.IngredientId = SelectedIngredient1ForMeal.Id;
-                    ingredient1ToUpdateDB.IngredientId = SelectedIngredient1ForMeal.Id;
+                    ingredient1toUpdateLocal.IngredientId = selectedIngredient1ForMeal.Id;
+                    ingredient1toUpdateLocal.Quantity = (int)AddQuantityIngredient1ForMeal;
+                    ingredient1ToUpdateDB.IngredientId = selectedIngredient1ForMeal.Id;
+                    ingredient1ToUpdateDB.Quantity = (int)AddQuantityIngredient1ForMeal;
                 }
                 //new ingredient
                 else
@@ -432,7 +446,7 @@ namespace ShoppingApp.Core
                         tempId = 1,
                         Id = countedIngredientsForMealsInsertId,
                         MealId = selectedMeal.Id,
-                        IngredientId = SelectedIngredient1ForMeal.Id,
+                        IngredientId = selectedIngredient1ForMeal.Id,
                         IngredientName = AddStringIngredient1ForMeal,
                         Quantity = 0,
                         Unit = "test"
