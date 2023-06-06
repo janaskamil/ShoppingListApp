@@ -250,9 +250,10 @@ namespace ShoppingApp.Core
                 if (AddMealName.Equals(selectedMeal?.MealName.ToString()))
                 {
                     var mealToUpdate = DatabaseCreationTool.MyDatabase.Meals.Find(selectedMeal.Id);
+                    SaveIngredientForMealLogic(selectedIngredient1ForMeal, 1);
                     mealToUpdate.MealRecipe = selectedMeal.MealRecipe;
                     mealToUpdate.MealType = selectedMeal.MealType;
-                    TempName(selectedIngredient1ForMeal);
+                    
 
 
                     DatabaseCreationTool.MyDatabase.SaveChanges();
@@ -364,6 +365,7 @@ namespace ShoppingApp.Core
                         {
                             tempIngredientforMeal.IngredientName = value;
                             tempIngredientforMeal.IngredientId = existingIngredient.Id;
+                            AddStringIngredient1ForMeal = value;
                         }
                         else
                             AddStringIngredient1ForMeal = value;
@@ -377,22 +379,38 @@ namespace ShoppingApp.Core
             }
         }
 
-        public void TempName(IngreditenViewModel ingredientToUpdate)
+        public void SaveIngredientForMealLogic(IngreditenViewModel ingredientToUpdate, int IngredientForMealNumber)
         {
-            int jeden = 1;
-            var ingredient1toUpdateLocal = IngredientsForMealVM.FirstOrDefault(il => il.MealId == selectedMeal.Id && il.tempId == jeden);
+            switch(IngredientForMealNumber)
+            {
+                case 1:
+                    break;
+                case 2:
+                    break;
+            }
+            var ingredient1toUpdateLocal = IngredientsForMealVM.FirstOrDefault(il => il.MealId == selectedMeal.Id && il.tempId == IngredientForMealNumber);
+            var ingredient1ToUpdateDB = DatabaseCreationTool.MyDatabase.IngredientForMeal.FirstOrDefault(idb => idb.Id == ingredient1toUpdateLocal.Id);
             //check for existing ingredient for meal
-            if (ingredient1toUpdateLocal != null)
+            if (ingredient1toUpdateLocal != null && ingredient1ToUpdateDB != null)
             {
                 //if ingredient already exists
-                var ingredient1ToUpdateDB = DatabaseCreationTool.MyDatabase.IngredientForMeal.FirstOrDefault(idb => idb.Id == ingredient1toUpdateLocal.Id);
-                var ingredientCheck = IngredientsForMealToReference.FirstOrDefault(i => i.Id == ingredient1toUpdateLocal.Id);
+                var ingredientCheck = IngedientsListVM.FirstOrDefault(i => i.Name == AddStringIngredient1ForMeal);
                 if (ingredientCheck != null)
                 {
                     ingredient1toUpdateLocal.IngredientId = selectedIngredient1ForMeal.Id;
-                    ingredient1toUpdateLocal.Quantity = (int)AddQuantityIngredient1ForMeal;
                     ingredient1ToUpdateDB.IngredientId = selectedIngredient1ForMeal.Id;
-                    ingredient1ToUpdateDB.Quantity = (int)AddQuantityIngredient1ForMeal;
+                    if (AddQuantityIngredient1ForMeal != null)
+                    {
+                        ingredient1toUpdateLocal.Quantity = (int)AddQuantityIngredient1ForMeal;
+                        ingredient1ToUpdateDB.Quantity = (int)AddQuantityIngredient1ForMeal;
+                    }
+                    else
+                    {
+                        ingredient1toUpdateLocal.Quantity = (int)QuantityIngredient1ForMeal;
+                        ingredient1ToUpdateDB.Quantity = (int)QuantityIngredient1ForMeal;
+                    }
+
+
                 }
                 //new ingredient
                 else
@@ -407,7 +425,7 @@ namespace ShoppingApp.Core
                     {
                         countedIngredientsInsertId = 1;
                     }
-
+                    //adding NEW ingredient to the Ingredients local + database
                     var newIngredient1 = new IngreditenViewModel
                     {
                         Id = countedIngredientsInsertId,
@@ -419,9 +437,19 @@ namespace ShoppingApp.Core
                         Id = newIngredient1.Id,
                         Name = newIngredient1.Name
                     });
-
                     ingredient1toUpdateLocal.IngredientId = newIngredient1.Id;
                     ingredient1ToUpdateDB.IngredientId = newIngredient1.Id;
+                    //adding NEW ingredient for meal to the local + database
+                    if (AddQuantityIngredient1ForMeal != null)
+                    {
+                        ingredient1toUpdateLocal.Quantity = (int)AddQuantityIngredient1ForMeal;
+                        ingredient1ToUpdateDB.Quantity = (int)AddQuantityIngredient1ForMeal;
+                    }
+                    else
+                    {
+                        ingredient1toUpdateLocal.Quantity = (int)QuantityIngredient1ForMeal;
+                        ingredient1ToUpdateDB.Quantity = (int)QuantityIngredient1ForMeal;
+                    }
                 }
             }
             //if ingredient FOR MEAL is new
