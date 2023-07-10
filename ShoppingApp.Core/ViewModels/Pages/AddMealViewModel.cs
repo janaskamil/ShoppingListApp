@@ -194,23 +194,30 @@ namespace ShoppingApp.Core
             get
             {
                 //if there is selected meal
-                if (selectedMeal != null && selectedIngredient1ForMeal != null)
+                if (selectedMeal != null)
                 {
-                    var quantityIngredient1ForMeal = IngredientsForMealVM.FirstOrDefault(i => i.tempId == 1 && i.MealId == selectedMeal.Id);
-                    var quantityIngredient1ForMealReference = IngredientsForMealToReference.FirstOrDefault(i => i.tempId == 1 && i.MealId == selectedMeal.Id);
-                    //if ingredient 1 for selected meal has value                   
-                    if (quantityIngredient1ForMeal != null)
+                    //if there is selected ingredient 
+                    if (selectedIngredient1ForMeal != null)
                     {
-                        if (quantityIngredient1ForMeal.IngredientId == selectedIngredient1ForMeal.Id)
+                        var quantityIngredient1ForMeal = IngredientsForMealVM.FirstOrDefault(i => i.tempId == 1 && i.MealId == selectedMeal.Id);
+                        var quantityIngredient1ForMealReference = IngredientsForMealToReference.FirstOrDefault(i => i.tempId == 1 && i.MealId == selectedMeal.Id);
+                        //if ingredient 1 for selected meal has value                   
+                        if (quantityIngredient1ForMeal != null)
                         {
-                            return quantityIngredient1ForMealReference.Quantity;
-                        }
+                            if (quantityIngredient1ForMeal.IngredientId == selectedIngredient1ForMeal.Id)
+                            {
+                                AddQuantityIngredient1ForMeal = quantityIngredient1ForMealReference.Quantity;
+                                return quantityIngredient1ForMealReference.Quantity;
+                            }
 
-                        AddQuantityIngredient1ForMeal = 0;
+                            AddQuantityIngredient1ForMeal = 0;
+                            return AddQuantityIngredient1ForMeal;
+                        }
+                        else
+                            AddQuantityIngredient1ForMeal = 0;
                         return AddQuantityIngredient1ForMeal;
                     }
                     else
-                        AddQuantityIngredient1ForMeal = 0;
                         return AddQuantityIngredient1ForMeal;
                 }
                 else
@@ -219,24 +226,26 @@ namespace ShoppingApp.Core
             set
             {
                 //if there is selected meal
-                if (selectedMeal != null && selectedIngredient1ForMeal != null)
+                if (selectedMeal != null)
                 {
-                    var quantityIngredient1ForMeal = IngredientsForMealVM.FirstOrDefault(i => i.tempId == 1 && i.MealId == selectedMeal.Id);
-                    var quantityIngredient1ForMealReference = IngredientsForMealToReference.FirstOrDefault(i => i.tempId == 1 && i.MealId == selectedMeal.Id);
-
-                    //if ingredient 1 for selected meal has value
-                    if (quantityIngredient1ForMeal != null)
+                    if(selectedIngredient1ForMeal != null)
                     {
-                        if (quantityIngredient1ForMealReference.IngredientId == selectedIngredient1ForMeal.Id)
+                        var quantityIngredient1ForMeal = IngredientsForMealVM.FirstOrDefault(i => i.tempId == 1 && i.MealId == selectedMeal.Id);
+                        var quantityIngredient1ForMealReference = IngredientsForMealToReference.FirstOrDefault(i => i.tempId == 1 && i.MealId == selectedMeal.Id);
+
+                        //if ingredient 1 for selected meal has value
+                        if (quantityIngredient1ForMeal != null)
                         {
-                            quantityIngredient1ForMealReference.Quantity = (int)value;
-                            AddQuantityIngredient1ForMeal = (int)value;
+                            if (quantityIngredient1ForMealReference.IngredientId == selectedIngredient1ForMeal.Id)
+                            {
+                                quantityIngredient1ForMealReference.Quantity = (int)value;
+                                AddQuantityIngredient1ForMeal = (int)value;
+                            }
+                            else
+                                AddQuantityIngredient1ForMeal = (int)value;
                         }
-                        else
-                            AddQuantityIngredient1ForMeal = (int)value;
                     }
-
-
+                    AddQuantityIngredient1ForMeal = (int)value;
                 }
             }
         }
@@ -261,7 +270,8 @@ namespace ShoppingApp.Core
                     AddMealName = null;
                     AddMealRecipe = null;
                     AddMealType = null;
-                    AddStringIngredient1ForMeal = null;
+                    StringIngredient1ForMeal = null;
+                    QuantityIngredient1ForMeal = null;
 
                 }
                 //save new recipe
@@ -340,7 +350,7 @@ namespace ShoppingApp.Core
                     var asdasd = IngredientsForMealToReference.FirstOrDefault(i => i.IngredientId == selectedIngredient1ForMeal.Id);
                     if (asdasd != null)
                     {
-                        AddStringIngredient1ForMeal = null;
+                        AddStringIngredient1ForMeal = selectedIngredient1ForMeal.Name;
                         return selectedIngredient1ForMeal.Name;                       
                     }
                     else
