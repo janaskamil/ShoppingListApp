@@ -17,7 +17,7 @@
             <TextBlock Grid.Column="1" Text="Quantity" Height="20" Width="80" Margin="30,25,26,55"/>
             <TextBox Grid.Column="1" Margin="0,50,0,26" HorizontalAlignment="Center" Width="76" Text ="{Binding QuantityIngredient1ForMeal, Mode=TwoWay}"/>
             <TextBlock Grid.Column="2" Text="Units" Margin="38,22,36,58"/>
-            <ComboBox Grid.Column="3" Margin="38,50,36,26"></ComboBox>
+            <TextBox Grid.Column="3" Margin="38,50,36,26" Text ="{Binding UnitIngredient1ForMeal, Mode=TwoWay}"></TextBox>
         </Grid>
         <!--2-->
         <Grid Height="100"  Background="Gray">
@@ -31,7 +31,7 @@
             <TextBlock Grid.Column="1" Text="Quantity" Height="20" Width="80" Margin="30,25,26,55"/>
             <TextBox Grid.Column="1" Margin="0,50,0,26" HorizontalAlignment="Center" Width="76"/>
             <TextBlock Grid.Column="2" Text="Units" Margin="38,22,36,58"/>
-            <ComboBox Grid.Column="3" Margin="38,50,36,26"></ComboBox>
+            <TextBox Grid.Column="3" Margin="38,50,36,26"></TextBox>
         </Grid>
         <!--3-->
         <Grid Height="100"  Background="White">
@@ -45,7 +45,7 @@
             <TextBlock Grid.Column="1" Text="Quantity" Height="20" Width="80" Margin="30,25,26,55"/>
             <TextBox Grid.Column="1" Margin="0,50,0,26" HorizontalAlignment="Center" Width="76"/>
             <TextBlock Grid.Column="2" Text="Units" Margin="38,22,36,58"/>
-            <ComboBox Grid.Column="3" Margin="38,50,36,26"></ComboBox>
+            <TextBox Grid.Column="3" Margin="38,50,36,26"></TextBox>
         </Grid>
         <!--4-->
         <Grid Height="100"  Background="Gray">
@@ -59,7 +59,7 @@
             <TextBlock Grid.Column="1" Text="Quantity" Height="20" Width="80" Margin="30,25,26,55"/>
             <TextBox Grid.Column="1" Margin="0,50,0,26" HorizontalAlignment="Center" Width="76"/>
             <TextBlock Grid.Column="2" Text="Units" Margin="38,22,36,58"/>
-            <ComboBox Grid.Column="3" Margin="38,50,36,26"></ComboBox>
+            <TextBox Grid.Column="3" Margin="38,50,36,26"></TextBox>
         </Grid>
         <!--5-->
         <Grid Height="100"  Background="White">
@@ -73,7 +73,7 @@
             <TextBlock Grid.Column="1" Text="Quantity" Height="20" Width="80" Margin="30,25,26,55"/>
             <TextBox Grid.Column="1" Margin="0,50,0,26" HorizontalAlignment="Center" Width="76"/>
             <TextBlock Grid.Column="2" Text="Units" Margin="38,22,36,58"/>
-            <ComboBox Grid.Column="3" Margin="38,50,36,26"></ComboBox>
+            <TextBox Grid.Column="3" Margin="38,50,36,26"></TextBox>
         </Grid>
         <!--6-->
         <Grid Height="100"  Background="Gray">
@@ -87,7 +87,7 @@
             <TextBlock Grid.Column="1" Text="Quantity" Height="20" Width="80" Margin="30,25,26,55"/>
             <TextBox Grid.Column="1" Margin="0,50,0,26" HorizontalAlignment="Center" Width="76"/>
             <TextBlock Grid.Column="2" Text="Units" Margin="38,22,36,58"/>
-            <ComboBox Grid.Column="3" Margin="38,50,36,26"></ComboBox>
+            <TextBox Grid.Column="3" Margin="38,50,36,26"></TextBox>
         </Grid>
         <!--7-->
         <Grid Height="100"  Background="White">
@@ -101,7 +101,7 @@
             <TextBlock Grid.Column="1" Text="Quantity" Height="20" Width="80" Margin="30,25,26,55"/>
             <TextBox Grid.Column="1" Margin="0,50,0,26" HorizontalAlignment="Center" Width="76"/>
             <TextBlock Grid.Column="2" Text="Units" Margin="38,22,36,58"/>
-            <ComboBox Grid.Column="3" Margin="38,50,36,26"></ComboBox>
+            <TextBox Grid.Column="3" Margin="38,50,36,26"></TextBox>
         </Grid>
         <!--8-->
         <Grid Height="100"  Background="Gray">
@@ -115,7 +115,7 @@
             <TextBlock Grid.Column="1" Text="Quantity" Height="20" Width="80" Margin="30,25,26,55"/>
             <TextBox Grid.Column="1" Margin="0,50,0,26" HorizontalAlignment="Center" Width="76"/>
             <TextBlock Grid.Column="2" Text="Units" Margin="38,22,36,58"/>
-            <ComboBox Grid.Column="3" Margin="38,50,36,26"></ComboBox>
+            <TextBox Grid.Column="3" Margin="38,50,36,26"></TextBox>
         </Grid>
         <!--9-->
         <Grid Height="100"  Background="White">
@@ -129,7 +129,7 @@
             <TextBlock Grid.Column="1" Text="Quantity" Height="20" Width="80" Margin="30,25,26,55"/>
             <TextBox Grid.Column="1" Margin="0,50,0,26" HorizontalAlignment="Center" Width="76"/>
             <TextBlock Grid.Column="2" Text="Units" Margin="38,22,36,58"/>
-            <ComboBox Grid.Column="3" Margin="38,50,36,26"></ComboBox>
+            <TextBox Grid.Column="3" Margin="38,50,36,26"></TextBox>
         </Grid>
         <!--10-->
         <Grid Height="100"  Background="Gray">
@@ -143,7 +143,7 @@
             <TextBlock Grid.Column="1" Text="Quantity" Height="20" Width="80" Margin="30,25,26,55"/>
             <TextBox Grid.Column="1" Margin="0,50,0,26" HorizontalAlignment="Center" Width="76"/>
             <TextBlock Grid.Column="2" Text="Units" Margin="38,22,36,58"/>
-            <ComboBox Grid.Column="3" Margin="38,50,36,26"></ComboBox>
+            <TextBox Grid.Column="3" Margin="38,50,36,26"></TextBox>
         </Grid>
     </StackPanel>
 </UserControl>
