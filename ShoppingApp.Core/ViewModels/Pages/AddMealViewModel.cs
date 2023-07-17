@@ -201,10 +201,7 @@ namespace ShoppingApp.Core
                     var mealToUpdate = DatabaseCreationTool.MyDatabase.Meals.Find(selectedMeal.Id);
                     SaveIngredientForMealLogic(selectedIngredient1ForMeal, 1);
                     mealToUpdate.MealRecipe = selectedMeal.MealRecipe;
-                    mealToUpdate.MealType = selectedMeal.MealType;
-                    
-
-
+                    mealToUpdate.MealType = selectedMeal.MealType;                  
                     DatabaseCreationTool.MyDatabase.SaveChanges();
                     //clear everything to force user to select new meal to create/edit after saving
                     AddMealName = null;
@@ -244,7 +241,8 @@ namespace ShoppingApp.Core
                         MealRecipe = NewMeal.MealRecipe,
                         MealType = NewMeal.MealType
                     });
-
+                    //save ingredients for new meal
+                    SaveIngredientForMealLogic(selectedIngredient1ForMeal, 1);
                     DatabaseCreationTool.MyDatabase.SaveChanges();
                     //clear everything to force user to select new meal to create/edit after saving
                     AddMealName = null;
@@ -260,6 +258,7 @@ namespace ShoppingApp.Core
         {
             if (selectedMeal != null)
             {
+
                 var mealToDelete = DatabaseCreationTool.MyDatabase.Meals.Find(selectedMeal.Id);
                 DatabaseCreationTool.MyDatabase.Meals.Remove(mealToDelete);
                 DatabaseCreationTool.MyDatabase.SaveChanges();
@@ -289,10 +288,11 @@ namespace ShoppingApp.Core
                     break;
             }
             var ingredient1toUpdateLocal = IngredientsForMealVM.FirstOrDefault(il => il.MealId == selectedMeal.Id && il.tempId == IngredientForMealNumber);
-            var ingredient1ToUpdateDB = DatabaseCreationTool.MyDatabase.IngredientForMeal.FirstOrDefault(idb => idb.Id == ingredient1toUpdateLocal.Id);
+            
             //check for existing ingredient for meal
-            if (ingredient1toUpdateLocal != null && ingredient1ToUpdateDB != null)
+            if (ingredient1toUpdateLocal != null)
             {
+                var ingredient1ToUpdateDB = DatabaseCreationTool.MyDatabase.IngredientForMeal.FirstOrDefault(idb => idb.Id == ingredient1toUpdateLocal.Id);
                 //if ingredient already exists
                 var ingredientCheck = IngedientsListVM.FirstOrDefault(i => i.Name == AddStringIngredient1ForMeal);
                 if (ingredientCheck != null)
@@ -359,6 +359,16 @@ namespace ShoppingApp.Core
                     {
                         ingredient1toUpdateLocal.Quantity = (int)QuantityIngredient1ForMeal;
                         ingredient1ToUpdateDB.Quantity = (int)QuantityIngredient1ForMeal;
+                    }
+                    if (AddUnitIngredient1ForMeal != null)
+                    {
+                        ingredient1toUpdateLocal.Unit = AddUnitIngredient1ForMeal;
+                        ingredient1ToUpdateDB.Unit = AddUnitIngredient1ForMeal;
+                    }
+                    else
+                    {
+                        ingredient1toUpdateLocal.Unit = UnitIngredient1ForMeal;
+                        ingredient1ToUpdateDB.Unit = UnitIngredient1ForMeal;
                     }
                 }
             }
@@ -443,8 +453,8 @@ namespace ShoppingApp.Core
                         MealId = selectedMeal.Id,
                         IngredientId = countedIngredientsInsertId,
                         IngredientName = AddStringIngredient1ForMeal,
-                        Quantity = 0,
-                        Unit = "testnew"
+                        Quantity = (int)AddQuantityIngredient1ForMeal,
+                        Unit = AddUnitIngredient1ForMeal
                     };
                     IngredientsForMealVM.Add(newIngredient1FromMeal);
                     DatabaseCreationTool.MyDatabase.IngredientForMeal.Add(new IngredientForMeal
@@ -452,8 +462,8 @@ namespace ShoppingApp.Core
                         Id = newIngredient1FromMeal.Id,
                         MealId = newIngredient1FromMeal.MealId,
                         IngredientId = newIngredient1FromMeal.IngredientId,
-                        Quantity = 0,
-                        Unit = "testnew"
+                        Quantity = (int)AddQuantityIngredient1ForMeal,
+                        Unit = AddUnitIngredient1ForMeal
                     });
                    
                 }
@@ -557,9 +567,28 @@ namespace ShoppingApp.Core
                         var existingIngredient = IngedientsListVM.FirstOrDefault(i => i.Name == value);
                         if (existingIngredient != null)
                         {
-                            tempIngredientforMeal.IngredientName = value;
-                            tempIngredientforMeal.IngredientId = existingIngredient.Id;
-                            AddStringIngredient1ForMeal = value;
+                            //if meal already have ingeredientXforMeal
+                            if (tempIngredientforMeal != null)
+                            {
+                                tempIngredientforMeal.IngredientName = value;
+                                tempIngredientforMeal.IngredientId = existingIngredient.Id;
+                                AddStringIngredient1ForMeal = value;
+                            }
+                            else
+                            {
+                                int countForId = IngredientsForMealVM.Count() + 1;
+
+                                IngredientsForMealToReference.Add(new IngredientForMealViewModel
+                                {
+                                    tempId = 1,
+                                    Id = countForId,
+                                    MealId = SelectedMeal.Id,
+                                    IngredientId = existingIngredient.Id,
+                                    IngredientName = existingIngredient.Name,
+                                    Quantity = 0,
+                                    Unit = ""
+                                });
+                            }
                         }
                         else
                             AddStringIngredient1ForMeal = value;
