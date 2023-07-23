@@ -56,15 +56,7 @@ namespace ShoppingApp.Core
             {
                 if (selectedMeal != null)
                 {
-                    AddStringIngredient1ForMeal = null;
-                    AddQuantityIngredient1ForMeal = null;
-                    var temp = IngredientsForMealVM.FirstOrDefault(i => i.MealId == selectedMeal.Id && i.tempId == 1);
-                    if (temp != null)
-                    {
-                        selectedIngredient1ForMeal = value;
-                    }
-                    else
-                        selectedIngredient1ForMeal = value;
+                    selectedIngredient1ForMeal = value;
                 }
             }
         }
@@ -204,11 +196,14 @@ namespace ShoppingApp.Core
                     mealToUpdate.MealType = selectedMeal.MealType;                  
                     DatabaseCreationTool.MyDatabase.SaveChanges();
                     //clear everything to force user to select new meal to create/edit after saving
+                    SelectedMeal = null;
                     AddMealName = null;
                     AddMealRecipe = null;
                     AddMealType = null;
-                    StringIngredient1ForMeal = null;
-                    QuantityIngredient1ForMeal = null;
+                    SelectedIngredient1ForMeal = null;
+                    AddStringIngredient1ForMeal = null;
+                    AddQuantityIngredient1ForMeal = null;
+                    AddUnitIngredient1ForMeal = null;                  
 
                 }
                 //save new recipe
@@ -245,9 +240,13 @@ namespace ShoppingApp.Core
                     SaveIngredientForMealLogic(selectedIngredient1ForMeal, 1);
                     DatabaseCreationTool.MyDatabase.SaveChanges();
                     //clear everything to force user to select new meal to create/edit after saving
+                    SelectedMeal = null;
                     AddMealName = null;
                     AddMealRecipe = null;
                     AddMealType = null;
+                    AddStringIngredient1ForMeal = string.Empty;
+                    QuantityIngredient1ForMeal = null;
+                    UnitIngredient1ForMeal = string.Empty;
 
                 }
             }                    
@@ -493,18 +492,18 @@ namespace ShoppingApp.Core
                                 return quantityIngredient1ForMealReference.Quantity;
                             }
 
-                            AddQuantityIngredient1ForMeal = 0;
+                            AddQuantityIngredient1ForMeal = null;
                             return AddQuantityIngredient1ForMeal;
                         }
                         else
-                            AddQuantityIngredient1ForMeal = 0;
+                            AddQuantityIngredient1ForMeal = null;
                         return AddQuantityIngredient1ForMeal;
                     }
                     else
                         return AddQuantityIngredient1ForMeal;
                 }
                 else
-                    return 0;
+                    return null;
             }
             set
             {
@@ -533,7 +532,7 @@ namespace ShoppingApp.Core
             }
         }
 
-        private string AddStringIngredient1ForMeal;
+        private string AddStringIngredient1ForMeal { get; set; }
 
         public string StringIngredient1ForMeal
         {
@@ -601,9 +600,9 @@ namespace ShoppingApp.Core
             }
         }
             
-        private string AddUnitIngredient1ForMeal;
+        private string? AddUnitIngredient1ForMeal { get; set; }
 
-        public string UnitIngredient1ForMeal
+        public string? UnitIngredient1ForMeal
         {
             get
             {
