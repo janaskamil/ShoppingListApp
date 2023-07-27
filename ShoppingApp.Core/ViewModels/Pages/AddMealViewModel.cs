@@ -382,15 +382,15 @@ namespace ShoppingApp.Core
             //if ingredient FOR MEAL is new
             else
             {
-                int countedIngredientsForMealsInsertId = IngredientsForMealVM.OrderByDescending(m => m.Id).First().Id;
+                int countedIngredientsForMealInsertId = IngredientsForMealVM.OrderByDescending(m => m.Id).First().Id;
                 
-                if (countedIngredientsForMealsInsertId > 0)
+                if (countedIngredientsForMealInsertId > 0)
                 {
-                    countedIngredientsForMealsInsertId += 1;
+                    countedIngredientsForMealInsertId += 1;
                 }
                 else
                 {
-                    countedIngredientsForMealsInsertId = 1;
+                    countedIngredientsForMealInsertId = 1;
                 }
                 var ingredientCheck = IngedientsListVM.FirstOrDefault(i => i.Name == AddStringIngredient1ForMeal);
                 //if ingredient already exists
@@ -399,7 +399,7 @@ namespace ShoppingApp.Core
                     var newIngredient1FromMeal = new IngredientForMealViewModel
                     {
                         tempId = 1,
-                        Id = countedIngredientsForMealsInsertId,
+                        Id = countedIngredientsForMealInsertId,
                         MealId = selectedMeal.Id,
                         IngredientId = selectedIngredient1ForMeal.Id,
                         IngredientName = AddStringIngredient1ForMeal,
@@ -419,11 +419,11 @@ namespace ShoppingApp.Core
                 //new ingredient
                 else
                 {
-                    var countedIngredients = IngedientsListVM.ToList();
-                    int countedIngredientsInsertId;
-                    if (countedIngredients.Count > 0)
+                    int countedIngredientsInsertId = IngedientsListVM.OrderByDescending(m => m.Id).First().Id;
+
+                    if (countedIngredientsInsertId > 0)
                     {
-                        countedIngredientsInsertId = DatabaseCreationTool.MyDatabase.Ingredients.OrderByDescending(i => i.Id).First().Id + 1;
+                        countedIngredientsInsertId += 1;
                     }
                     else
                     {
@@ -442,21 +442,11 @@ namespace ShoppingApp.Core
                         Name = newIngredient1.Name
                     });
 
-                    var xd = IngredientsForMealVM.ToList();
-                    int xdint;
-                    if (xd.Count > 0)
-                    {
-                        xdint = DatabaseCreationTool.MyDatabase.IngredientForMeal.OrderByDescending(m => m.Id).First().Id + 1;
-                    }
-                    else
-                    {
-                        xdint = 1;
-                    }
 
                     var newIngredient1FromMeal = new IngredientForMealViewModel
                     {
-                        tempId = countedIngredientsForMealsInsertId,
-                        Id = xdint,
+                        tempId = countedIngredientsForMealInsertId,
+                        Id = countedIngredientsForMealInsertId,
                         MealId = selectedMeal.Id,
                         IngredientId = countedIngredientsInsertId,
                         IngredientName = AddStringIngredient1ForMeal,
