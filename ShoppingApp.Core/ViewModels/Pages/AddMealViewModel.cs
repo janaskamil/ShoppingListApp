@@ -84,6 +84,14 @@ namespace ShoppingApp.Core
 
         public void Reload()
         {
+            SelectedMeal = null;
+            AddMealName = null;
+            AddMealRecipe = null;
+            AddMealType = null;
+            SelectedIngredient1ForMeal = null;
+            AddStringIngredient1ForMeal = null;
+            AddQuantityIngredient1ForMeal = null;
+            AddUnitIngredient1ForMeal = null;
             MealsList.Clear();
             IngedientsListVM.Clear();
             IngredientsForMealVM.Clear();
@@ -218,16 +226,7 @@ namespace ShoppingApp.Core
                     //save changes to the database
                     DatabaseCreationTool.MyDatabase.SaveChanges();
                     
-
                     //clear everything to force user to select new meal to create/edit after saving
-                    SelectedMeal = null;
-                    AddMealName = null;
-                    AddMealRecipe = null;
-                    AddMealType = null;
-                    SelectedIngredient1ForMeal = null;
-                    AddStringIngredient1ForMeal = null;
-                    AddQuantityIngredient1ForMeal = null;
-                    AddUnitIngredient1ForMeal = null;
                     Reload();
 
                 }
@@ -266,15 +265,8 @@ namespace ShoppingApp.Core
                     //save changes to the database
                     DatabaseCreationTool.MyDatabase.SaveChanges();
 
-                    //clear everything to force user to select new meal to create/edit after saving
-                    SelectedMeal = null;
-                    AddMealName = null;
-                    AddMealRecipe = null;
-                    AddMealType = null;
-                    SelectedIngredient1ForMeal = null;
-                    AddStringIngredient1ForMeal = null;
-                    AddQuantityIngredient1ForMeal = null;
-                    AddUnitIngredient1ForMeal = null;
+                    //clear everything to force user to select new meal to create/edit after saving                   
+                    Reload();
                 }
             }                    
         }
@@ -284,24 +276,22 @@ namespace ShoppingApp.Core
         {
             if (selectedMeal != null)
             {
-
                 var mealToDelete = DatabaseCreationTool.MyDatabase.Meals.Find(selectedMeal.Id);
+                var ingredientsToDelete = DatabaseCreationTool.MyDatabase.IngredientForMeal.Where(i => i.MealId == selectedMeal.Id).ToList();
+                foreach (var ingredient in ingredientsToDelete)
+                { 
+                    DatabaseCreationTool.MyDatabase.IngredientForMeal.Remove(ingredient);
+                }
                 DatabaseCreationTool.MyDatabase.Meals.Remove(mealToDelete);
                 DatabaseCreationTool.MyDatabase.SaveChanges();
-                MealsList.Remove(selectedMeal);
                 //clear everything to force user to select new meal after deleting
-                AddMealName = null;
-                AddMealRecipe = null;
-                AddMealType = null;
+                Reload();
             }
             else
             {
                 //temporary - messagebox eventually
-                AddMealName = null;
-                AddMealRecipe = null;
-                AddMealType = null;
-            }
-                
+                Reload();
+            }                
         }
         
         public void SaveIngredientForMealLogic(IngreditenViewModel ingredientToUpdate, int IngredientForMealNumber)
@@ -336,16 +326,10 @@ namespace ShoppingApp.Core
                 //new ingredient
                 else
                 {
-                    var countedIngredients = IngedientsListVM.ToList();
-                    int countedIngredientsInsertId;
-                    if (countedIngredients.Count > 0)
-                    {
-                        countedIngredientsInsertId = IngedientsListVM.OrderByDescending(i => i.Id).First().Id + 1;
-                    }
-                    else
-                    {
-                        countedIngredientsInsertId = 1;
-                    }
+                    var lastIngredient = IngedientsListVM.OrderByDescending(m => m.Id).FirstOrDefault();
+                    int countedIngredientsInsertId = lastIngredient != null ? lastIngredient.Id : 0;
+
+                    countedIngredientsInsertId += 1;
                     //adding NEW ingredient to the Ingredients local + database
                     var newIngredient1 = new IngreditenViewModel
                     {
@@ -375,23 +359,15 @@ namespace ShoppingApp.Core
                     ingredient1ToUpdateDB.Quantity = ingredientToReferenceToUpdate.Quantity;
                     ingredient1ToUpdateDB.Unit = ingredientToReferenceToUpdate.Unit;
                 }
-
-                //var entry = DatabaseCreationTool.MyDatabase.Entry(ingredient1ToUpdateDB);
-                //entry.State = EntityState.Detached;
             }
             //if ingredient FOR MEAL is new
             else
             {
-                int countedIngredientsForMealInsertId = IngredientsForMealVM.OrderByDescending(m => m.Id).First().Id;
-                
-                if (countedIngredientsForMealInsertId > 0)
-                {
-                    countedIngredientsForMealInsertId += 1;
-                }
-                else
-                {
-                    countedIngredientsForMealInsertId = 1;
-                }
+                var lastIngredientForMeal = IngredientsForMealVM.OrderByDescending(m => m.Id).FirstOrDefault();
+                int countedIngredientsForMealInsertId = lastIngredientForMeal != null ? lastIngredientForMeal.Id : 0;
+
+                countedIngredientsForMealInsertId += 1;
+
                 var ingredientCheck = IngedientsListVM.FirstOrDefault(i => i.Name == AddStringIngredient1ForMeal);
                 //if ingredient already exists
                 if (ingredientCheck != null)
@@ -419,16 +395,10 @@ namespace ShoppingApp.Core
                 //new ingredient
                 else
                 {
-                    int countedIngredientsInsertId = IngedientsListVM.OrderByDescending(m => m.Id).First().Id;
+                    var lastIngredient = IngedientsListVM.OrderByDescending(m => m.Id).FirstOrDefault();
+                    int countedIngredientsInsertId = lastIngredient != null ? lastIngredient.Id : 0;
 
-                    if (countedIngredientsInsertId > 0)
-                    {
-                        countedIngredientsInsertId += 1;
-                    }
-                    else
-                    {
-                        countedIngredientsInsertId = 1;
-                    }
+                    countedIngredientsInsertId += 1;
 
                     var newIngredient1 = new IngreditenViewModel
                     {
