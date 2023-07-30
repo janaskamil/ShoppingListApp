@@ -53,7 +53,7 @@ namespace ShoppingApp {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/ShoppingApp;V1.0.0.0;component/pages/createlist.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/ShoppingApp;component/pages/createlist.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Pages\CreateList.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

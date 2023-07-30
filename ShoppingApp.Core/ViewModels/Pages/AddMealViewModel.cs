@@ -50,6 +50,15 @@ namespace ShoppingApp.Core
                     {
                         selectedIngredient1ForMeal = null;
                     }
+                    var ingredient2 = IngredientsForMealVM.FirstOrDefault(i => i.tempId == 2 && i.MealId == selectedMeal.Id);
+                    if (ingredient2 != null)
+                    {
+                        selectedIngredient2ForMeal = IngedientsListVM.First(i => i.Id == ingredient2.IngredientId);
+                    }
+                    else
+                    {
+                        selectedIngredient2ForMeal = null;
+                    }
                 }
             }
         }
@@ -63,6 +72,19 @@ namespace ShoppingApp.Core
                 if (selectedMeal != null)
                 {
                     selectedIngredient1ForMeal = value;
+                }
+
+            }
+        }
+        public IngreditenViewModel? selectedIngredient2ForMeal { get; set; }
+        public IngreditenViewModel SelectedIngredient2ForMeal
+        {
+            get { return selectedIngredient2ForMeal; }
+            set
+            {
+                if (selectedMeal != null)
+                {
+                    selectedIngredient2ForMeal = value;
                 }
 
             }
@@ -88,7 +110,7 @@ namespace ShoppingApp.Core
             AddMealName = null;
             AddMealRecipe = null;
             AddMealType = null;
-            SelectedIngredient1ForMeal = null;
+            selectedIngredient1ForMeal = null;
             AddStringIngredient1ForMeal = null;
             AddQuantityIngredient1ForMeal = null;
             AddUnitIngredient1ForMeal = null;
@@ -145,6 +167,7 @@ namespace ShoppingApp.Core
                         Quantity = item.Quantity,
                         Unit = item.Unit
                     });
+                    tempId++;
                 }
             }
         }
@@ -219,8 +242,7 @@ namespace ShoppingApp.Core
 
                     //update ingredients used to prepare meal
                     SaveIngredientForMealLogic(1);
-                    
-                    
+                                        
                     //save changes to the database
                     DatabaseCreationTool.MyDatabase.SaveChanges();
                     
@@ -231,21 +253,14 @@ namespace ShoppingApp.Core
                 //save new recipe
                 else
                 {
-                    //assing id in the meals
-                    var countedMealsId = MealsList.ToList();
-                    int mealIdInsert;
-                    if (countedMealsId.Count > 0)
-                    {
-                        mealIdInsert = DatabaseCreationTool.MyDatabase.Meals.OrderByDescending(m => m.Id).First().Id + 1;
-                    }
-                    else
-                    {
-                        mealIdInsert = 1;
-                    }
-                    
+                    //find and assing Id for the new Meal
+                    var lastMealId = MealsList.OrderByDescending(m => m.Id).FirstOrDefault();
+                    int countedMealsToInsert = lastMealId != null ? lastMealId.Id : 0;
+                    countedMealsToInsert += 1;
+
                     var NewMeal = new MealViewModel
                     {
-                        Id = mealIdInsert,
+                        Id = countedMealsToInsert,
                         MealName = AddMealName,
                         MealRecipe = AddMealRecipe,
                         MealType = AddMealType
@@ -306,6 +321,9 @@ namespace ShoppingApp.Core
                     saveAddUnit= AddUnitIngredient1ForMeal;
                     break;
                 case 2:
+                    //saveAddString = AddStringIngredient1ForMeal;
+                    //saveAddQuantity = AddQuantityIngredient1ForMeal;
+                    //saveAddUnit = AddUnitIngredient1ForMeal;
                     break;
             }
 
@@ -370,7 +388,6 @@ namespace ShoppingApp.Core
             {
                 var lastIngredientForMeal = IngredientsForMealVM.OrderByDescending(m => m.Id).FirstOrDefault();
                 int countedIngredientsForMealInsertId = lastIngredientForMeal != null ? lastIngredientForMeal.Id : 0;
-
                 countedIngredientsForMealInsertId += 1;
 
                 var ingredientCheck = IngedientsListVM.FirstOrDefault(i => i.Name == saveAddString);
@@ -447,68 +464,84 @@ namespace ShoppingApp.Core
         {
             get
             {
-                if (selectedMeal != null && selectedIngredient1ForMeal != null)
-                {
-                    var asdasd = IngredientsForMealToReference.FirstOrDefault(i => i.IngredientId == selectedIngredient1ForMeal.Id);
-                    if (asdasd != null)
-                    {
-                        AddStringIngredient1ForMeal = selectedIngredient1ForMeal.Name;
-                        return selectedIngredient1ForMeal.Name;
-                    }
-                    else
-                    {
-                        return AddStringIngredient1ForMeal;
-                    }
-                }
-                else
-                {
-                    return AddStringIngredient1ForMeal;
-                }
+                return GetStringIngredientForMeal(1, selectedIngredient1ForMeal, AddStringIngredient1ForMeal);
             }
             set
             {
-                if (selectedMeal != null)
+                string Addstring1 = SetStringIngredientForMeal(1, selectedIngredient1ForMeal, AddStringIngredient1ForMeal, value);
+                AddStringIngredient1ForMeal = Addstring1;
+            }
+        }
+
+        private string? GetStringIngredientForMeal(int tempId, IngreditenViewModel selectedIngredient, string AddString)
+        {
+            if (selectedMeal != null && selectedIngredient != null)
+            {
+                var existingIngredientForMeal = IngredientsForMealToReference.FirstOrDefault(i => i.IngredientId == selectedIngredient.Id);
+                if (existingIngredientForMeal != null)
                 {
-                    if (selectedIngredient1ForMeal != null)
-                    {
-                        var tempIngredientforMeal = IngredientsForMealToReference.FirstOrDefault(i => i.tempId == 1);
-                        var existingIngredient = IngedientsListVM.FirstOrDefault(i => i.Name == value);
-                        if (existingIngredient != null)
-                        {
-                            //if meal already have ingeredientXforMeal
-                            if (tempIngredientforMeal != null)
-                            {
-                                tempIngredientforMeal.IngredientName = value;
-                                tempIngredientforMeal.IngredientId = existingIngredient.Id;
-                                AddStringIngredient1ForMeal = value;
-                            }
-                            else
-                            {
-                                int countForId = IngredientsForMealVM.Count() + 1;
-
-                                IngredientsForMealToReference.Add(new IngredientForMealViewModel
-                                {
-                                    tempId = 1,
-                                    Id = countForId,
-                                    MealId = SelectedMeal.Id,
-                                    IngredientId = existingIngredient.Id,
-                                    IngredientName = existingIngredient.Name,
-                                    Quantity = 0,
-                                    Unit = ""
-                                });
-
-                                AddStringIngredient1ForMeal = value;
-                            }
-                        }
-                        else
-                            AddStringIngredient1ForMeal = value;
-                    }
-                    else
-                    {
-                        AddStringIngredient1ForMeal = value;
-                    }
+                    AddString = selectedIngredient.Name;
+                    return selectedIngredient.Name;
+                }
+                else
+                {
+                    return AddString;
                 }
             }
+            else
+            {
+                return AddString;
+            }
+        }
+
+        private string? SetStringIngredientForMeal(int tempId, IngreditenViewModel selectedIngredient, string AddString, string value)
+        {
+            if (selectedMeal != null)
+            {
+                if (selectedIngredient != null)
+                {
+                    var tempIngredientforMeal = IngredientsForMealToReference.FirstOrDefault(i => i.tempId == tempId);
+                    var existingIngredient = IngedientsListVM.FirstOrDefault(i => i.Name == value);
+                    if (existingIngredient != null)
+                    {
+                        //if meal already have ingeredientXforMeal
+                        if (tempIngredientforMeal != null)
+                        {
+                            tempIngredientforMeal.IngredientName = value;
+                            tempIngredientforMeal.IngredientId = existingIngredient.Id;
+                            AddString = value;
+                            return AddString;
+                        }
+                        else
+                        {
+                            int countForId = IngredientsForMealVM.Count() + 1;
+
+                            IngredientsForMealToReference.Add(new IngredientForMealViewModel
+                            {
+                                tempId = tempId,
+                                Id = countForId,
+                                MealId = SelectedMeal.Id,
+                                IngredientId = existingIngredient.Id,
+                                IngredientName = existingIngredient.Name,
+                                Quantity = 0,
+                                Unit = ""
+                            });
+                            AddString = value;
+                            return AddString;
+                        }
+                    }
+                    else
+                        AddString = value;
+                        return AddString;
+                }
+                else
+                {
+                    AddString = value;
+                    return AddString;
+                }
+            }
+            AddString = value;
+            return AddString;
         }
 
         private int? AddQuantityIngredient1ForMeal { get; set; }
