@@ -59,6 +59,123 @@ namespace ShoppingApp.Core
                     {
                         selectedIngredient2ForMeal = null;
                     }
+                    var ingredient3 = IngredientsForMealVM.FirstOrDefault(i => i.tempId == 3 && i.MealId == selectedMeal.Id);
+                    if (ingredient3 != null)
+                    {
+                        selectedIngredient3ForMeal = IngedientsListVM.First(i => i.Id == ingredient3.IngredientId);
+                    }
+                    else
+                    {
+                        selectedIngredient3ForMeal = null;
+                    }
+                    var ingredient4 = IngredientsForMealVM.FirstOrDefault(i => i.tempId == 4 && i.MealId == selectedMeal.Id);
+                    if (ingredient4 != null)
+                    {
+                        selectedIngredient4ForMeal = IngedientsListVM.First(i => i.Id == ingredient4.IngredientId);
+                    }
+                    else
+                    {
+                        selectedIngredient4ForMeal = null;
+                    }
+                    var ingredient5 = IngredientsForMealVM.FirstOrDefault(i => i.tempId == 5 && i.MealId == selectedMeal.Id);
+                    if (ingredient5 != null)
+                    {
+                        selectedIngredient5ForMeal = IngedientsListVM.First(i => i.Id == ingredient5.IngredientId);
+                    }
+                    else
+                    {
+                        selectedIngredient5ForMeal = null;
+                    }
+                    var ingredient6 = IngredientsForMealVM.FirstOrDefault(i => i.tempId == 6 && i.MealId == selectedMeal.Id);
+                    if (ingredient6 != null)
+                    {
+                        selectedIngredient6ForMeal = IngedientsListVM.First(i => i.Id == ingredient6.IngredientId);
+                    }
+                    else
+                    {
+                        selectedIngredient6ForMeal = null;
+                    }
+                    var ingredient7 = IngredientsForMealVM.FirstOrDefault(i => i.tempId == 7 && i.MealId == selectedMeal.Id);
+                    if (ingredient7 != null)
+                    {
+                        selectedIngredient7ForMeal = IngedientsListVM.First(i => i.Id == ingredient7.IngredientId);
+                    }
+                    else
+                    {
+                        selectedIngredient7ForMeal = null;
+                    }
+                    var ingredient8 = IngredientsForMealVM.FirstOrDefault(i => i.tempId == 8 && i.MealId == selectedMeal.Id);
+                    if (ingredient8 != null)
+                    {
+                        selectedIngredient8ForMeal = IngedientsListVM.First(i => i.Id == ingredient8.IngredientId);
+                    }
+                    else
+                    {
+                        selectedIngredient8ForMeal = null;
+                    }
+                    var ingredient9 = IngredientsForMealVM.FirstOrDefault(i => i.tempId == 9 && i.MealId == selectedMeal.Id);
+                    if (ingredient9 != null)
+                    {
+                        selectedIngredient9ForMeal = IngedientsListVM.First(i => i.Id == ingredient9.IngredientId);
+                    }
+                    else
+                    {
+                        selectedIngredient9ForMeal = null;
+                    }
+                    var ingredient10 = IngredientsForMealVM.FirstOrDefault(i => i.tempId == 10 && i.MealId == selectedMeal.Id);
+                    if (ingredient10 != null)
+                    {
+                        selectedIngredient10ForMeal = IngedientsListVM.First(i => i.Id == ingredient10.IngredientId);
+                    }
+                    else
+                    {
+                        selectedIngredient10ForMeal = null;
+                    }
+                    var ingredient11 = IngredientsForMealVM.FirstOrDefault(i => i.tempId == 11 && i.MealId == selectedMeal.Id);
+                    if (ingredient11 != null)
+                    {
+                        selectedIngredient11ForMeal = IngedientsListVM.First(i => i.Id == ingredient11.IngredientId);
+                    }
+                    else
+                    {
+                        selectedIngredient11ForMeal = null;
+                    }
+                    var ingredient12 = IngredientsForMealVM.FirstOrDefault(i => i.tempId == 12 && i.MealId == selectedMeal.Id);
+                    if (ingredient12 != null)
+                    {
+                        selectedIngredient12ForMeal = IngedientsListVM.First(i => i.Id == ingredient12.IngredientId);
+                    }
+                    else
+                    {
+                        selectedIngredient12ForMeal = null;
+                    }
+                    var ingredient13 = IngredientsForMealVM.FirstOrDefault(i => i.tempId == 13 && i.MealId == selectedMeal.Id);
+                    if (ingredient13 != null)
+                    {
+                        selectedIngredient13ForMeal = IngedientsListVM.First(i => i.Id == ingredient13.IngredientId);
+                    }
+                    else
+                    {
+                        selectedIngredient13ForMeal = null;
+                    }
+                    var ingredient14 = IngredientsForMealVM.FirstOrDefault(i => i.tempId == 14 && i.MealId == selectedMeal.Id);
+                    if (ingredient14 != null)
+                    {
+                        selectedIngredient14ForMeal = IngedientsListVM.First(i => i.Id == ingredient14.IngredientId);
+                    }
+                    else
+                    {
+                        selectedIngredient14ForMeal = null;
+                    }
+                    var ingredient15 = IngredientsForMealVM.FirstOrDefault(i => i.tempId == 15 && i.MealId == selectedMeal.Id);
+                    if (ingredient15 != null)
+                    {
+                        selectedIngredient15ForMeal = IngedientsListVM.First(i => i.Id == ingredient15.IngredientId);
+                    }
+                    else
+                    {
+                        selectedIngredient15ForMeal = null;
+                    }
                 }
             }
         }
@@ -89,6 +206,176 @@ namespace ShoppingApp.Core
 
             }
         }
+        public IngreditenViewModel? selectedIngredient3ForMeal { get; set; }
+        public IngreditenViewModel SelectedIngredient3ForMeal
+        {
+            get { return selectedIngredient3ForMeal; }
+            set
+            {
+                if (selectedMeal != null)
+                {
+                    selectedIngredient3ForMeal = value;
+                }
+
+            }
+        }
+        public IngreditenViewModel? selectedIngredient4ForMeal { get; set; }
+        public IngreditenViewModel SelectedIngredient4ForMeal
+        {
+            get { return selectedIngredient4ForMeal; }
+            set
+            {
+                if (selectedMeal != null)
+                {
+                    selectedIngredient4ForMeal = value;
+                }
+
+            }
+        }
+        public IngreditenViewModel? selectedIngredient5ForMeal { get; set; }
+        public IngreditenViewModel SelectedIngredient5ForMeal
+        {
+            get { return selectedIngredient5ForMeal; }
+            set
+            {
+                if (selectedMeal != null)
+                {
+                    selectedIngredient5ForMeal = value;
+                }
+
+            }
+        }
+        public IngreditenViewModel? selectedIngredient6ForMeal { get; set; }
+        public IngreditenViewModel SelectedIngredient6ForMeal
+        {
+            get { return selectedIngredient6ForMeal; }
+            set
+            {
+                if (selectedMeal != null)
+                {
+                    selectedIngredient6ForMeal = value;
+                }
+
+            }
+        }
+        public IngreditenViewModel? selectedIngredient7ForMeal { get; set; }
+        public IngreditenViewModel SelectedIngredient7ForMeal
+        {
+            get { return selectedIngredient7ForMeal; }
+            set
+            {
+                if (selectedMeal != null)
+                {
+                    selectedIngredient7ForMeal = value;
+                }
+
+            }
+        }
+        public IngreditenViewModel? selectedIngredient8ForMeal { get; set; }
+        public IngreditenViewModel SelectedIngredient8ForMeal
+        {
+            get { return selectedIngredient8ForMeal; }
+            set
+            {
+                if (selectedMeal != null)
+                {
+                    selectedIngredient8ForMeal = value;
+                }
+
+            }
+        }
+        public IngreditenViewModel? selectedIngredient9ForMeal { get; set; }
+        public IngreditenViewModel SelectedIngredient9ForMeal
+        {
+            get { return selectedIngredient9ForMeal; }
+            set
+            {
+                if (selectedMeal != null)
+                {
+                    selectedIngredient9ForMeal = value;
+                }
+
+            }
+        }
+        public IngreditenViewModel? selectedIngredient10ForMeal { get; set; }
+        public IngreditenViewModel SelectedIngredient10ForMeal
+        {
+            get { return selectedIngredient10ForMeal; }
+            set
+            {
+                if (selectedMeal != null)
+                {
+                    selectedIngredient10ForMeal = value;
+                }
+
+            }
+        }
+        public IngreditenViewModel? selectedIngredient11ForMeal { get; set; }
+        public IngreditenViewModel SelectedIngredient11ForMeal
+        {
+            get { return selectedIngredient11ForMeal; }
+            set
+            {
+                if (selectedMeal != null)
+                {
+                    selectedIngredient11ForMeal = value;
+                }
+
+            }
+        }
+        public IngreditenViewModel? selectedIngredient12ForMeal { get; set; }
+        public IngreditenViewModel SelectedIngredient12ForMeal
+        {
+            get { return selectedIngredient12ForMeal; }
+            set
+            {
+                if (selectedMeal != null)
+                {
+                    selectedIngredient12ForMeal = value;
+                }
+
+            }
+        }
+        public IngreditenViewModel? selectedIngredient13ForMeal { get; set; }
+        public IngreditenViewModel SelectedIngredient13ForMeal
+        {
+            get { return selectedIngredient13ForMeal; }
+            set
+            {
+                if (selectedMeal != null)
+                {
+                    selectedIngredient13ForMeal = value;
+                }
+
+            }
+        }
+        public IngreditenViewModel? selectedIngredient14ForMeal { get; set; }
+        public IngreditenViewModel SelectedIngredient14ForMeal
+        {
+            get { return selectedIngredient14ForMeal; }
+            set
+            {
+                if (selectedMeal != null)
+                {
+                    selectedIngredient14ForMeal = value;
+                }
+
+            }
+        }
+        public IngreditenViewModel? selectedIngredient15ForMeal { get; set; }
+        public IngreditenViewModel SelectedIngredient15ForMeal
+        {
+            get { return selectedIngredient15ForMeal; }
+            set
+            {
+                if (selectedMeal != null)
+                {
+                    selectedIngredient15ForMeal = value;
+                }
+
+            }
+        }
+
 
         public string[] MealTypesList { get; set; } = new string[] {"Breakfast", "Lunch", "Dinner", "Tea", "Supper"};
         public string AddMealName { get; set; }
@@ -241,8 +528,16 @@ namespace ShoppingApp.Core
                     mealToUpdate.MealType = selectedMeal.MealType;
 
                     //update ingredients used to prepare meal
-                    SaveIngredientForMealLogic(1);
-                                        
+                    for (int ingr = 0; ingr <= 15; ingr++)
+                    {
+                        var lol = IngredientsForMealToReference.FirstOrDefault(i => i.tempId == ingr);
+                        if (lol != null)
+                        {
+                            SaveIngredientForMealLogic(ingr);
+                        }
+                        
+                    }
+                                                         
                     //save changes to the database
                     DatabaseCreationTool.MyDatabase.SaveChanges();
                     
@@ -316,14 +611,79 @@ namespace ShoppingApp.Core
             switch (IngredientForMealNumber)
             {
                 case 1:
-                    saveAddString = AddStringIngredient1ForMeal;
-                    saveAddQuantity = AddQuantityIngredient1ForMeal;
-                    saveAddUnit= AddUnitIngredient1ForMeal;
+                    saveAddString = StringIngredient1ForMeal;
+                    saveAddQuantity = QuantityIngredient1ForMeal;
+                    saveAddUnit= UnitIngredient1ForMeal;
                     break;
                 case 2:
-                    //saveAddString = AddStringIngredient1ForMeal;
-                    //saveAddQuantity = AddQuantityIngredient1ForMeal;
-                    //saveAddUnit = AddUnitIngredient1ForMeal;
+                    saveAddString = StringIngredient2ForMeal;
+                    saveAddQuantity = QuantityIngredient2ForMeal;
+                    saveAddUnit = UnitIngredient2ForMeal;
+                    break;
+                case 3:
+                    saveAddString = StringIngredient3ForMeal;
+                    saveAddQuantity = QuantityIngredient3ForMeal;
+                    saveAddUnit = UnitIngredient3ForMeal;
+                    break;
+                case 4:
+                    saveAddString = StringIngredient4ForMeal;
+                    saveAddQuantity = QuantityIngredient4ForMeal;
+                    saveAddUnit = UnitIngredient4ForMeal;
+                    break;
+                case 5:
+                    saveAddString = StringIngredient5ForMeal;
+                    saveAddQuantity = QuantityIngredient5ForMeal;
+                    saveAddUnit = UnitIngredient5ForMeal;
+                    break;
+                case 6:
+                    saveAddString = StringIngredient6ForMeal;
+                    saveAddQuantity = QuantityIngredient6ForMeal;
+                    saveAddUnit = UnitIngredient6ForMeal;
+                    break;
+                case 7:
+                    saveAddString = StringIngredient7ForMeal;
+                    saveAddQuantity = QuantityIngredient7ForMeal;
+                    saveAddUnit = UnitIngredient7ForMeal;
+                    break;
+                case 8:
+                    saveAddString = StringIngredient8ForMeal;
+                    saveAddQuantity = QuantityIngredient8ForMeal;
+                    saveAddUnit = UnitIngredient8ForMeal;
+                    break;
+                case 9:
+                    saveAddString = StringIngredient9ForMeal;
+                    saveAddQuantity = QuantityIngredient9ForMeal;
+                    saveAddUnit = UnitIngredient9ForMeal;
+                    break;
+                case 10:
+                    saveAddString = StringIngredient10ForMeal;
+                    saveAddQuantity = QuantityIngredient10ForMeal;
+                    saveAddUnit = UnitIngredient10ForMeal;
+                    break;
+                case 11:
+                    saveAddString = StringIngredient11ForMeal;
+                    saveAddQuantity = QuantityIngredient11ForMeal;
+                    saveAddUnit = UnitIngredient11ForMeal;
+                    break;
+                case 12:
+                    saveAddString = StringIngredient12ForMeal;
+                    saveAddQuantity = QuantityIngredient12ForMeal;
+                    saveAddUnit = UnitIngredient12ForMeal;
+                    break;
+                case 13:
+                    saveAddString = StringIngredient13ForMeal;
+                    saveAddQuantity = QuantityIngredient13ForMeal;
+                    saveAddUnit = UnitIngredient13ForMeal;
+                    break;
+                case 14:
+                    saveAddString = StringIngredient14ForMeal;
+                    saveAddQuantity = QuantityIngredient14ForMeal;
+                    saveAddUnit = UnitIngredient14ForMeal;
+                    break;
+                case 15:
+                    saveAddString = StringIngredient15ForMeal;
+                    saveAddQuantity = QuantityIngredient15ForMeal;
+                    saveAddUnit = UnitIngredient15ForMeal;
                     break;
             }
 
@@ -459,7 +819,6 @@ namespace ShoppingApp.Core
             }
         }
         private string AddStringIngredient1ForMeal { get; set; }
-
         public string StringIngredient1ForMeal
         {
             get
@@ -468,33 +827,604 @@ namespace ShoppingApp.Core
             }
             set
             {
-                string Addstring1 = SetStringIngredientForMeal(1, selectedIngredient1ForMeal, AddStringIngredient1ForMeal, value);
-                AddStringIngredient1ForMeal = Addstring1;
+                string addString1 = SetStringIngredientForMeal(1, selectedIngredient1ForMeal, AddStringIngredient1ForMeal, value);
+                AddStringIngredient1ForMeal = addString1;
+            }
+        }        
+        private int? AddQuantityIngredient1ForMeal { get; set; }
+        public int? QuantityIngredient1ForMeal
+        {
+            get
+            {
+                return GetQuantityIngredientForMeal(1, selectedIngredient1ForMeal, AddQuantityIngredient1ForMeal);
+            }
+            set
+            {
+                int? addInt1 = SetQuantityIngredientForMeal(1, selectedIngredient1ForMeal, AddQuantityIngredient1ForMeal, value);
+                AddQuantityIngredient1ForMeal = addInt1;
             }
         }
-
-        private string? GetStringIngredientForMeal(int tempId, IngreditenViewModel selectedIngredient, string AddString)
+        private string? AddUnitIngredient1ForMeal { get; set; }
+        public string? UnitIngredient1ForMeal
+        {
+            get
+            {
+                return GetUnitIngredientForMeal(1, selectedIngredient1ForMeal, AddUnitIngredient1ForMeal);
+            }
+            set
+            {
+                string addUnit = SetUnitIngredientForMeal(1, selectedIngredient1ForMeal, AddUnitIngredient1ForMeal, value);
+                AddUnitIngredient1ForMeal = addUnit;
+            }
+        }
+        private string AddStringIngredient2ForMeal { get; set; }
+        public string StringIngredient2ForMeal
+        {
+            get
+            {
+                return GetStringIngredientForMeal(2, selectedIngredient2ForMeal, AddStringIngredient2ForMeal);
+            }
+            set
+            {
+                string addString2 = SetStringIngredientForMeal(2, selectedIngredient2ForMeal, AddStringIngredient2ForMeal, value);
+                AddStringIngredient2ForMeal = addString2;
+            }
+        }
+        private int? AddQuantityIngredient2ForMeal { get; set; }
+        public int? QuantityIngredient2ForMeal
+        {
+            get
+            {
+                return GetQuantityIngredientForMeal(2, selectedIngredient2ForMeal, AddQuantityIngredient2ForMeal);
+            }
+            set
+            {
+                int? addInt2 = SetQuantityIngredientForMeal(2, selectedIngredient2ForMeal, AddQuantityIngredient2ForMeal, value);
+                AddQuantityIngredient2ForMeal = addInt2;
+            }
+        }            
+        private string? AddUnitIngredient2ForMeal { get; set; }
+        public string? UnitIngredient2ForMeal
+        {
+            get
+            {
+                return GetUnitIngredientForMeal(2, selectedIngredient2ForMeal, AddUnitIngredient2ForMeal);
+            }
+            set
+            {
+                string addUnit = SetUnitIngredientForMeal(2, selectedIngredient2ForMeal, AddUnitIngredient2ForMeal, value);
+                AddUnitIngredient2ForMeal = addUnit;
+            }
+        }
+        private string AddStringIngredient3ForMeal { get; set; }
+        public string StringIngredient3ForMeal
+        {
+            get
+            {
+                return GetStringIngredientForMeal(3, selectedIngredient3ForMeal, AddStringIngredient3ForMeal);
+            }
+            set
+            {
+                string addString3 = SetStringIngredientForMeal(3, selectedIngredient3ForMeal, AddStringIngredient3ForMeal, value);
+                AddStringIngredient3ForMeal = addString3;
+            }
+        }
+        private int? AddQuantityIngredient3ForMeal { get; set; }
+        public int? QuantityIngredient3ForMeal
+        {
+            get
+            {
+                return GetQuantityIngredientForMeal(3, selectedIngredient3ForMeal, AddQuantityIngredient3ForMeal);
+            }
+            set
+            {
+                int? addInt3 = SetQuantityIngredientForMeal(3, selectedIngredient3ForMeal, AddQuantityIngredient3ForMeal, value);
+                AddQuantityIngredient3ForMeal = addInt3;
+            }
+        }
+        private string? AddUnitIngredient3ForMeal { get; set; }
+        public string? UnitIngredient3ForMeal
+        {
+            get
+            {
+                return GetUnitIngredientForMeal(3, selectedIngredient3ForMeal, AddUnitIngredient3ForMeal);
+            }
+            set
+            {
+                string addUnit = SetUnitIngredientForMeal(3, selectedIngredient3ForMeal, AddUnitIngredient3ForMeal, value);
+                AddUnitIngredient3ForMeal = addUnit;
+            }
+        }
+        private string AddStringIngredient4ForMeal { get; set; }
+        public string StringIngredient4ForMeal
+        {
+            get
+            {
+                return GetStringIngredientForMeal(4, selectedIngredient4ForMeal, AddStringIngredient4ForMeal);
+            }
+            set
+            {
+                string addString4 = SetStringIngredientForMeal(4, selectedIngredient4ForMeal, AddStringIngredient4ForMeal, value);
+                AddStringIngredient4ForMeal = addString4;
+            }
+        }
+        private int? AddQuantityIngredient4ForMeal { get; set; }
+        public int? QuantityIngredient4ForMeal
+        {
+            get
+            {
+                return GetQuantityIngredientForMeal(4, selectedIngredient4ForMeal, AddQuantityIngredient4ForMeal);
+            }
+            set
+            {
+                int? addInt4 = SetQuantityIngredientForMeal(4, selectedIngredient4ForMeal, AddQuantityIngredient4ForMeal, value);
+                AddQuantityIngredient4ForMeal = addInt4;
+            }
+        }
+        private string? AddUnitIngredient4ForMeal { get; set; }
+        public string? UnitIngredient4ForMeal
+        {
+            get
+            {
+                return GetUnitIngredientForMeal(4, selectedIngredient4ForMeal, AddUnitIngredient4ForMeal);
+            }
+            set
+            {
+                string addUnit = SetUnitIngredientForMeal(4, selectedIngredient4ForMeal, AddUnitIngredient4ForMeal, value);
+                AddUnitIngredient4ForMeal = addUnit;
+            }
+        }
+        private string AddStringIngredient5ForMeal { get; set; }
+        public string StringIngredient5ForMeal
+        {
+            get
+            {
+                return GetStringIngredientForMeal(5, selectedIngredient5ForMeal, AddStringIngredient5ForMeal);
+            }
+            set
+            {
+                string addString5 = SetStringIngredientForMeal(5, selectedIngredient5ForMeal, AddStringIngredient5ForMeal, value);
+                AddStringIngredient5ForMeal = addString5;
+            }
+        }
+        private int? AddQuantityIngredient5ForMeal { get; set; }
+        public int? QuantityIngredient5ForMeal
+        {
+            get
+            {
+                return GetQuantityIngredientForMeal(5, selectedIngredient5ForMeal, AddQuantityIngredient5ForMeal);
+            }
+            set
+            {
+                int? addInt5 = SetQuantityIngredientForMeal(5, selectedIngredient5ForMeal, AddQuantityIngredient5ForMeal, value);
+                AddQuantityIngredient5ForMeal = addInt5;
+            }
+        }
+        private string? AddUnitIngredient5ForMeal { get; set; }
+        public string? UnitIngredient5ForMeal
+        {
+            get
+            {
+                return GetUnitIngredientForMeal(5, selectedIngredient5ForMeal, AddUnitIngredient5ForMeal);
+            }
+            set
+            {
+                string addUnit = SetUnitIngredientForMeal(5, selectedIngredient5ForMeal, AddUnitIngredient5ForMeal, value);
+                AddUnitIngredient5ForMeal = addUnit;
+            }
+        }
+        private string AddStringIngredient6ForMeal { get; set; }
+        public string StringIngredient6ForMeal
+        {
+            get
+            {
+                return GetStringIngredientForMeal(6, selectedIngredient6ForMeal, AddStringIngredient6ForMeal);
+            }
+            set
+            {
+                string addString6 = SetStringIngredientForMeal(6, selectedIngredient6ForMeal, AddStringIngredient6ForMeal, value);
+                AddStringIngredient6ForMeal = addString6;
+            }
+        }
+        private int? AddQuantityIngredient6ForMeal { get; set; }
+        public int? QuantityIngredient6ForMeal
+        {
+            get
+            {
+                return GetQuantityIngredientForMeal(6, selectedIngredient6ForMeal, AddQuantityIngredient6ForMeal);
+            }
+            set
+            {
+                int? addInt6 = SetQuantityIngredientForMeal(6, selectedIngredient6ForMeal, AddQuantityIngredient6ForMeal, value);
+                AddQuantityIngredient6ForMeal = addInt6;
+            }
+        }
+        private string? AddUnitIngredient6ForMeal { get; set; }
+        public string? UnitIngredient6ForMeal
+        {
+            get
+            {
+                return GetUnitIngredientForMeal(6, selectedIngredient6ForMeal, AddUnitIngredient6ForMeal);
+            }
+            set
+            {
+                string addUnit = SetUnitIngredientForMeal(6, selectedIngredient6ForMeal, AddUnitIngredient6ForMeal, value);
+                AddUnitIngredient6ForMeal = addUnit;
+            }
+        }
+        private string AddStringIngredient7ForMeal { get; set; }
+        public string StringIngredient7ForMeal
+        {
+            get
+            {
+                return GetStringIngredientForMeal(7, selectedIngredient7ForMeal, AddStringIngredient7ForMeal);
+            }
+            set
+            {
+                string addString7 = SetStringIngredientForMeal(7, selectedIngredient7ForMeal, AddStringIngredient7ForMeal, value);
+                AddStringIngredient7ForMeal = addString7;
+            }
+        }
+        private int? AddQuantityIngredient7ForMeal { get; set; }
+        public int? QuantityIngredient7ForMeal
+        {
+            get
+            {
+                return GetQuantityIngredientForMeal(7, selectedIngredient7ForMeal, AddQuantityIngredient7ForMeal);
+            }
+            set
+            {
+                int? addInt7 = SetQuantityIngredientForMeal(7, selectedIngredient7ForMeal, AddQuantityIngredient7ForMeal, value);
+                AddQuantityIngredient7ForMeal = addInt7;
+            }
+        }
+        private string? AddUnitIngredient7ForMeal { get; set; }
+        public string? UnitIngredient7ForMeal
+        {
+            get
+            {
+                return GetUnitIngredientForMeal(7, selectedIngredient7ForMeal, AddUnitIngredient7ForMeal);
+            }
+            set
+            {
+                string addUnit = SetUnitIngredientForMeal(7, selectedIngredient7ForMeal, AddUnitIngredient7ForMeal, value);
+                AddUnitIngredient7ForMeal = addUnit;
+            }
+        }
+        private string AddStringIngredient8ForMeal { get; set; }
+        public string StringIngredient8ForMeal
+        {
+            get
+            {
+                return GetStringIngredientForMeal(8, selectedIngredient8ForMeal, AddStringIngredient8ForMeal);
+            }
+            set
+            {
+                string addString8 = SetStringIngredientForMeal(8, selectedIngredient8ForMeal, AddStringIngredient8ForMeal, value);
+                AddStringIngredient8ForMeal = addString8;
+            }
+        }
+        private int? AddQuantityIngredient8ForMeal { get; set; }
+        public int? QuantityIngredient8ForMeal
+        {
+            get
+            {
+                return GetQuantityIngredientForMeal(8, selectedIngredient8ForMeal, AddQuantityIngredient8ForMeal);
+            }
+            set
+            {
+                int? addInt8 = SetQuantityIngredientForMeal(8, selectedIngredient8ForMeal, AddQuantityIngredient8ForMeal, value);
+                AddQuantityIngredient8ForMeal = addInt8;
+            }
+        }
+        private string? AddUnitIngredient8ForMeal { get; set; }
+        public string? UnitIngredient8ForMeal
+        {
+            get
+            {
+                return GetUnitIngredientForMeal(8, selectedIngredient8ForMeal, AddUnitIngredient8ForMeal);
+            }
+            set
+            {
+                string addUnit = SetUnitIngredientForMeal(8, selectedIngredient8ForMeal, AddUnitIngredient8ForMeal, value);
+                AddUnitIngredient8ForMeal = addUnit;
+            }
+        }
+        private string AddStringIngredient9ForMeal { get; set; }
+        public string StringIngredient9ForMeal
+        {
+            get
+            {
+                return GetStringIngredientForMeal(9, selectedIngredient9ForMeal, AddStringIngredient9ForMeal);
+            }
+            set
+            {
+                string addString9 = SetStringIngredientForMeal(9, selectedIngredient9ForMeal, AddStringIngredient9ForMeal, value);
+                AddStringIngredient9ForMeal = addString9;
+            }
+        }
+        private int? AddQuantityIngredient9ForMeal { get; set; }
+        public int? QuantityIngredient9ForMeal
+        {
+            get
+            {
+                return GetQuantityIngredientForMeal(9, selectedIngredient9ForMeal, AddQuantityIngredient9ForMeal);
+            }
+            set
+            {
+                int? addInt9 = SetQuantityIngredientForMeal(9, selectedIngredient9ForMeal, AddQuantityIngredient9ForMeal, value);
+                AddQuantityIngredient9ForMeal = addInt9;
+            }
+        }
+        private string? AddUnitIngredient9ForMeal { get; set; }
+        public string? UnitIngredient9ForMeal
+        {
+            get
+            {
+                return GetUnitIngredientForMeal(9, selectedIngredient9ForMeal, AddUnitIngredient9ForMeal);
+            }
+            set
+            {
+                string addUnit = SetUnitIngredientForMeal(9, selectedIngredient9ForMeal, AddUnitIngredient9ForMeal, value);
+                AddUnitIngredient9ForMeal = addUnit;
+            }
+        }
+        private string AddStringIngredient10ForMeal { get; set; }
+        public string StringIngredient10ForMeal
+        {
+            get
+            {
+                return GetStringIngredientForMeal(10, selectedIngredient10ForMeal, AddStringIngredient10ForMeal);
+            }
+            set
+            {
+                string addString10 = SetStringIngredientForMeal(10, selectedIngredient10ForMeal, AddStringIngredient10ForMeal, value);
+                AddStringIngredient10ForMeal = addString10;
+            }
+        }
+        private int? AddQuantityIngredient10ForMeal { get; set; }
+        public int? QuantityIngredient10ForMeal
+        {
+            get
+            {
+                return GetQuantityIngredientForMeal(10, selectedIngredient10ForMeal, AddQuantityIngredient10ForMeal);
+            }
+            set
+            {
+                int? addInt10 = SetQuantityIngredientForMeal(10, selectedIngredient10ForMeal, AddQuantityIngredient10ForMeal, value);
+                AddQuantityIngredient10ForMeal = addInt10;
+            }
+        }
+        private string? AddUnitIngredient10ForMeal { get; set; }
+        public string? UnitIngredient10ForMeal
+        {
+            get
+            {
+                return GetUnitIngredientForMeal(10, selectedIngredient10ForMeal, AddUnitIngredient10ForMeal);
+            }
+            set
+            {
+                string addUnit = SetUnitIngredientForMeal(10, selectedIngredient10ForMeal, AddUnitIngredient10ForMeal, value);
+                AddUnitIngredient10ForMeal = addUnit;
+            }
+        }
+        private string AddStringIngredient11ForMeal { get; set; }
+        public string StringIngredient11ForMeal
+        {
+            get
+            {
+                return GetStringIngredientForMeal(11, selectedIngredient11ForMeal, AddStringIngredient11ForMeal);
+            }
+            set
+            {
+                string addString11 = SetStringIngredientForMeal(11, selectedIngredient11ForMeal, AddStringIngredient11ForMeal, value);
+                AddStringIngredient11ForMeal = addString11;
+            }
+        }
+        private int? AddQuantityIngredient11ForMeal { get; set; }
+        public int? QuantityIngredient11ForMeal
+        {
+            get
+            {
+                return GetQuantityIngredientForMeal(11, selectedIngredient11ForMeal, AddQuantityIngredient11ForMeal);
+            }
+            set
+            {
+                int? addInt11 = SetQuantityIngredientForMeal(11, selectedIngredient11ForMeal, AddQuantityIngredient11ForMeal, value);
+                AddQuantityIngredient11ForMeal = addInt11;
+            }
+        }
+        private string? AddUnitIngredient11ForMeal { get; set; }
+        public string? UnitIngredient11ForMeal
+        {
+            get
+            {
+                return GetUnitIngredientForMeal(11, selectedIngredient11ForMeal, AddUnitIngredient11ForMeal);
+            }
+            set
+            {
+                string addUnit = SetUnitIngredientForMeal(11, selectedIngredient11ForMeal, AddUnitIngredient11ForMeal, value);
+                AddUnitIngredient11ForMeal = addUnit;
+            }
+        }
+        private string AddStringIngredient12ForMeal { get; set; }
+        public string StringIngredient12ForMeal
+        {
+            get
+            {
+                return GetStringIngredientForMeal(12, selectedIngredient12ForMeal, AddStringIngredient12ForMeal);
+            }
+            set
+            {
+                string addString12 = SetStringIngredientForMeal(12, selectedIngredient12ForMeal, AddStringIngredient12ForMeal, value);
+                AddStringIngredient12ForMeal = addString12;
+            }
+        }
+        private int? AddQuantityIngredient12ForMeal { get; set; }
+        public int? QuantityIngredient12ForMeal
+        {
+            get
+            {
+                return GetQuantityIngredientForMeal(12, selectedIngredient12ForMeal, AddQuantityIngredient12ForMeal);
+            }
+            set
+            {
+                int? addInt12 = SetQuantityIngredientForMeal(12, selectedIngredient12ForMeal, AddQuantityIngredient12ForMeal, value);
+                AddQuantityIngredient12ForMeal = addInt12;
+            }
+        }
+        private string? AddUnitIngredient12ForMeal { get; set; }
+        public string? UnitIngredient12ForMeal
+        {
+            get
+            {
+                return GetUnitIngredientForMeal(12, selectedIngredient12ForMeal, AddUnitIngredient12ForMeal);
+            }
+            set
+            {
+                string addUnit = SetUnitIngredientForMeal(12, selectedIngredient12ForMeal, AddUnitIngredient12ForMeal, value);
+                AddUnitIngredient12ForMeal = addUnit;
+            }
+        }
+        private string AddStringIngredient13ForMeal { get; set; }
+        public string StringIngredient13ForMeal
+        {
+            get
+            {
+                return GetStringIngredientForMeal(13, selectedIngredient13ForMeal, AddStringIngredient13ForMeal);
+            }
+            set
+            {
+                string addString13 = SetStringIngredientForMeal(13, selectedIngredient13ForMeal, AddStringIngredient13ForMeal, value);
+                AddStringIngredient13ForMeal = addString13;
+            }
+        }
+        private int? AddQuantityIngredient13ForMeal { get; set; }
+        public int? QuantityIngredient13ForMeal
+        {
+            get
+            {
+                return GetQuantityIngredientForMeal(13, selectedIngredient13ForMeal, AddQuantityIngredient13ForMeal);
+            }
+            set
+            {
+                int? addInt13 = SetQuantityIngredientForMeal(13, selectedIngredient13ForMeal, AddQuantityIngredient13ForMeal, value);
+                AddQuantityIngredient13ForMeal = addInt13;
+            }
+        }
+        private string? AddUnitIngredient13ForMeal { get; set; }
+        public string? UnitIngredient13ForMeal
+        {
+            get
+            {
+                return GetUnitIngredientForMeal(13, selectedIngredient13ForMeal, AddUnitIngredient13ForMeal);
+            }
+            set
+            {
+                string addUnit = SetUnitIngredientForMeal(13, selectedIngredient13ForMeal, AddUnitIngredient13ForMeal, value);
+                AddUnitIngredient13ForMeal = addUnit;
+            }
+        }
+        private string AddStringIngredient14ForMeal { get; set; }
+        public string StringIngredient14ForMeal
+        {
+            get
+            {
+                return GetStringIngredientForMeal(14, selectedIngredient14ForMeal, AddStringIngredient14ForMeal);
+            }
+            set
+            {
+                string addString14 = SetStringIngredientForMeal(14, selectedIngredient14ForMeal, AddStringIngredient14ForMeal, value);
+                AddStringIngredient14ForMeal = addString14;
+            }
+        }
+        private int? AddQuantityIngredient14ForMeal { get; set; }
+        public int? QuantityIngredient14ForMeal
+        {
+            get
+            {
+                return GetQuantityIngredientForMeal(14, selectedIngredient14ForMeal, AddQuantityIngredient14ForMeal);
+            }
+            set
+            {
+                int? addInt14 = SetQuantityIngredientForMeal(14, selectedIngredient14ForMeal, AddQuantityIngredient14ForMeal, value);
+                AddQuantityIngredient14ForMeal = addInt14;
+            }
+        }
+        private string? AddUnitIngredient14ForMeal { get; set; }
+        public string? UnitIngredient14ForMeal
+        {
+            get
+            {
+                return GetUnitIngredientForMeal(14, selectedIngredient14ForMeal, AddUnitIngredient14ForMeal);
+            }
+            set
+            {
+                string addUnit = SetUnitIngredientForMeal(14, selectedIngredient14ForMeal, AddUnitIngredient14ForMeal, value);
+                AddUnitIngredient14ForMeal = addUnit;
+            }
+        }
+        private string AddStringIngredient15ForMeal { get; set; }
+        public string StringIngredient15ForMeal
+        {
+            get
+            {
+                return GetStringIngredientForMeal(15, selectedIngredient15ForMeal, AddStringIngredient15ForMeal);
+            }
+            set
+            {
+                string addString15 = SetStringIngredientForMeal(15, selectedIngredient15ForMeal, AddStringIngredient15ForMeal, value);
+                AddStringIngredient15ForMeal = addString15;
+            }
+        }
+        private int? AddQuantityIngredient15ForMeal { get; set; }
+        public int? QuantityIngredient15ForMeal
+        {
+            get
+            {
+                return GetQuantityIngredientForMeal(15, selectedIngredient15ForMeal, AddQuantityIngredient15ForMeal);
+            }
+            set
+            {
+                int? addInt15 = SetQuantityIngredientForMeal(15, selectedIngredient15ForMeal, AddQuantityIngredient15ForMeal, value);
+                AddQuantityIngredient15ForMeal = addInt15;
+            }
+        }
+        private string? AddUnitIngredient15ForMeal { get; set; }
+        public string? UnitIngredient15ForMeal
+        {
+            get
+            {
+                return GetUnitIngredientForMeal(15, selectedIngredient15ForMeal, AddUnitIngredient15ForMeal);
+            }
+            set
+            {
+                string addUnit = SetUnitIngredientForMeal(15, selectedIngredient15ForMeal, AddUnitIngredient15ForMeal, value);
+                AddUnitIngredient15ForMeal = addUnit;
+            }
+        }
+        //--------------------------------------------------//
+        private string? GetStringIngredientForMeal(int tempId, IngreditenViewModel selectedIngredient, string addString)
         {
             if (selectedMeal != null && selectedIngredient != null)
             {
                 var existingIngredientForMeal = IngredientsForMealToReference.FirstOrDefault(i => i.IngredientId == selectedIngredient.Id);
                 if (existingIngredientForMeal != null)
                 {
-                    AddString = selectedIngredient.Name;
+                    addString = selectedIngredient.Name;
                     return selectedIngredient.Name;
                 }
                 else
                 {
-                    return AddString;
+                    return addString;
                 }
             }
             else
             {
-                return AddString;
+                return addString;
             }
         }
-
-        private string? SetStringIngredientForMeal(int tempId, IngreditenViewModel selectedIngredient, string AddString, string value)
+        private string? SetStringIngredientForMeal(int tempId, IngreditenViewModel selectedIngredient, string addString, string value)
         {
             if (selectedMeal != null)
             {
@@ -509,8 +1439,8 @@ namespace ShoppingApp.Core
                         {
                             tempIngredientforMeal.IngredientName = value;
                             tempIngredientforMeal.IngredientId = existingIngredient.Id;
-                            AddString = value;
-                            return AddString;
+                            addString = value;
+                            return addString;
                         }
                         else
                         {
@@ -526,141 +1456,139 @@ namespace ShoppingApp.Core
                                 Quantity = 0,
                                 Unit = ""
                             });
-                            AddString = value;
-                            return AddString;
+                            addString = value;
+                            return addString;
                         }
                     }
                     else
-                        AddString = value;
-                        return AddString;
+                        addString = value;
+                    return addString;
                 }
                 else
                 {
-                    AddString = value;
-                    return AddString;
+                    addString = value;
+                    return addString;
                 }
             }
-            AddString = value;
-            return AddString;
+            addString = value;
+            return addString;
         }
-
-        private int? AddQuantityIngredient1ForMeal { get; set; }
-        public int? QuantityIngredient1ForMeal
+        private int? GetQuantityIngredientForMeal(int tempId, IngreditenViewModel selectedIngredient, int? addQuantity)
         {
-            get
+            //if there is selected meal
+            if (selectedMeal != null)
             {
-                //if there is selected meal
-                if (selectedMeal != null)
+                //if there is selected ingredient 
+                if (selectedIngredient != null)
                 {
-                    //if there is selected ingredient 
-                    if (selectedIngredient1ForMeal != null)
+                    var quantityIngredientForMealReference = IngredientsForMealToReference.FirstOrDefault(i => i.tempId == tempId && i.MealId == selectedMeal.Id);
+                    //if ingredient 1 for selected meal has value                   
+                    if (quantityIngredientForMealReference != null)
                     {
-                        var quantityIngredient1ForMealReference = IngredientsForMealToReference.FirstOrDefault(i => i.tempId == 1 && i.MealId == selectedMeal.Id);
-                        //if ingredient 1 for selected meal has value                   
-                        if (quantityIngredient1ForMealReference != null)
+                        if (quantityIngredientForMealReference.IngredientId == selectedIngredient.Id)
                         {
-                            if (quantityIngredient1ForMealReference.IngredientId == selectedIngredient1ForMeal.Id)
-                            {
-                                AddQuantityIngredient1ForMeal = quantityIngredient1ForMealReference.Quantity;
-                                return quantityIngredient1ForMealReference.Quantity;
-                            }
+                            addQuantity = quantityIngredientForMealReference.Quantity;
+                            return quantityIngredientForMealReference.Quantity;
+                        }
 
-                            AddQuantityIngredient1ForMeal = null;
-                            return AddQuantityIngredient1ForMeal;
+                        addQuantity = null;
+                        return addQuantity;
+                    }
+                    else
+                        addQuantity = null;
+                    return addQuantity;
+                }
+                else
+                    return addQuantity;
+            }
+            else
+                return null;
+        }
+        private int? SetQuantityIngredientForMeal(int tempId, IngreditenViewModel selectedIngredient, int? addQuantity, int? value)
+        {
+            //if there is selected meal
+            if (selectedMeal != null)
+            {
+                if (selectedIngredient != null)
+                {
+                    var quantityIngredientForMealReference = IngredientsForMealToReference.FirstOrDefault(i => i.tempId == tempId && i.MealId == selectedMeal.Id);
+                    //if ingredient 1 for selected meal has value                   
+                    if (quantityIngredientForMealReference != null)
+                    {
+                        if (quantityIngredientForMealReference.IngredientId == selectedIngredient.Id)
+                        {
+                            quantityIngredientForMealReference.Quantity = (int)value;
+                            addQuantity = (int)value;
+                            return addQuantity;
                         }
                         else
-                            AddQuantityIngredient1ForMeal = null;
-                        return AddQuantityIngredient1ForMeal;
+                            addQuantity = (int)value;
+                        return addQuantity;
+                    }
+                }
+                addQuantity = (int)value;
+                return addQuantity;
+            }
+            return null;
+        }
+        private string GetUnitIngredientForMeal(int tempId, IngreditenViewModel selectedIngredient, string AddUnit)
+        {
+            //if there is selected meal
+            if (selectedMeal != null)
+            {
+                //if there is selected ingredient 
+                if (selectedIngredient != null)
+                {
+                    var unitIngredientForMealReference = IngredientsForMealToReference.FirstOrDefault(i => i.tempId == tempId && i.MealId == selectedMeal.Id);
+                    //if ingredient 1 for selected meal has value                   
+                    if (unitIngredientForMealReference != null)
+                    {
+                        if (unitIngredientForMealReference.IngredientId == selectedIngredient.Id)
+                        {
+                            AddUnit = unitIngredientForMealReference.Unit;
+                            return AddUnit;
+                        }
+
+                        AddUnit = "";
+                        return AddUnit;
                     }
                     else
-                        return AddQuantityIngredient1ForMeal;
+                        AddUnit = "";
+                    return AddUnit;
                 }
                 else
-                    return null;
+                    return AddUnit;
             }
-            set
-            {
-                //if there is selected meal
-                if (selectedMeal != null)
-                {
-                    if (selectedIngredient1ForMeal != null)
-                    {
-                          var quantityIngredient1ForMealReference = IngredientsForMealToReference.FirstOrDefault(i => i.tempId == 1 && i.MealId == selectedMeal.Id);
-                        //if ingredient 1 for selected meal has value                   
-                        if (quantityIngredient1ForMealReference != null)
-                        {
-                            if (quantityIngredient1ForMealReference.IngredientId == selectedIngredient1ForMeal.Id)
-                            {
-                                quantityIngredient1ForMealReference.Quantity = (int)value;
-                                AddQuantityIngredient1ForMeal = (int)value;
-                            }
-                            else
-                                AddQuantityIngredient1ForMeal = (int)value;
-                        }
-                    }
-                    AddQuantityIngredient1ForMeal = (int)value;
-                }
-            }
+            else
+                return "";
         }
-                 
-        private string? AddUnitIngredient1ForMeal { get; set; }
 
-        public string? UnitIngredient1ForMeal
+        private string SetUnitIngredientForMeal(int tempId, IngreditenViewModel selectedIngredient, string AddUnit, string value)
         {
-            get
+            //if there is selected meal
+            if (selectedMeal != null)
             {
-                //if there is selected meal
-                if (selectedMeal != null)
+                if (selectedIngredient != null)
                 {
-                    //if there is selected ingredient 
-                    if (selectedIngredient1ForMeal != null)
-                    {                     
-                        var unitIngredient1ForMealReference = IngredientsForMealToReference.FirstOrDefault(i => i.tempId == 1 && i.MealId == selectedMeal.Id);
-                        //if ingredient 1 for selected meal has value                   
-                        if (unitIngredient1ForMealReference != null)
+                    var unitIngredientForMealReference = IngredientsForMealToReference.FirstOrDefault(i => i.tempId == tempId && i.MealId == selectedMeal.Id);
+                    //if ingredient 1 for selected meal has value                   
+                    if (unitIngredientForMealReference != null)
+                    {
+                        if (unitIngredientForMealReference.IngredientId == selectedIngredient.Id)
                         {
-                            if (unitIngredient1ForMealReference.IngredientId == selectedIngredient1ForMeal.Id)
-                            {
-                                AddUnitIngredient1ForMeal = unitIngredient1ForMealReference.Unit;
-                                return unitIngredient1ForMealReference.Unit;
-                            }
-
-                            AddUnitIngredient1ForMeal = "";
-                            return AddUnitIngredient1ForMeal;
+                            unitIngredientForMealReference.Unit = value;
+                            AddUnit = value;
+                            return AddUnit;
                         }
                         else
-                            AddUnitIngredient1ForMeal = "";
-                        return AddUnitIngredient1ForMeal;
+                            AddUnit = value;
+                        return AddUnit;
                     }
-                    else
-                        return AddUnitIngredient1ForMeal;
                 }
-                else
-                    return "";
+                AddUnit = value;
+                return AddUnit;
             }
-            set
-            {
-                //if there is selected meal
-                if (selectedMeal != null)
-                {
-                    if (selectedIngredient1ForMeal != null)
-                    {
-                        var unitIngredient1ForMealReference = IngredientsForMealToReference.FirstOrDefault(i => i.tempId == 1 && i.MealId == selectedMeal.Id);
-                        //if ingredient 1 for selected meal has value                   
-                        if (unitIngredient1ForMealReference != null)
-                        {
-                            if (unitIngredient1ForMealReference.IngredientId == selectedIngredient1ForMeal.Id)
-                            {
-                                unitIngredient1ForMealReference.Unit = value;
-                                AddUnitIngredient1ForMeal = value;
-                            }
-                            else
-                                AddUnitIngredient1ForMeal = value;
-                        }
-                    }
-                    AddUnitIngredient1ForMeal = value;
-                }
-            }
+            return null;
         }
     }
 }

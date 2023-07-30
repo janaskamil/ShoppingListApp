@@ -41,11 +41,11 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0" Text="Ingredient" Height="20" Width="80" Margin="51,25,413,55" />
-            <ComboBox Grid.Column="0" Margin="51,50,33,26"></ComboBox>
+            <ComboBox Grid.Column="0" Margin="51,50,33,26" IsEditable="True" IsReadOnly="False" ItemsSource="{Binding IngedientsListVM}" DisplayMemberPath="Name" Text="{Binding StringIngredient3ForMeal, Mode=TwoWay}" SelectedItem="{Binding SelectedIngredient3ForMeal, Mode=TwoWay}"></ComboBox>
             <TextBlock Grid.Column="1" Text="Quantity" Height="20" Width="80" Margin="30,25,26,55"/>
-            <TextBox Grid.Column="1" Margin="0,50,0,26" HorizontalAlignment="Center" Width="76"/>
+            <TextBox Grid.Column="1" Margin="0,50,0,26" HorizontalAlignment="Center" Width="76" Text ="{Binding QuantityIngredient3ForMeal, Mode=TwoWay}"/>
             <TextBlock Grid.Column="2" Text="Units" Margin="38,22,36,58"/>
-            <TextBox Grid.Column="3" Margin="38,50,36,26"></TextBox>
+            <TextBox Grid.Column="3" Margin="38,50,36,26" Text ="{Binding UnitIngredient3ForMeal, Mode=TwoWay}"></TextBox>
         </Grid>
         <!--4-->
         <Grid Height="100"  Background="Gray">
@@ -55,11 +55,11 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0" Text="Ingredient" Height="20" Width="80" Margin="51,25,413,55" />
-            <ComboBox Grid.Column="0" Margin="51,50,33,26"></ComboBox>
+            <ComboBox Grid.Column="0" Margin="51,50,33,26" IsEditable="True" IsReadOnly="False" ItemsSource="{Binding IngedientsListVM}" DisplayMemberPath="Name" Text="{Binding StringIngredient4ForMeal, Mode=TwoWay}" SelectedItem="{Binding SelectedIngredient4ForMeal, Mode=TwoWay}"></ComboBox>
             <TextBlock Grid.Column="1" Text="Quantity" Height="20" Width="80" Margin="30,25,26,55"/>
-            <TextBox Grid.Column="1" Margin="0,50,0,26" HorizontalAlignment="Center" Width="76"/>
+            <TextBox Grid.Column="1" Margin="0,50,0,26" HorizontalAlignment="Center" Width="76" Text ="{Binding QuantityIngredient4ForMeal, Mode=TwoWay}"/>
             <TextBlock Grid.Column="2" Text="Units" Margin="38,22,36,58"/>
-            <TextBox Grid.Column="3" Margin="38,50,36,26"></TextBox>
+            <TextBox Grid.Column="3" Margin="38,50,36,26" Text ="{Binding UnitIngredient4ForMeal, Mode=TwoWay}"></TextBox>
         </Grid>
         <!--5-->
         <Grid Height="100"  Background="White">
@@ -69,11 +69,11 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0" Text="Ingredient" Height="20" Width="80" Margin="51,25,413,55" />
-            <ComboBox Grid.Column="0" Margin="51,50,33,26"></ComboBox>
+            <ComboBox Grid.Column="0" Margin="51,50,33,26" IsEditable="True" IsReadOnly="False" ItemsSource="{Binding IngedientsListVM}" DisplayMemberPath="Name" Text="{Binding StringIngredient5ForMeal, Mode=TwoWay}" SelectedItem="{Binding SelectedIngredient5ForMeal, Mode=TwoWay}"></ComboBox>
             <TextBlock Grid.Column="1" Text="Quantity" Height="20" Width="80" Margin="30,25,26,55"/>
-            <TextBox Grid.Column="1" Margin="0,50,0,26" HorizontalAlignment="Center" Width="76"/>
+            <TextBox Grid.Column="1" Margin="0,50,0,26" HorizontalAlignment="Center" Width="76" Text ="{Binding QuantityIngredient5ForMeal, Mode=TwoWay}"/>
             <TextBlock Grid.Column="2" Text="Units" Margin="38,22,36,58"/>
-            <TextBox Grid.Column="3" Margin="38,50,36,26"></TextBox>
+            <TextBox Grid.Column="3" Margin="38,50,36,26" Text ="{Binding UnitIngredient5ForMeal, Mode=TwoWay}"></TextBox>
         </Grid>
         <!--6-->
         <Grid Height="100"  Background="Gray">
@@ -83,11 +83,11 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0" Text="Ingredient" Height="20" Width="80" Margin="51,25,413,55" />
-            <ComboBox Grid.Column="0" Margin="51,50,33,26"></ComboBox>
+            <ComboBox Grid.Column="0" Margin="51,50,33,26" IsEditable="True" IsReadOnly="False" ItemsSource="{Binding IngedientsListVM}" DisplayMemberPath="Name" Text="{Binding StringIngredient6ForMeal, Mode=TwoWay}" SelectedItem="{Binding SelectedIngredient6ForMeal, Mode=TwoWay}"></ComboBox>
             <TextBlock Grid.Column="1" Text="Quantity" Height="20" Width="80" Margin="30,25,26,55"/>
-            <TextBox Grid.Column="1" Margin="0,50,0,26" HorizontalAlignment="Center" Width="76"/>
+            <TextBox Grid.Column="1" Margin="0,50,0,26" HorizontalAlignment="Center" Width="76" Text ="{Binding QuantityIngredient6ForMeal, Mode=TwoWay}"/>
             <TextBlock Grid.Column="2" Text="Units" Margin="38,22,36,58"/>
-            <TextBox Grid.Column="3" Margin="38,50,36,26"></TextBox>
+            <TextBox Grid.Column="3" Margin="38,50,36,26" Text ="{Binding UnitIngredient6ForMeal, Mode=TwoWay}"></TextBox>
         </Grid>
         <!--7-->
         <Grid Height="100"  Background="White">
@@ -97,11 +97,11 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0" Text="Ingredient" Height="20" Width="80" Margin="51,25,413,55" />
-            <ComboBox Grid.Column="0" Margin="51,50,33,26"></ComboBox>
+            <ComboBox Grid.Column="0" Margin="51,50,33,26" IsEditable="True" IsReadOnly="False" ItemsSource="{Binding IngedientsListVM}" DisplayMemberPath="Name" Text="{Binding StringIngredient7ForMeal, Mode=TwoWay}" SelectedItem="{Binding SelectedIngredient7ForMeal, Mode=TwoWay}"></ComboBox>
             <TextBlock Grid.Column="1" Text="Quantity" Height="20" Width="80" Margin="30,25,26,55"/>
-            <TextBox Grid.Column="1" Margin="0,50,0,26" HorizontalAlignment="Center" Width="76"/>
+            <TextBox Grid.Column="1" Margin="0,50,0,26" HorizontalAlignment="Center" Width="76" Text ="{Binding QuantityIngredient7ForMeal, Mode=TwoWay}"/>
             <TextBlock Grid.Column="2" Text="Units" Margin="38,22,36,58"/>
-            <TextBox Grid.Column="3" Margin="38,50,36,26"></TextBox>
+            <TextBox Grid.Column="3" Margin="38,50,36,26" Text ="{Binding UnitIngredient7ForMeal, Mode=TwoWay}"></TextBox>
         </Grid>
         <!--8-->
         <Grid Height="100"  Background="Gray">
@@ -111,11 +111,11 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0" Text="Ingredient" Height="20" Width="80" Margin="51,25,413,55" />
-            <ComboBox Grid.Column="0" Margin="51,50,33,26"></ComboBox>
+            <ComboBox Grid.Column="0" Margin="51,50,33,26" IsEditable="True" IsReadOnly="False" ItemsSource="{Binding IngedientsListVM}" DisplayMemberPath="Name" Text="{Binding StringIngredient8ForMeal, Mode=TwoWay}" SelectedItem="{Binding SelectedIngredient8ForMeal, Mode=TwoWay}"></ComboBox>
             <TextBlock Grid.Column="1" Text="Quantity" Height="20" Width="80" Margin="30,25,26,55"/>
-            <TextBox Grid.Column="1" Margin="0,50,0,26" HorizontalAlignment="Center" Width="76"/>
+            <TextBox Grid.Column="1" Margin="0,50,0,26" HorizontalAlignment="Center" Width="76" Text ="{Binding QuantityIngredient8ForMeal, Mode=TwoWay}"/>
             <TextBlock Grid.Column="2" Text="Units" Margin="38,22,36,58"/>
-            <TextBox Grid.Column="3" Margin="38,50,36,26"></TextBox>
+            <TextBox Grid.Column="3" Margin="38,50,36,26" Text ="{Binding UnitIngredient8ForMeal, Mode=TwoWay}"></TextBox>
         </Grid>
         <!--9-->
         <Grid Height="100"  Background="White">
@@ -125,11 +125,11 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0" Text="Ingredient" Height="20" Width="80" Margin="51,25,413,55" />
-            <ComboBox Grid.Column="0" Margin="51,50,33,26"></ComboBox>
+            <ComboBox Grid.Column="0" Margin="51,50,33,26" IsEditable="True" IsReadOnly="False" ItemsSource="{Binding IngedientsListVM}" DisplayMemberPath="Name" Text="{Binding StringIngredient9ForMeal, Mode=TwoWay}" SelectedItem="{Binding SelectedIngredient9ForMeal, Mode=TwoWay}"></ComboBox>
             <TextBlock Grid.Column="1" Text="Quantity" Height="20" Width="80" Margin="30,25,26,55"/>
-            <TextBox Grid.Column="1" Margin="0,50,0,26" HorizontalAlignment="Center" Width="76"/>
+            <TextBox Grid.Column="1" Margin="0,50,0,26" HorizontalAlignment="Center" Width="76" Text ="{Binding QuantityIngredient9ForMeal, Mode=TwoWay}"/>
             <TextBlock Grid.Column="2" Text="Units" Margin="38,22,36,58"/>
-            <TextBox Grid.Column="3" Margin="38,50,36,26"></TextBox>
+            <TextBox Grid.Column="3" Margin="38,50,36,26" Text ="{Binding UnitIngredient9ForMeal, Mode=TwoWay}"></TextBox>
         </Grid>
         <!--10-->
         <Grid Height="100"  Background="Gray">
@@ -139,11 +139,81 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0" Text="Ingredient" Height="20" Width="80" Margin="51,25,413,55" />
-            <ComboBox Grid.Column="0" Margin="51,50,33,26"></ComboBox>
+            <ComboBox Grid.Column="0" Margin="51,50,33,26" IsEditable="True" IsReadOnly="False" ItemsSource="{Binding IngedientsListVM}" DisplayMemberPath="Name" Text="{Binding StringIngredient10ForMeal, Mode=TwoWay}" SelectedItem="{Binding SelectedIngredient10ForMeal, Mode=TwoWay}"></ComboBox>
             <TextBlock Grid.Column="1" Text="Quantity" Height="20" Width="80" Margin="30,25,26,55"/>
-            <TextBox Grid.Column="1" Margin="0,50,0,26" HorizontalAlignment="Center" Width="76"/>
+            <TextBox Grid.Column="1" Margin="0,50,0,26" HorizontalAlignment="Center" Width="76" Text ="{Binding QuantityIngredient10ForMeal, Mode=TwoWay}"/>
             <TextBlock Grid.Column="2" Text="Units" Margin="38,22,36,58"/>
-            <TextBox Grid.Column="3" Margin="38,50,36,26"></TextBox>
+            <TextBox Grid.Column="3" Margin="38,50,36,26" Text ="{Binding UnitIngredient10ForMeal, Mode=TwoWay}"></TextBox>
+        </Grid>
+        <!--11-->
+        <Grid Height="100"  Background="White">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="Ingredient" Height="20" Width="80" Margin="51,25,413,55" />
+            <ComboBox Grid.Column="0" Margin="51,50,33,26" IsEditable="True" IsReadOnly="False" ItemsSource="{Binding IngedientsListVM}" DisplayMemberPath="Name" Text="{Binding StringIngredient11ForMeal, Mode=TwoWay}" SelectedItem="{Binding SelectedIngredient11ForMeal, Mode=TwoWay}"></ComboBox>
+            <TextBlock Grid.Column="1" Text="Quantity" Height="20" Width="80" Margin="30,25,26,55"/>
+            <TextBox Grid.Column="1" Margin="0,50,0,26" HorizontalAlignment="Center" Width="76" Text ="{Binding QuantityIngredient11ForMeal, Mode=TwoWay}"/>
+            <TextBlock Grid.Column="2" Text="Units" Margin="38,22,36,58"/>
+            <TextBox Grid.Column="3" Margin="38,50,36,26" Text ="{Binding UnitIngredient11ForMeal, Mode=TwoWay}"></TextBox>
+        </Grid>
+        <!--12-->
+        <Grid Height="100"  Background="Gray">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="Ingredient" Height="20" Width="80" Margin="51,25,413,55" />
+            <ComboBox Grid.Column="0" Margin="51,50,33,26" IsEditable="True" IsReadOnly="False" ItemsSource="{Binding IngedientsListVM}" DisplayMemberPath="Name" Text="{Binding StringIngredient12ForMeal, Mode=TwoWay}" SelectedItem="{Binding SelectedIngredient12ForMeal, Mode=TwoWay}"></ComboBox>
+            <TextBlock Grid.Column="1" Text="Quantity" Height="20" Width="80" Margin="30,25,26,55"/>
+            <TextBox Grid.Column="1" Margin="0,50,0,26" HorizontalAlignment="Center" Width="76" Text ="{Binding QuantityIngredient12ForMeal, Mode=TwoWay}"/>
+            <TextBlock Grid.Column="2" Text="Units" Margin="38,22,36,58"/>
+            <TextBox Grid.Column="3" Margin="38,50,36,26" Text ="{Binding UnitIngredient12ForMeal, Mode=TwoWay}"></TextBox>
+        </Grid>
+        <!--13-->
+        <Grid Height="100"  Background="White">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="Ingredient" Height="20" Width="80" Margin="51,25,413,55" />
+            <ComboBox Grid.Column="0" Margin="51,50,33,26" IsEditable="True" IsReadOnly="False" ItemsSource="{Binding IngedientsListVM}" DisplayMemberPath="Name" Text="{Binding StringIngredient13ForMeal, Mode=TwoWay}" SelectedItem="{Binding SelectedIngredient13ForMeal, Mode=TwoWay}"></ComboBox>
+            <TextBlock Grid.Column="1" Text="Quantity" Height="20" Width="80" Margin="30,25,26,55"/>
+            <TextBox Grid.Column="1" Margin="0,50,0,26" HorizontalAlignment="Center" Width="76" Text ="{Binding QuantityIngredient13ForMeal, Mode=TwoWay}"/>
+            <TextBlock Grid.Column="2" Text="Units" Margin="38,22,36,58"/>
+            <TextBox Grid.Column="3" Margin="38,50,36,26" Text ="{Binding UnitIngredient13ForMeal, Mode=TwoWay}"></TextBox>
+        </Grid>
+        <!--14-->
+        <Grid Height="100"  Background="Gray">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="Ingredient" Height="20" Width="80" Margin="51,25,413,55" />
+            <ComboBox Grid.Column="0" Margin="51,50,33,26" IsEditable="True" IsReadOnly="False" ItemsSource="{Binding IngedientsListVM}" DisplayMemberPath="Name" Text="{Binding StringIngredient14ForMeal, Mode=TwoWay}" SelectedItem="{Binding SelectedIngredient14ForMeal, Mode=TwoWay}"></ComboBox>
+            <TextBlock Grid.Column="1" Text="Quantity" Height="20" Width="80" Margin="30,25,26,55"/>
+            <TextBox Grid.Column="1" Margin="0,50,0,26" HorizontalAlignment="Center" Width="76" Text ="{Binding QuantityIngredient14ForMeal, Mode=TwoWay}"/>
+            <TextBlock Grid.Column="2" Text="Units" Margin="38,22,36,58"/>
+            <TextBox Grid.Column="3" Margin="38,50,36,26" Text ="{Binding UnitIngredient14ForMeal, Mode=TwoWay}"></TextBox>
+        </Grid>
+        <!--15-->
+        <Grid Height="100"  Background="White">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="Ingredient" Height="20" Width="80" Margin="51,25,413,55" />
+            <ComboBox Grid.Column="0" Margin="51,50,33,26" IsEditable="True" IsReadOnly="False" ItemsSource="{Binding IngedientsListVM}" DisplayMemberPath="Name" Text="{Binding StringIngredient15ForMeal, Mode=TwoWay}" SelectedItem="{Binding SelectedIngredient15ForMeal, Mode=TwoWay}"></ComboBox>
+            <TextBlock Grid.Column="1" Text="Quantity" Height="20" Width="80" Margin="30,25,26,55"/>
+            <TextBox Grid.Column="1" Margin="0,50,0,26" HorizontalAlignment="Center" Width="76" Text ="{Binding QuantityIngredient15ForMeal, Mode=TwoWay}"/>
+            <TextBlock Grid.Column="2" Text="Units" Margin="38,22,36,58"/>
+            <TextBox Grid.Column="3" Margin="38,50,36,26" Text ="{Binding UnitIngredient15ForMeal, Mode=TwoWay}"></TextBox>
         </Grid>
     </StackPanel>
 </UserControl>
