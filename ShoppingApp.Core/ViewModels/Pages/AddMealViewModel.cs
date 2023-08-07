@@ -584,7 +584,7 @@ namespace ShoppingApp.Core
                     mealToUpdate.MealType = selectedMeal.MealType;
 
                     //update ingredients used to prepare meal
-                    for (int ingr = 0; ingr <= 15; ingr++)
+                    for (int ingr = 1; ingr <= 15; ingr++)
                     {
                         SaveIngredientForMealLogic(ingr);                       
                     }
@@ -656,99 +656,175 @@ namespace ShoppingApp.Core
         public void SaveIngredientForMealLogic(int IngredientForMealNumber)
         {
             //declare varuables at the beggining 
-            string saveAddString = null;
+            string? saveAddString = null;
             int? saveAddQuantity = 0;
             string saveAddUnit = "";
+            string? existingString = null;
+            int? existingQuantity = null;
+            string? existingUnit = null;
             switch (IngredientForMealNumber)
             {
                 case 1:
                     saveAddString = AddStringIngredient1ForMeal;
-                    saveAddQuantity = AddQuantityIngredient1ForMeal;
-                    saveAddUnit = AddUnitIngredient1ForMeal;
+                    saveAddQuantity = AddQuantityIngredient1ForMeal ?? 0;
+                    saveAddUnit = AddUnitIngredient1ForMeal ?? "";
+                    existingString = StringIngredient1ForMeal;
+                    existingQuantity = QuantityIngredient1ForMeal;
+                    existingUnit = UnitIngredient1ForMeal;
                     break;
                 case 2:
                     saveAddString = AddStringIngredient2ForMeal;
-                    saveAddQuantity = AddQuantityIngredient2ForMeal;
-                    saveAddUnit = AddUnitIngredient2ForMeal;
+                    saveAddQuantity = AddQuantityIngredient2ForMeal ?? 0;
+                    saveAddUnit = AddUnitIngredient2ForMeal ?? "";
+                    existingString = StringIngredient2ForMeal;
+                    existingQuantity = QuantityIngredient2ForMeal;
+                    existingUnit = UnitIngredient2ForMeal;
                     break;
                 case 3:
                     saveAddString = AddStringIngredient3ForMeal;
-                    saveAddQuantity = AddQuantityIngredient3ForMeal;
-                    saveAddUnit = AddUnitIngredient3ForMeal;
+                    saveAddQuantity = AddQuantityIngredient3ForMeal ?? 0;
+                    saveAddUnit = AddUnitIngredient3ForMeal ?? "";
+                    existingString = StringIngredient3ForMeal;
+                    existingQuantity = QuantityIngredient3ForMeal;
+                    existingUnit = UnitIngredient3ForMeal;
                     break;
                 case 4:
                     saveAddString = AddStringIngredient4ForMeal;
-                    saveAddQuantity = AddQuantityIngredient4ForMeal;
-                    saveAddUnit = AddUnitIngredient4ForMeal;
+                    saveAddQuantity = AddQuantityIngredient4ForMeal ?? 0;
+                    saveAddUnit = AddUnitIngredient4ForMeal ?? "";
+                    existingString = StringIngredient4ForMeal;
+                    existingQuantity = QuantityIngredient4ForMeal;
+                    existingUnit = UnitIngredient4ForMeal;
                     break;
                 case 5:
                     saveAddString = AddStringIngredient5ForMeal;
-                    saveAddQuantity = AddQuantityIngredient5ForMeal;
-                    saveAddUnit = AddUnitIngredient5ForMeal;
+                    saveAddQuantity = AddQuantityIngredient5ForMeal ?? 0;
+                    saveAddUnit = AddUnitIngredient5ForMeal ?? "";
+                    existingString = StringIngredient5ForMeal;
+                    existingQuantity = QuantityIngredient5ForMeal;
+                    existingUnit = UnitIngredient5ForMeal;
                     break;
                 case 6:
                     saveAddString = AddStringIngredient6ForMeal;
-                    saveAddQuantity = AddQuantityIngredient6ForMeal;
-                    saveAddUnit = AddUnitIngredient6ForMeal;
+                    saveAddQuantity = AddQuantityIngredient6ForMeal ?? 0;
+                    saveAddUnit = AddUnitIngredient6ForMeal ?? "";
+                    existingString = StringIngredient6ForMeal;
+                    existingQuantity = QuantityIngredient6ForMeal;
+                    existingUnit = UnitIngredient6ForMeal;
                     break;
                 case 7:
                     saveAddString = AddStringIngredient7ForMeal;
-                    saveAddQuantity = AddQuantityIngredient7ForMeal;
-                    saveAddUnit = AddUnitIngredient7ForMeal;
+                    saveAddQuantity = AddQuantityIngredient7ForMeal ?? 0;
+                    saveAddUnit = AddUnitIngredient7ForMeal ?? "";
+                    existingString = StringIngredient7ForMeal;
+                    existingQuantity = QuantityIngredient7ForMeal;
+                    existingUnit = UnitIngredient7ForMeal;
                     break;
                 case 8:
                     saveAddString = AddStringIngredient8ForMeal;
-                    saveAddQuantity = AddQuantityIngredient8ForMeal;
-                    saveAddUnit = AddUnitIngredient8ForMeal;
+                    saveAddQuantity = AddQuantityIngredient8ForMeal ?? 0;
+                    saveAddUnit = AddUnitIngredient8ForMeal ?? "";
+                    existingString = StringIngredient8ForMeal;
+                    existingQuantity = QuantityIngredient8ForMeal;
+                    existingUnit = UnitIngredient8ForMeal;
                     break;
                 case 9:
                     saveAddString = AddStringIngredient9ForMeal;
-                    saveAddQuantity = AddQuantityIngredient9ForMeal;
-                    saveAddUnit = AddUnitIngredient9ForMeal;
+                    saveAddQuantity = AddQuantityIngredient9ForMeal ?? 0;
+                    saveAddUnit = AddUnitIngredient9ForMeal ?? "";
+                    existingString = StringIngredient9ForMeal;
+                    existingQuantity = QuantityIngredient9ForMeal;
+                    existingUnit = UnitIngredient9ForMeal;
                     break;
                 case 10:
                     saveAddString = AddStringIngredient10ForMeal;
-                    saveAddQuantity = AddQuantityIngredient10ForMeal;
-                    saveAddUnit = AddUnitIngredient10ForMeal;
+                    saveAddQuantity = AddQuantityIngredient10ForMeal ?? 0;
+                    saveAddUnit = AddUnitIngredient10ForMeal ?? "";
+                    existingString = StringIngredient10ForMeal;
+                    existingQuantity = QuantityIngredient10ForMeal;
+                    existingUnit = UnitIngredient10ForMeal;
                     break;
                 case 11:
                     saveAddString = AddStringIngredient11ForMeal;
-                    saveAddQuantity = AddQuantityIngredient11ForMeal;
-                    saveAddUnit = AddUnitIngredient11ForMeal;
+                    saveAddQuantity = AddQuantityIngredient11ForMeal ?? 0;
+                    saveAddUnit = AddUnitIngredient11ForMeal ?? "";
+                    existingString = StringIngredient11ForMeal;
+                    existingQuantity = QuantityIngredient11ForMeal;
+                    existingUnit = UnitIngredient11ForMeal;
                     break;
                 case 12:
                     saveAddString = AddStringIngredient12ForMeal;
-                    saveAddQuantity = AddQuantityIngredient12ForMeal;
-                    saveAddUnit = AddUnitIngredient12ForMeal;
+                    saveAddQuantity = AddQuantityIngredient12ForMeal ?? 0;
+                    saveAddUnit = AddUnitIngredient12ForMeal ?? "";
+                    existingString = StringIngredient12ForMeal;
+                    existingQuantity = QuantityIngredient12ForMeal;
+                    existingUnit = UnitIngredient12ForMeal;
                     break;
                 case 13:
                     saveAddString = AddStringIngredient13ForMeal;
-                    saveAddQuantity = AddQuantityIngredient13ForMeal;
-                    saveAddUnit = AddUnitIngredient13ForMeal;
+                    saveAddQuantity = AddQuantityIngredient13ForMeal ?? 0;
+                    saveAddUnit = AddUnitIngredient13ForMeal ?? "";
+                    existingString = StringIngredient13ForMeal;
+                    existingQuantity = QuantityIngredient13ForMeal;
+                    existingUnit = UnitIngredient13ForMeal;
                     break;
                 case 14:
                     saveAddString = AddStringIngredient14ForMeal;
-                    saveAddQuantity = AddQuantityIngredient14ForMeal;
-                    saveAddUnit = AddUnitIngredient14ForMeal;
+                    saveAddQuantity = AddQuantityIngredient14ForMeal ?? 0;
+                    saveAddUnit = AddUnitIngredient14ForMeal ?? "";
+                    existingString = StringIngredient14ForMeal;
+                    existingQuantity = QuantityIngredient14ForMeal;
+                    existingUnit = UnitIngredient14ForMeal;
                     break;
                 case 15:
                     saveAddString = AddStringIngredient15ForMeal;
-                    saveAddQuantity = AddQuantityIngredient15ForMeal;
-                    saveAddUnit = AddUnitIngredient15ForMeal;
+                    saveAddQuantity = AddQuantityIngredient15ForMeal ?? 0;
+                    saveAddUnit = AddUnitIngredient15ForMeal ?? "";
+                    existingString = StringIngredient15ForMeal;
+                    existingQuantity = QuantityIngredient15ForMeal;
+                    existingUnit = UnitIngredient15ForMeal;
                     break;
             }
 
-            if(saveAddString is null)
-            {
-                return;
-            }
             //check for existing ingredient for meal 
             var ingredientForMealToUpdate = IngredientsForMealVM.FirstOrDefault(idb => idb.MealId == selectedMeal.Id && idb.tempId == IngredientForMealNumber);
+            bool anyChanges = false;
 
+            if (saveAddString is null)
+            {
+                if(existingString is null)
+                {
+                    if(ingredientForMealToUpdate is null)
+                    {
+                        //this mean that meal never had this ingredient and we do not pass parameters to save something so we exit from procedure
+                        anyChanges = true;
+                    }
+                }
+                else if (saveAddQuantity == 0 && existingQuantity != 0)
+                {
+                    if (ingredientForMealToUpdate.Quantity == existingQuantity)
+                    {
+                        anyChanges = true;
+                    }
+                }
+                else if (saveAddUnit.Equals("") && !existingUnit.Equals(""))
+                {
+                    if (ingredientForMealToUpdate.Unit == existingUnit)
+                    {
+                        anyChanges = true;
+                    }
+                }
+            }
+
+            if (!anyChanges)
+            {
+                //there is nothing to save
+                return;
+            }
+            
             if (ingredientForMealToUpdate != null)
             {
                 //check if the ingredients for meal existsted before
-                //var ingredientForMealToUpdate = IngredientsForMealVM.FirstOrDefault(idb => idb.Id == ingredientToReferenceToUpdate.Id && idb.MealId == selectedMeal.Id);
                 var ingredientToReferenceToUpdate = IngredientsForMealToReference.FirstOrDefault(il => il.Id == ingredientForMealToUpdate.Id && il.MealId == selectedMeal.Id);
 
                 //check if new ingredient exists in the database
