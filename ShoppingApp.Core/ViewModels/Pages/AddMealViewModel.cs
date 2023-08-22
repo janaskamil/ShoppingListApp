@@ -5,7 +5,9 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Globalization;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -788,39 +790,68 @@ namespace ShoppingApp.Core
 
             //check for existing ingredient for meal 
             var ingredientForMealToUpdate = IngredientsForMealVM.FirstOrDefault(idb => idb.MealId == selectedMeal.Id && idb.tempId == IngredientForMealNumber);
-            bool anyChanges = false;
+            bool anyChangesName = true;
+            bool anyChangesQuantity = true;
+            bool anyChangesUnit = true;
 
-            if (saveAddString is null)
+            //
+            if (String.IsNullOrEmpty(saveAddString))
             {
-                if(existingString is null)
+                if (!String.IsNullOrEmpty(existingString))
                 {
-                    if(ingredientForMealToUpdate is null)
+                    if (ingredientForMealToUpdate is not null)
                     {
-                        //this mean that meal never had this ingredient and we do not pass parameters to save something so we exit from procedure
-                        anyChanges = true;
+                        if (ingredientForMealToUpdate.IngredientName.Equals(existingString))
+                        {
+                            //this mean that meal never had this ingredient and we do not pass parameters to save something so we exit from procedure
+                            anyChangesName = false;
+                        }
+                        
+                    }
+                    if (saveAddQuantity == 0 && existingQuantity != null)
+                    {
+                        if (ingredientForMealToUpdate.Quantity == existingQuantity)
+                        {
+                            anyChangesQuantity = false;
+                        }
+                    }
+                    if (String.IsNullOrEmpty(saveAddUnit) && !String.IsNullOrEmpty(existingUnit))
+                    {
+                        if (ingredientForMealToUpdate.Unit == existingUnit)
+                        {
+                            anyChangesUnit = false;
+                        }
                     }
                 }
-                else if (saveAddQuantity == 0 && existingQuantity != 0)
+                else
                 {
-                    if (ingredientForMealToUpdate.Quantity == existingQuantity)
+                    //check if there is meal to Delete
+                    if (ingredientForMealToUpdate is not null)
                     {
-                        anyChanges = true;
+                        //delete
+                        var xd = DatabaseCreationTool.MyDatabase.IngredientForMeal.FirstOrDefault(i => i.Id == ingredientForMealToUpdate.Id);
+                        DatabaseCreationTool.MyDatabase.IngredientForMeal.Remove(xd);
+                        return;
                     }
+                    else
+                        //no ingredientForMealToUpdate/Add/Delete
+                        return;
                 }
-                else if (saveAddUnit.Equals("") && !existingUnit.Equals(""))
-                {
-                    if (ingredientForMealToUpdate.Unit == existingUnit)
-                    {
-                        anyChanges = true;
-                    }
-                }
-            }
 
-            if (!anyChanges)
-            {
-                //there is nothing to save
-                return;
-            }
+
+                if (!anyChangesName && !anyChangesQuantity && !anyChangesUnit) 
+                {
+                    return;
+                }
+                else
+                {
+                    saveAddString = existingString;
+                    saveAddQuantity = existingQuantity;
+                    saveAddUnit = existingUnit;
+                }
+                    
+            }                
+                  
             
             if (ingredientForMealToUpdate != null)
             {
