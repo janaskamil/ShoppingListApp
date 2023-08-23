@@ -46,6 +46,7 @@ namespace ShoppingApp.Core
                     var ingredient1 = IngredientsForMealVM.FirstOrDefault(i => i.tempId == 1 && i.MealId == selectedMeal.Id);
                     if (ingredient1 != null)
                     {
+                        selectedIngredient1ForMeal = null;
                         selectedIngredient1ForMeal = IngedientsListVM.First(i => i.Id == ingredient1.IngredientId);
                     }
                     else
@@ -55,6 +56,7 @@ namespace ShoppingApp.Core
                     var ingredient2 = IngredientsForMealVM.FirstOrDefault(i => i.tempId == 2 && i.MealId == selectedMeal.Id);
                     if (ingredient2 != null)
                     {
+                        selectedIngredient2ForMeal = null;
                         selectedIngredient2ForMeal = IngedientsListVM.First(i => i.Id == ingredient2.IngredientId);
                     }
                     else
@@ -64,6 +66,7 @@ namespace ShoppingApp.Core
                     var ingredient3 = IngredientsForMealVM.FirstOrDefault(i => i.tempId == 3 && i.MealId == selectedMeal.Id);
                     if (ingredient3 != null)
                     {
+                        selectedIngredient3ForMeal = null;
                         selectedIngredient3ForMeal = IngedientsListVM.First(i => i.Id == ingredient3.IngredientId);
                     }
                     else
@@ -73,6 +76,7 @@ namespace ShoppingApp.Core
                     var ingredient4 = IngredientsForMealVM.FirstOrDefault(i => i.tempId == 4 && i.MealId == selectedMeal.Id);
                     if (ingredient4 != null)
                     {
+                        selectedIngredient4ForMeal = null;
                         selectedIngredient4ForMeal = IngedientsListVM.First(i => i.Id == ingredient4.IngredientId);
                     }
                     else
@@ -82,6 +86,7 @@ namespace ShoppingApp.Core
                     var ingredient5 = IngredientsForMealVM.FirstOrDefault(i => i.tempId == 5 && i.MealId == selectedMeal.Id);
                     if (ingredient5 != null)
                     {
+                        selectedIngredient5ForMeal = null;
                         selectedIngredient5ForMeal = IngedientsListVM.First(i => i.Id == ingredient5.IngredientId);
                     }
                     else
@@ -91,6 +96,7 @@ namespace ShoppingApp.Core
                     var ingredient6 = IngredientsForMealVM.FirstOrDefault(i => i.tempId == 6 && i.MealId == selectedMeal.Id);
                     if (ingredient6 != null)
                     {
+                        selectedIngredient6ForMeal = null;
                         selectedIngredient6ForMeal = IngedientsListVM.First(i => i.Id == ingredient6.IngredientId);
                     }
                     else
@@ -100,6 +106,7 @@ namespace ShoppingApp.Core
                     var ingredient7 = IngredientsForMealVM.FirstOrDefault(i => i.tempId == 7 && i.MealId == selectedMeal.Id);
                     if (ingredient7 != null)
                     {
+                        selectedIngredient7ForMeal = null;
                         selectedIngredient7ForMeal = IngedientsListVM.First(i => i.Id == ingredient7.IngredientId);
                     }
                     else
@@ -109,6 +116,7 @@ namespace ShoppingApp.Core
                     var ingredient8 = IngredientsForMealVM.FirstOrDefault(i => i.tempId == 8 && i.MealId == selectedMeal.Id);
                     if (ingredient8 != null)
                     {
+                        selectedIngredient8ForMeal = null;
                         selectedIngredient8ForMeal = IngedientsListVM.First(i => i.Id == ingredient8.IngredientId);
                     }
                     else
@@ -118,6 +126,7 @@ namespace ShoppingApp.Core
                     var ingredient9 = IngredientsForMealVM.FirstOrDefault(i => i.tempId == 9 && i.MealId == selectedMeal.Id);
                     if (ingredient9 != null)
                     {
+                        selectedIngredient9ForMeal = null;
                         selectedIngredient9ForMeal = IngedientsListVM.First(i => i.Id == ingredient9.IngredientId);
                     }
                     else
@@ -127,6 +136,7 @@ namespace ShoppingApp.Core
                     var ingredient10 = IngredientsForMealVM.FirstOrDefault(i => i.tempId == 10 && i.MealId == selectedMeal.Id);
                     if (ingredient10 != null)
                     {
+                        selectedIngredient10ForMeal = null;
                         selectedIngredient10ForMeal = IngedientsListVM.First(i => i.Id == ingredient10.IngredientId);
                     }
                     else
@@ -136,6 +146,7 @@ namespace ShoppingApp.Core
                     var ingredient11 = IngredientsForMealVM.FirstOrDefault(i => i.tempId == 11 && i.MealId == selectedMeal.Id);
                     if (ingredient11 != null)
                     {
+                        selectedIngredient11ForMeal = null;
                         selectedIngredient11ForMeal = IngedientsListVM.First(i => i.Id == ingredient11.IngredientId);
                     }
                     else
@@ -145,6 +156,7 @@ namespace ShoppingApp.Core
                     var ingredient12 = IngredientsForMealVM.FirstOrDefault(i => i.tempId == 12 && i.MealId == selectedMeal.Id);
                     if (ingredient12 != null)
                     {
+                        selectedIngredient12ForMeal = null;
                         selectedIngredient12ForMeal = IngedientsListVM.First(i => i.Id == ingredient12.IngredientId);
                     }
                     else
@@ -154,6 +166,7 @@ namespace ShoppingApp.Core
                     var ingredient13 = IngredientsForMealVM.FirstOrDefault(i => i.tempId == 13 && i.MealId == selectedMeal.Id);
                     if (ingredient13 != null)
                     {
+                        selectedIngredient13ForMeal = null;
                         selectedIngredient13ForMeal = IngedientsListVM.First(i => i.Id == ingredient13.IngredientId);
                     }
                     else
@@ -163,6 +176,7 @@ namespace ShoppingApp.Core
                     var ingredient14 = IngredientsForMealVM.FirstOrDefault(i => i.tempId == 14 && i.MealId == selectedMeal.Id);
                     if (ingredient14 != null)
                     {
+                        selectedIngredient14ForMeal = null;
                         selectedIngredient14ForMeal = IngedientsListVM.First(i => i.Id == ingredient14.IngredientId);
                     }
                     else
@@ -172,6 +186,7 @@ namespace ShoppingApp.Core
                     var ingredient15 = IngredientsForMealVM.FirstOrDefault(i => i.tempId == 15 && i.MealId == selectedMeal.Id);
                     if (ingredient15 != null)
                     {
+                        selectedIngredient15ForMeal = null;
                         selectedIngredient15ForMeal = IngedientsListVM.First(i => i.Id == ingredient15.IngredientId);
                     }
                     else
@@ -659,10 +674,10 @@ namespace ShoppingApp.Core
         {
             //declare varuables at the beggining 
             string? saveAddString = null;
-            int? saveAddQuantity = 0;
+            double? saveAddQuantity = 0;
             string saveAddUnit = "";
             string? existingString = null;
-            int? existingQuantity = null;
+            double? existingQuantity = null;
             string? existingUnit = null;
             switch (IngredientForMealNumber)
             {
@@ -829,8 +844,8 @@ namespace ShoppingApp.Core
                     if (ingredientForMealToUpdate is not null)
                     {
                         //delete
-                        var xd = DatabaseCreationTool.MyDatabase.IngredientForMeal.FirstOrDefault(i => i.Id == ingredientForMealToUpdate.Id);
-                        DatabaseCreationTool.MyDatabase.IngredientForMeal.Remove(xd);
+                        var ingredientForMealToDelete = DatabaseCreationTool.MyDatabase.IngredientForMeal.FirstOrDefault(i => i.Id == ingredientForMealToUpdate.Id);
+                        DatabaseCreationTool.MyDatabase.IngredientForMeal.Remove(ingredientForMealToDelete);
                         return;
                     }
                     else
@@ -864,7 +879,7 @@ namespace ShoppingApp.Core
                 //ingredient exists
                 if (ingredientCheck != null)
                 {
-                    ingredientToReferenceToUpdate.Quantity = (int)saveAddQuantity;                  
+                    ingredientToReferenceToUpdate.Quantity = (double)saveAddQuantity;                  
                     ingredientToReferenceToUpdate.Unit = saveAddUnit;
                 }
                 //new ingredient
@@ -891,7 +906,7 @@ namespace ShoppingApp.Core
                     });
 
                     ingredientToReferenceToUpdate.IngredientId = newIngredient.Id;
-                    ingredientToReferenceToUpdate.Quantity = (int)saveAddQuantity;
+                    ingredientToReferenceToUpdate.Quantity = (double)saveAddQuantity;
                     ingredientToReferenceToUpdate.Unit = saveAddUnit;
                 }
 
@@ -922,7 +937,7 @@ namespace ShoppingApp.Core
                         MealId = selectedMeal.Id,
                         IngredientId = ingredientCheck.Id,
                         IngredientName = saveAddString,
-                        Quantity = (int)saveAddQuantity,
+                        Quantity = (double)saveAddQuantity,
                         Unit = saveAddUnit
                     };
                     IngredientsForMealVM.Add(newIngredientFromMeal);
@@ -957,12 +972,12 @@ namespace ShoppingApp.Core
 
                     var newIngredientForMeal = new IngredientForMealViewModel
                     {
-                        tempId = countedIngredientsForMealInsertId,
+                        tempId = IngredientForMealNumber,
                         Id = countedIngredientsForMealInsertId,
                         MealId = selectedMeal.Id,
                         IngredientId = countedIngredientsInsertId,
                         IngredientName = saveAddString,
-                        Quantity = (int)saveAddQuantity,
+                        Quantity = (double)saveAddQuantity,
                         Unit = saveAddUnit
                     };
                     IngredientsForMealVM.Add(newIngredientForMeal);
@@ -988,12 +1003,12 @@ namespace ShoppingApp.Core
             }
             set
             {
-                string addString1 = SetStringIngredientForMeal(1, selectedIngredient1ForMeal, AddStringIngredient1ForMeal, value);
-                AddStringIngredient1ForMeal = addString1;
+                string addString = SetStringIngredientForMeal(1, selectedIngredient1ForMeal, AddStringIngredient1ForMeal, value);
+                AddStringIngredient1ForMeal = addString;
             }
         }        
-        private int? AddQuantityIngredient1ForMeal { get; set; }
-        public int? QuantityIngredient1ForMeal
+        private double? AddQuantityIngredient1ForMeal { get; set; }
+        public double? QuantityIngredient1ForMeal
         {
             get
             {
@@ -1001,8 +1016,8 @@ namespace ShoppingApp.Core
             }
             set
             {
-                int? addInt1 = SetQuantityIngredientForMeal(1, selectedIngredient1ForMeal, AddQuantityIngredient1ForMeal, value);
-                AddQuantityIngredient1ForMeal = addInt1;
+                double? addDouble = SetQuantityIngredientForMeal(1, selectedIngredient1ForMeal, AddQuantityIngredient1ForMeal, value);
+                AddQuantityIngredient1ForMeal = addDouble;
             }
         }
         private string? AddUnitIngredient1ForMeal { get; set; }
@@ -1027,12 +1042,12 @@ namespace ShoppingApp.Core
             }
             set
             {
-                string addString2 = SetStringIngredientForMeal(2, selectedIngredient2ForMeal, AddStringIngredient2ForMeal, value);
-                AddStringIngredient2ForMeal = addString2;
+                string addString = SetStringIngredientForMeal(2, selectedIngredient2ForMeal, AddStringIngredient2ForMeal, value);
+                AddStringIngredient2ForMeal = addString;
             }
         }
-        private int? AddQuantityIngredient2ForMeal { get; set; }
-        public int? QuantityIngredient2ForMeal
+        private double? AddQuantityIngredient2ForMeal { get; set; }
+        public double? QuantityIngredient2ForMeal
         {
             get
             {
@@ -1040,8 +1055,8 @@ namespace ShoppingApp.Core
             }
             set
             {
-                int? addInt2 = SetQuantityIngredientForMeal(2, selectedIngredient2ForMeal, AddQuantityIngredient2ForMeal, value);
-                AddQuantityIngredient2ForMeal = addInt2;
+                double? addDouble = SetQuantityIngredientForMeal(2, selectedIngredient2ForMeal, AddQuantityIngredient2ForMeal, value);
+                AddQuantityIngredient2ForMeal = addDouble;
             }
         }            
         private string? AddUnitIngredient2ForMeal { get; set; }
@@ -1066,12 +1081,12 @@ namespace ShoppingApp.Core
             }
             set
             {
-                string addString3 = SetStringIngredientForMeal(3, selectedIngredient3ForMeal, AddStringIngredient3ForMeal, value);
-                AddStringIngredient3ForMeal = addString3;
+                string addString = SetStringIngredientForMeal(3, selectedIngredient3ForMeal, AddStringIngredient3ForMeal, value);
+                AddStringIngredient3ForMeal = addString;
             }
         }
-        private int? AddQuantityIngredient3ForMeal { get; set; }
-        public int? QuantityIngredient3ForMeal
+        private double? AddQuantityIngredient3ForMeal { get; set; }
+        public double? QuantityIngredient3ForMeal
         {
             get
             {
@@ -1079,8 +1094,8 @@ namespace ShoppingApp.Core
             }
             set
             {
-                int? addInt3 = SetQuantityIngredientForMeal(3, selectedIngredient3ForMeal, AddQuantityIngredient3ForMeal, value);
-                AddQuantityIngredient3ForMeal = addInt3;
+                double? addDouble = SetQuantityIngredientForMeal(3, selectedIngredient3ForMeal, AddQuantityIngredient3ForMeal, value);
+                AddQuantityIngredient3ForMeal = addDouble;
             }
         }
         private string? AddUnitIngredient3ForMeal { get; set; }
@@ -1105,12 +1120,12 @@ namespace ShoppingApp.Core
             }
             set
             {
-                string addString4 = SetStringIngredientForMeal(4, selectedIngredient4ForMeal, AddStringIngredient4ForMeal, value);
-                AddStringIngredient4ForMeal = addString4;
+                string addString = SetStringIngredientForMeal(4, selectedIngredient4ForMeal, AddStringIngredient4ForMeal, value);
+                AddStringIngredient4ForMeal = addString;
             }
         }
-        private int? AddQuantityIngredient4ForMeal { get; set; }
-        public int? QuantityIngredient4ForMeal
+        private double? AddQuantityIngredient4ForMeal { get; set; }
+        public double? QuantityIngredient4ForMeal
         {
             get
             {
@@ -1118,8 +1133,8 @@ namespace ShoppingApp.Core
             }
             set
             {
-                int? addInt4 = SetQuantityIngredientForMeal(4, selectedIngredient4ForMeal, AddQuantityIngredient4ForMeal, value);
-                AddQuantityIngredient4ForMeal = addInt4;
+                double? addDouble = SetQuantityIngredientForMeal(4, selectedIngredient4ForMeal, AddQuantityIngredient4ForMeal, value);
+                AddQuantityIngredient4ForMeal = addDouble; 
             }
         }
         private string? AddUnitIngredient4ForMeal { get; set; }
@@ -1144,12 +1159,12 @@ namespace ShoppingApp.Core
             }
             set
             {
-                string addString5 = SetStringIngredientForMeal(5, selectedIngredient5ForMeal, AddStringIngredient5ForMeal, value);
-                AddStringIngredient5ForMeal = addString5;
+                string addString = SetStringIngredientForMeal(5, selectedIngredient5ForMeal, AddStringIngredient5ForMeal, value);
+                AddStringIngredient5ForMeal = addString;
             }
         }
-        private int? AddQuantityIngredient5ForMeal { get; set; }
-        public int? QuantityIngredient5ForMeal
+        private double? AddQuantityIngredient5ForMeal { get; set; }
+        public double? QuantityIngredient5ForMeal
         {
             get
             {
@@ -1157,8 +1172,8 @@ namespace ShoppingApp.Core
             }
             set
             {
-                int? addInt5 = SetQuantityIngredientForMeal(5, selectedIngredient5ForMeal, AddQuantityIngredient5ForMeal, value);
-                AddQuantityIngredient5ForMeal = addInt5;
+                double? addDouble = SetQuantityIngredientForMeal(5, selectedIngredient5ForMeal, AddQuantityIngredient5ForMeal, value);
+                AddQuantityIngredient5ForMeal = addDouble;
             }
         }
         private string? AddUnitIngredient5ForMeal { get; set; }
@@ -1183,12 +1198,12 @@ namespace ShoppingApp.Core
             }
             set
             {
-                string addString6 = SetStringIngredientForMeal(6, selectedIngredient6ForMeal, AddStringIngredient6ForMeal, value);
-                AddStringIngredient6ForMeal = addString6;
+                string addString = SetStringIngredientForMeal(6, selectedIngredient6ForMeal, AddStringIngredient6ForMeal, value);
+                AddStringIngredient6ForMeal = addString;
             }
         }
-        private int? AddQuantityIngredient6ForMeal { get; set; }
-        public int? QuantityIngredient6ForMeal
+        private double? AddQuantityIngredient6ForMeal { get; set; }
+        public double? QuantityIngredient6ForMeal
         {
             get
             {
@@ -1196,8 +1211,8 @@ namespace ShoppingApp.Core
             }
             set
             {
-                int? addInt6 = SetQuantityIngredientForMeal(6, selectedIngredient6ForMeal, AddQuantityIngredient6ForMeal, value);
-                AddQuantityIngredient6ForMeal = addInt6;
+                double? addDouble = SetQuantityIngredientForMeal(6, selectedIngredient6ForMeal, AddQuantityIngredient6ForMeal, value);
+                AddQuantityIngredient6ForMeal = addDouble;
             }
         }
         private string? AddUnitIngredient6ForMeal { get; set; }
@@ -1222,12 +1237,12 @@ namespace ShoppingApp.Core
             }
             set
             {
-                string addString7 = SetStringIngredientForMeal(7, selectedIngredient7ForMeal, AddStringIngredient7ForMeal, value);
-                AddStringIngredient7ForMeal = addString7;
+                string addString = SetStringIngredientForMeal(7, selectedIngredient7ForMeal, AddStringIngredient7ForMeal, value);
+                AddStringIngredient7ForMeal = addString;
             }
         }
-        private int? AddQuantityIngredient7ForMeal { get; set; }
-        public int? QuantityIngredient7ForMeal
+        private double? AddQuantityIngredient7ForMeal { get; set; }
+        public double? QuantityIngredient7ForMeal
         {
             get
             {
@@ -1235,8 +1250,8 @@ namespace ShoppingApp.Core
             }
             set
             {
-                int? addInt7 = SetQuantityIngredientForMeal(7, selectedIngredient7ForMeal, AddQuantityIngredient7ForMeal, value);
-                AddQuantityIngredient7ForMeal = addInt7;
+                double? addDouble = SetQuantityIngredientForMeal(7, selectedIngredient7ForMeal, AddQuantityIngredient7ForMeal, value);
+                AddQuantityIngredient7ForMeal = addDouble;
             }
         }
         private string? AddUnitIngredient7ForMeal { get; set; }
@@ -1261,12 +1276,12 @@ namespace ShoppingApp.Core
             }
             set
             {
-                string addString8 = SetStringIngredientForMeal(8, selectedIngredient8ForMeal, AddStringIngredient8ForMeal, value);
-                AddStringIngredient8ForMeal = addString8;
+                string addString = SetStringIngredientForMeal(8, selectedIngredient8ForMeal, AddStringIngredient8ForMeal, value);
+                AddStringIngredient8ForMeal = addString;
             }
         }
-        private int? AddQuantityIngredient8ForMeal { get; set; }
-        public int? QuantityIngredient8ForMeal
+        private double? AddQuantityIngredient8ForMeal { get; set; }
+        public double? QuantityIngredient8ForMeal
         {
             get
             {
@@ -1274,8 +1289,8 @@ namespace ShoppingApp.Core
             }
             set
             {
-                int? addInt8 = SetQuantityIngredientForMeal(8, selectedIngredient8ForMeal, AddQuantityIngredient8ForMeal, value);
-                AddQuantityIngredient8ForMeal = addInt8;
+                double? addDouble = SetQuantityIngredientForMeal(8, selectedIngredient8ForMeal, AddQuantityIngredient8ForMeal, value);
+                AddQuantityIngredient8ForMeal = addDouble;
             }
         }
         private string? AddUnitIngredient8ForMeal { get; set; }
@@ -1300,12 +1315,12 @@ namespace ShoppingApp.Core
             }
             set
             {
-                string addString9 = SetStringIngredientForMeal(9, selectedIngredient9ForMeal, AddStringIngredient9ForMeal, value);
-                AddStringIngredient9ForMeal = addString9;
+                string addString = SetStringIngredientForMeal(9, selectedIngredient9ForMeal, AddStringIngredient9ForMeal, value);
+                AddStringIngredient9ForMeal = addString;
             }
         }
-        private int? AddQuantityIngredient9ForMeal { get; set; }
-        public int? QuantityIngredient9ForMeal
+        private double? AddQuantityIngredient9ForMeal { get; set; }
+        public double? QuantityIngredient9ForMeal
         {
             get
             {
@@ -1313,8 +1328,8 @@ namespace ShoppingApp.Core
             }
             set
             {
-                int? addInt9 = SetQuantityIngredientForMeal(9, selectedIngredient9ForMeal, AddQuantityIngredient9ForMeal, value);
-                AddQuantityIngredient9ForMeal = addInt9;
+                double? addDouble = SetQuantityIngredientForMeal(9, selectedIngredient9ForMeal, AddQuantityIngredient9ForMeal, value);
+                AddQuantityIngredient9ForMeal = addDouble;
             }
         }
         private string? AddUnitIngredient9ForMeal { get; set; }
@@ -1339,12 +1354,12 @@ namespace ShoppingApp.Core
             }
             set
             {
-                string addString10 = SetStringIngredientForMeal(10, selectedIngredient10ForMeal, AddStringIngredient10ForMeal, value);
-                AddStringIngredient10ForMeal = addString10;
+                string addString = SetStringIngredientForMeal(10, selectedIngredient10ForMeal, AddStringIngredient10ForMeal, value);
+                AddStringIngredient10ForMeal = addString;
             }
         }
-        private int? AddQuantityIngredient10ForMeal { get; set; }
-        public int? QuantityIngredient10ForMeal
+        private double? AddQuantityIngredient10ForMeal { get; set; }
+        public double? QuantityIngredient10ForMeal
         {
             get
             {
@@ -1352,8 +1367,8 @@ namespace ShoppingApp.Core
             }
             set
             {
-                int? addInt10 = SetQuantityIngredientForMeal(10, selectedIngredient10ForMeal, AddQuantityIngredient10ForMeal, value);
-                AddQuantityIngredient10ForMeal = addInt10;
+                double? addDouble = SetQuantityIngredientForMeal(10, selectedIngredient10ForMeal, AddQuantityIngredient10ForMeal, value);
+                AddQuantityIngredient10ForMeal = addDouble;
             }
         }
         private string? AddUnitIngredient10ForMeal { get; set; }
@@ -1378,12 +1393,12 @@ namespace ShoppingApp.Core
             }
             set
             {
-                string addString11 = SetStringIngredientForMeal(11, selectedIngredient11ForMeal, AddStringIngredient11ForMeal, value);
-                AddStringIngredient11ForMeal = addString11;
+                string addString = SetStringIngredientForMeal(11, selectedIngredient11ForMeal, AddStringIngredient11ForMeal, value);
+                AddStringIngredient11ForMeal = addString;
             }
         }
-        private int? AddQuantityIngredient11ForMeal { get; set; }
-        public int? QuantityIngredient11ForMeal
+        private double? AddQuantityIngredient11ForMeal { get; set; }
+        public double? QuantityIngredient11ForMeal
         {
             get
             {
@@ -1391,8 +1406,8 @@ namespace ShoppingApp.Core
             }
             set
             {
-                int? addInt11 = SetQuantityIngredientForMeal(11, selectedIngredient11ForMeal, AddQuantityIngredient11ForMeal, value);
-                AddQuantityIngredient11ForMeal = addInt11;
+                double? addDouble = SetQuantityIngredientForMeal(11, selectedIngredient11ForMeal, AddQuantityIngredient11ForMeal, value);
+                AddQuantityIngredient11ForMeal = addDouble;
             }
         }
         private string? AddUnitIngredient11ForMeal { get; set; }
@@ -1417,12 +1432,12 @@ namespace ShoppingApp.Core
             }
             set
             {
-                string addString12 = SetStringIngredientForMeal(12, selectedIngredient12ForMeal, AddStringIngredient12ForMeal, value);
-                AddStringIngredient12ForMeal = addString12;
+                string addString = SetStringIngredientForMeal(12, selectedIngredient12ForMeal, AddStringIngredient12ForMeal, value);
+                AddStringIngredient12ForMeal = addString;
             }
         }
-        private int? AddQuantityIngredient12ForMeal { get; set; }
-        public int? QuantityIngredient12ForMeal
+        private double? AddQuantityIngredient12ForMeal { get; set; }
+        public double? QuantityIngredient12ForMeal
         {
             get
             {
@@ -1430,8 +1445,8 @@ namespace ShoppingApp.Core
             }
             set
             {
-                int? addInt12 = SetQuantityIngredientForMeal(12, selectedIngredient12ForMeal, AddQuantityIngredient12ForMeal, value);
-                AddQuantityIngredient12ForMeal = addInt12;
+                double? addDouble = SetQuantityIngredientForMeal(12, selectedIngredient12ForMeal, AddQuantityIngredient12ForMeal, value);
+                AddQuantityIngredient12ForMeal = addDouble;
             }
         }
         private string? AddUnitIngredient12ForMeal { get; set; }
@@ -1456,12 +1471,12 @@ namespace ShoppingApp.Core
             }
             set
             {
-                string addString13 = SetStringIngredientForMeal(13, selectedIngredient13ForMeal, AddStringIngredient13ForMeal, value);
-                AddStringIngredient13ForMeal = addString13;
+                string addString = SetStringIngredientForMeal(13, selectedIngredient13ForMeal, AddStringIngredient13ForMeal, value);
+                AddStringIngredient13ForMeal = addString;
             }
         }
-        private int? AddQuantityIngredient13ForMeal { get; set; }
-        public int? QuantityIngredient13ForMeal
+        private double? AddQuantityIngredient13ForMeal { get; set; }
+        public double? QuantityIngredient13ForMeal
         {
             get
             {
@@ -1469,8 +1484,8 @@ namespace ShoppingApp.Core
             }
             set
             {
-                int? addInt13 = SetQuantityIngredientForMeal(13, selectedIngredient13ForMeal, AddQuantityIngredient13ForMeal, value);
-                AddQuantityIngredient13ForMeal = addInt13;
+                double? addDouble = SetQuantityIngredientForMeal(13, selectedIngredient13ForMeal, AddQuantityIngredient13ForMeal, value);
+                AddQuantityIngredient13ForMeal = addDouble;
             }
         }
         private string? AddUnitIngredient13ForMeal { get; set; }
@@ -1495,12 +1510,12 @@ namespace ShoppingApp.Core
             }
             set
             {
-                string addString14 = SetStringIngredientForMeal(14, selectedIngredient14ForMeal, AddStringIngredient14ForMeal, value);
-                AddStringIngredient14ForMeal = addString14;
+                string addString = SetStringIngredientForMeal(14, selectedIngredient14ForMeal, AddStringIngredient14ForMeal, value);
+                AddStringIngredient14ForMeal = addString;
             }
         }
-        private int? AddQuantityIngredient14ForMeal { get; set; }
-        public int? QuantityIngredient14ForMeal
+        private double? AddQuantityIngredient14ForMeal { get; set; }
+        public double? QuantityIngredient14ForMeal
         {
             get
             {
@@ -1508,8 +1523,8 @@ namespace ShoppingApp.Core
             }
             set
             {
-                int? addInt14 = SetQuantityIngredientForMeal(14, selectedIngredient14ForMeal, AddQuantityIngredient14ForMeal, value);
-                AddQuantityIngredient14ForMeal = addInt14;
+                double? addDouble = SetQuantityIngredientForMeal(14, selectedIngredient14ForMeal, AddQuantityIngredient14ForMeal, value);
+                AddQuantityIngredient14ForMeal = addDouble;
             }
         }
         private string? AddUnitIngredient14ForMeal { get; set; }
@@ -1534,12 +1549,12 @@ namespace ShoppingApp.Core
             }
             set
             {
-                string addString15 = SetStringIngredientForMeal(15, selectedIngredient15ForMeal, AddStringIngredient15ForMeal, value);
-                AddStringIngredient15ForMeal = addString15;
+                string addString = SetStringIngredientForMeal(15, selectedIngredient15ForMeal, AddStringIngredient15ForMeal, value);
+                AddStringIngredient15ForMeal = addString;
             }
         }
-        private int? AddQuantityIngredient15ForMeal { get; set; }
-        public int? QuantityIngredient15ForMeal
+        private double? AddQuantityIngredient15ForMeal { get; set; }
+        public double? QuantityIngredient15ForMeal
         {
             get
             {
@@ -1547,8 +1562,8 @@ namespace ShoppingApp.Core
             }
             set
             {
-                int? addInt15 = SetQuantityIngredientForMeal(15, selectedIngredient15ForMeal, AddQuantityIngredient15ForMeal, value);
-                AddQuantityIngredient15ForMeal = addInt15;
+                double? addDouble = SetQuantityIngredientForMeal(15, selectedIngredient15ForMeal, AddQuantityIngredient15ForMeal, value);
+                AddQuantityIngredient15ForMeal = addDouble;
             }
         }
         private string? AddUnitIngredient15ForMeal { get; set; }
@@ -1634,7 +1649,7 @@ namespace ShoppingApp.Core
             addString = value;
             return addString;
         }
-        private int? GetQuantityIngredientForMeal(int tempId, IngreditenViewModel selectedIngredient, int? addQuantity)
+        private double? GetQuantityIngredientForMeal(int tempId, IngreditenViewModel selectedIngredient, double? addQuantity)
         {
             //if there is selected meal
             if (selectedMeal != null)
@@ -1643,7 +1658,7 @@ namespace ShoppingApp.Core
                 if (selectedIngredient != null)
                 {
                     var quantityIngredientForMealReference = IngredientsForMealToReference.FirstOrDefault(i => i.tempId == tempId && i.MealId == selectedMeal.Id);
-                    //if ingredient 1 for selected meal has value                   
+                    //if ingredient for selected meal has value                   
                     if (quantityIngredientForMealReference != null)
                     {
                         if (quantityIngredientForMealReference.IngredientId == selectedIngredient.Id)
@@ -1665,7 +1680,7 @@ namespace ShoppingApp.Core
             else
                 return null;
         }
-        private int? SetQuantityIngredientForMeal(int tempId, IngreditenViewModel selectedIngredient, int? addQuantity, int? value)
+        private double? SetQuantityIngredientForMeal(int tempId, IngreditenViewModel selectedIngredient, double? addQuantity, double? value)
         {
             //if there is selected meal
             if (selectedMeal != null)
@@ -1678,16 +1693,16 @@ namespace ShoppingApp.Core
                     {
                         if (quantityIngredientForMealReference.IngredientId == selectedIngredient.Id)
                         {
-                            quantityIngredientForMealReference.Quantity = (int)value;
-                            addQuantity = (int)value;
+                            quantityIngredientForMealReference.Quantity = (double)value;
+                            addQuantity = (double)value;
                             return addQuantity;
                         }
                         else
-                            addQuantity = (int)value;
+                            addQuantity = (double)value;
                         return addQuantity;
                     }
                 }
-                addQuantity = (int)value;
+                addQuantity = (double)value;
                 return addQuantity;
             }
             return null;
