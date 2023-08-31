@@ -1,4 +1,5 @@
-﻿using ShoppingApp.Core.Services;
+﻿using Microsoft.EntityFrameworkCore;
+using ShoppingApp.Core.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,7 @@ namespace ShoppingApp.Core
         public ICommand ShowAddMeal { get; set; }
         public ICommand ShowCheckAndGenerateList { get; set; }
         public ICommand ShowGenerateList { get; set; }
+        public ICommand ShowDeleteUnusedIngredients { get; set; }
 
         public BaseViewModel CurrentChildView
         {
@@ -36,6 +38,7 @@ namespace ShoppingApp.Core
             CloseApp = new RelayCommand(CloseApplicationMainPageViewModel);
             MinimalizeApp = new RelayCommand(MinimizeApplicationMainPageViewModel);
             ShowAddMeal = new RelayCommand(ShowAddMealViewCommand);
+            ShowDeleteUnusedIngredients = new RelayCommand(ShowDeleteUnusedIngredientsCommand);
             ShowCheckAndGenerateList = new RelayCommand(ShowCheckAndGenerateViewCommand);
             ShowGenerateList = new RelayCommand(ShowGenerateViewCommand);        
         }        
@@ -52,7 +55,10 @@ namespace ShoppingApp.Core
         {
             CurrentChildView = new GenerateListViewModel();
         }
-
+        private void ShowDeleteUnusedIngredientsCommand()
+        {
+            CurrentChildView = new DeleteUnusedIngredientsViewModel();
+        }
 
         private void CloseApplicationMainPageViewModel()
         {
@@ -63,6 +69,5 @@ namespace ShoppingApp.Core
         {
             messageService.MinimalizeApplication();
         }
-
     }
 }

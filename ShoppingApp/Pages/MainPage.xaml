@@ -29,6 +29,14 @@
                        HorizontalAlignment="Center" 
                        VerticalAlignment="Center" 
                        FontFamily="Arial"></TextBlock>
+            <TextBlock Grid.Row="0" 
+                       Grid.Column="0"                       
+                       Text="by Kamil Janas" 
+                       FontSize="12" 
+                       FontWeight="Bold" 
+                       HorizontalAlignment="Left" 
+                       VerticalAlignment="Top" 
+                       FontFamily="Arial" Margin="89,66,0,0"/>
             <Grid Height="15" Margin="178,3,4,75" Grid.ColumnSpan="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"></ColumnDefinition>
@@ -56,20 +64,20 @@
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
                 </Grid.RowDefinitions>
-                <Button Grid.Row="0"
+                <RadioButton Grid.Row="0"
                         Content="Add Meals"
-                        Style="{DynamicResource GridButton}"
-                        Command="{Binding ShowAddMeal}"></Button>
-                <Button Grid.Row="1"    
+                        Command="{Binding ShowAddMeal}"></RadioButton>
+                <RadioButton Grid.Row="1"
+                        Content="Delete Unused Ingredients"
+                        Command="{Binding ShowDeleteUnusedIngredients}"></RadioButton>
+                <RadioButton Grid.Row="2"    
                         Content="Create New Shopping List"
-                        Style="{DynamicResource GridButton}"
-                        Command="{Binding ShowGenerateList}"
-                        ></Button>
-                <Button Grid.Row="2"
+                        Command="{Binding ShowGenerateList}"></RadioButton>
+                <RadioButton Grid.Row="3"
                         Content="Check and Generate List"
-                        Style="{DynamicResource GridButton}"
-                        Command="{Binding ShowCheckAndGenerateList}"></Button>
+                        Command="{Binding ShowCheckAndGenerateList}"></RadioButton>
             </Grid>
             <Frame
                 Grid.Row="1"

@@ -10,6 +10,9 @@
     <Compile Update="Controls\IngredientsList.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Controls\IngredientsToDelete.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Controls\MealName.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -28,9 +31,15 @@
     <Compile Update="Pages\CreateList.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\DeleteUnusedIngredients.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Controls\IngredientsList.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\IngredientsToDelete.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Controls\MealName.xaml">
@@ -52,6 +61,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\CreateList.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\DeleteUnusedIngredients.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Styles\Buttons.xaml">
