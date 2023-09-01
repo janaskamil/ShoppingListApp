@@ -26,6 +26,8 @@ namespace ShoppingApp
             InitializeComponent();
 
             DataContext = new DeleteUnusedIngredientsViewModel();
+
+
         }
     }
 }

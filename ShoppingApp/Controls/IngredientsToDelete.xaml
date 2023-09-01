@@ -4,6 +4,16 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ShoppingApp">
-    <ComboBox IsEditable="True" IsReadOnly="False" ItemsSource="{Binding MealsList}" DisplayMemberPath="MealName" Text="{Binding AddMealName}" SelectedItem="{Binding SelectedMeal, Mode=TwoWay}">
-    </ComboBox>
+    <ScrollViewer Height="200" Width="200">
+        <ItemsControl ItemsSource="{Binding UnusedIngredients}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <CheckBox IsChecked="{Binding isSelected}"></CheckBox>
+                        <TextBlock Text="{Binding Name}"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </ScrollViewer>
 </UserControl>

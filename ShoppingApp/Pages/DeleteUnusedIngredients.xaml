@@ -10,11 +10,16 @@
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0"
         Text="DeleteUnusedIngredients"
         Background="Transparent">
         </TextBlock>
-        <local:IngredientsToDelete Grid.Row="1"></local:IngredientsToDelete>
+        <local:IngredientsToDelete Grid.Row="1">
+        </local:IngredientsToDelete>
+        <Button Grid.Row="2" Height="100" Width="100" Background="Red" Command="{Binding DeleteIngredients}">
+            
+        </Button>
     </Grid>
 </Page>
