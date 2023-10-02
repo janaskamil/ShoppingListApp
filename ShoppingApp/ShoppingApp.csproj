@@ -12,4 +12,10 @@
     <ProjectReference Include="..\ShoppingApp.Database\ShoppingApp.Database.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="Controls\IngredientsToModify.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
 </Project>

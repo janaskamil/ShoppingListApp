@@ -57,7 +57,7 @@ namespace ShoppingApp.Core
         }
         private void ShowDeleteUnusedIngredientsCommand()
         {
-            CurrentChildView = new DeleteUnusedIngredientsViewModel();
+            CurrentChildView = new DeleteAndModifyIngredients();
         }
 
         private void CloseApplicationMainPageViewModel()
