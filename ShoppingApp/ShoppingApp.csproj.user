@@ -28,7 +28,7 @@
     <Compile Update="Pages\CheckAndGenerateList.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Pages\CreateList.xaml.cs">
+    <Compile Update="Pages\GenerateList.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Pages\DeleteAndModifyIngredients.xaml.cs">
@@ -63,7 +63,7 @@
     <Page Update="Pages\CheckAndGenerateList.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Pages\CreateList.xaml">
+    <Page Update="Pages\GenerateList.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\DeleteAndModifyIngredients.xaml">

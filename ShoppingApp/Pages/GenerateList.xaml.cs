@@ -19,13 +19,18 @@ namespace ShoppingApp
     /// <summary>
     /// Interaction logic for CreateList.xaml
     /// </summary>
-    public partial class CreateList : UserControl
+    public partial class GenerateList : UserControl
     {
-        public CreateList()
+        public GenerateList()
         {
             InitializeComponent();
 
             DataContext = new GenerateListViewModel();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
