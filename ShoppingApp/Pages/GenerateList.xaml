@@ -12,13 +12,26 @@
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition ></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <!--selected meal-->
-            <local:MealName Grid.Column="0" Grid.Row ="0"  Margin="20,10,20,10" Height="20" Width="100" ></local:MealName>
+            <local:MealName Grid.Column="0" Grid.Row ="0" Margin="20,10,20,10" Height="20" Width="100" ></local:MealName>
+            <!--counter-->
+            <ComboBox Grid.Column="1" Grid.Row ="0" IsEditable="False" IsReadOnly="True" ItemsSource="{Binding MealQuantity}" SelectedItem="{Binding chosenQuantity}"></ComboBox>
             <!--button-->
             <Button Grid.Column="0" Grid.Row="1" Height="100" Width="100" Background="Green" Command="{Binding SaveListCommand}"></Button>
+            <!--list-->
+            <Border Grid.Column="2" Height="200" Width="200" Background="Gray" Margin="10,10,10,10">
+                <ItemsControl ItemsSource="{Binding MealsForShoppingList}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <local:MealsOnTheList/>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </Border>
         </Grid>
     </StackPanel>
 </UserControl>

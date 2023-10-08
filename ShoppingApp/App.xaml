@@ -9,7 +9,6 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Styles/Buttons.xaml"></ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
-
             <DataTemplate DataType="{x:Type view:AddMealViewModel}">
                 <local:AddMeal />
             </DataTemplate>

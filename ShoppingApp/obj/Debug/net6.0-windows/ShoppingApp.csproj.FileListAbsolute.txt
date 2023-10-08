@@ -184,3 +184,5 @@ D:\SISZARP NAUKA\ShoppingListApp\ShoppingApp\obj\Debug\net6.0-windows\Controls\I
 D:\SISZARP NAUKA\ShoppingListApp\ShoppingApp\obj\Debug\net6.0-windows\Controls\IngredientsToModify.baml
 D:\SISZARP NAUKA\ShoppingListApp\ShoppingApp\obj\Debug\net6.0-windows\Pages\GenerateList.g.cs
 D:\SISZARP NAUKA\ShoppingListApp\ShoppingApp\obj\Debug\net6.0-windows\Pages\GenerateList.baml
+D:\SISZARP NAUKA\ShoppingListApp\ShoppingApp\obj\Debug\net6.0-windows\Controls\MealsOnTheList.g.cs
+D:\SISZARP NAUKA\ShoppingListApp\ShoppingApp\obj\Debug\net6.0-windows\Controls\MealsOnTheList.baml

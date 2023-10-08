@@ -8,23 +8,32 @@ using System.Windows.Input;
 
 namespace ShoppingApp.Core
 {
-    public class GenerateListViewModel :BaseViewModel
+    public class GenerateListViewModel : BaseViewModel
     {
-        private List<MealViewModel> MealsForShoppingList { get; set; } = new List<MealViewModel>();
-
-
+        public ObservableCollection<MealViewModel> MealsForShoppingList { get; set; } = new ObservableCollection<MealViewModel>();
+        public int[] MealQuantity { get; set; } = new int[] {1,2,3,4,5,6,7,8,9,10};
+        public int chosenQuantity { get; set; } = 1;
         public GenerateListViewModel()
         {
             ReloadVMTables();
-
             SaveListCommand = new RelayCommand(AddMealToMealList);
         }
-
         private void AddMealToMealList()
         {          
             if(SelectedMeal != null)
-            {
-                MealsForShoppingList.Add(SelectedMeal);
+            {    
+                for(int i = 1; i <= chosenQuantity; i++)
+                {
+                    var temp = MealsForShoppingList.FirstOrDefault(x => x.Id == SelectedMeal.Id);
+                    if (temp != null)
+                    {                      
+                        temp.MealCount++;
+                    }
+                    else 
+                    {
+                        MealsForShoppingList.Add(SelectedMeal);
+                    }                   
+                }         
             }
             ReloadVMTables();
         }

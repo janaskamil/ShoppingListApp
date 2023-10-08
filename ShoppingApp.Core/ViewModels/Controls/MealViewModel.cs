@@ -18,5 +18,7 @@ namespace ShoppingApp.Core
 
         public string MealType { get; set; }
 
+        public int MealCount { get; set; } = 1;
+
     }
 }
