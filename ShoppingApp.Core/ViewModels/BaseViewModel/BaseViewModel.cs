@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace ShoppingApp.Core
@@ -15,10 +10,12 @@ namespace ShoppingApp.Core
         public ObservableCollection<MealViewModel> MealsList { get; set; } = new ObservableCollection<MealViewModel>();
         public ObservableCollection<IngreditenViewModel> IngedientsListVM { get; set; } = new ObservableCollection<IngreditenViewModel>();
         public ObservableCollection<IngredientForMealViewModel> IngredientsForMealVM { get; set; } = new ObservableCollection<IngredientForMealViewModel>();
+        public ObservableCollection<IngredientsToListViewModel> IngredientsToListVM { get; set; } = new ObservableCollection<IngredientsToListViewModel>();
         public virtual MealViewModel SelectedMeal { get; set; }
         public ICommand SaveMealCommand { get; set; }
         public ICommand DeleteMealCommand { get; set; }
-        public ICommand SaveListCommand { get; set; }
+        public ICommand AddMealToListCommand { get; set; }
+        public ICommand GenereteShoppingListCommand { get; set; }
 
         protected void ReloadVMTables()
         {
