@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using ShoppingApp.Core.Helpers;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows.Input;
 
@@ -10,7 +11,8 @@ namespace ShoppingApp.Core
         public ObservableCollection<MealViewModel> MealsList { get; set; } = new ObservableCollection<MealViewModel>();
         public ObservableCollection<IngreditenViewModel> IngedientsListVM { get; set; } = new ObservableCollection<IngreditenViewModel>();
         public ObservableCollection<IngredientForMealViewModel> IngredientsForMealVM { get; set; } = new ObservableCollection<IngredientForMealViewModel>();
-        public ObservableCollection<IngredientsToListViewModel> IngredientsToListVM { get; set; } = new ObservableCollection<IngredientsToListViewModel>();
+        public ObservableCollection<MealViewModel> MealsForShoppingList => DataStore.Instance.MealsForShoppingList;
+        public ObservableCollection<IngredientsToListViewModel> IngredientsToBuy => DataStore.Instance.IngredientsToBuy;
         public virtual MealViewModel SelectedMeal { get; set; }
         public ICommand SaveMealCommand { get; set; }
         public ICommand DeleteMealCommand { get; set; }

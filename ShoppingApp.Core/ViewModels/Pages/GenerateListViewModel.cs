@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShoppingApp.Core.Helpers;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
@@ -10,8 +11,7 @@ using System.Windows.Input;
 namespace ShoppingApp.Core
 {
     public class GenerateListViewModel : BaseViewModel
-    {
-        public ObservableCollection<MealViewModel> MealsForShoppingList { get; set; } = new ObservableCollection<MealViewModel>();
+    {       
         public ObservableCollection<MealViewModel> MealsToChooseFrom { get; set; } = new ObservableCollection<MealViewModel>();
         public int[] MealQuantity { get; set; } = new int[] {1,2,3,4,5,6,7,8,9,10};
         //setting default quanitity to 2 (1 day for 2 people)
@@ -70,7 +70,7 @@ namespace ShoppingApp.Core
                     {              
                         for(int i = 1; i <= meal.MealCount; i++)
                         {
-                            var mealIngredientExistingOnList = IngredientsToListVM.FirstOrDefault(x => x.IngredientId == position.IngredientId && string.Equals(x.Unit, position.Unit, StringComparison.OrdinalIgnoreCase));
+                            var mealIngredientExistingOnList = IngredientsToBuy.FirstOrDefault(x => x.IngredientId == position.IngredientId && string.Equals(x.Unit, position.Unit, StringComparison.OrdinalIgnoreCase));
                             if (mealIngredientExistingOnList == null)
                             {
                                 var newIngredientOnList = new IngredientsToListViewModel
@@ -81,7 +81,7 @@ namespace ShoppingApp.Core
                                     Unit = position.Unit,
                                     Regdate = currentTimestamp
                                 };
-                                IngredientsToListVM.Add(newIngredientOnList);
+                                IngredientsToBuy.Add(newIngredientOnList);
                             }
                             else
                             {
@@ -91,8 +91,6 @@ namespace ShoppingApp.Core
                     }                                     
                 }
             }
-            //Debug stop
-            Console.WriteLine("");
         }
     }
 }

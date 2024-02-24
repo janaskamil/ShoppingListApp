@@ -5,8 +5,6 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ShoppingApp"
              mc:Ignorable="d">
-    <TextBlock
-        Text="CheckandGenerate"
-        Background="Transparent">
-    </TextBlock>
+    <local:ListOfIngredientsToBuy>
+    </local:ListOfIngredientsToBuy>
 </UserControl>

@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using ShoppingApp.Core.Helpers;
 using ShoppingApp.Database;
 using System;
 using System.Collections.Generic;
@@ -20,7 +21,6 @@ namespace ShoppingApp.Core
     {
                 
         private List<IngredientForMealViewModel> IngredientsForMealToReference { get; set; } = new List<IngredientForMealViewModel>();
-
         private MealViewModel? selectedMeal { get; set; }
 
         public override MealViewModel SelectedMeal
