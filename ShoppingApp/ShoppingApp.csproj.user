@@ -51,6 +51,9 @@
     <Page Update="Controls\MealName.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Controls\MealsToChooseFrom.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Controls\MealsOnTheList.xaml">
       <SubType>Designer</SubType>
     </Page>

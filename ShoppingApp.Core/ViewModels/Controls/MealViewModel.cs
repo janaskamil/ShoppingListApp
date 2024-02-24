@@ -10,6 +10,7 @@ namespace ShoppingApp.Core
 {
     public class MealViewModel : BaseViewModel
     {
+        public bool isSelected { get; set; }
         public int Id { get; set; }
 
         public string MealName { get; set; }

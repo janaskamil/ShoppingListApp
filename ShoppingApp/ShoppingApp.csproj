@@ -16,6 +16,9 @@
     <Compile Update="Controls\IngredientsToModify.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Controls\MealsToChooseFrom.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
 
 </Project>

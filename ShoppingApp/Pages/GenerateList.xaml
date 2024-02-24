@@ -18,7 +18,16 @@
                 <ColumnDefinition Width="2*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <!--selected meal-->
-            <local:MealName Grid.Column="0" Grid.Row ="0" Margin="20,10,20,10" Height="20" Width="100" ></local:MealName>
+            <Border Grid.Column="0" Height="200" Width="200" Background="White" Margin="10,10,10,10">
+                <ItemsControl ItemsSource="{Binding MealsToChooseFrom}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <local:MealsToChooseFrom/>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </Border>
+            <!--<local:MealName Grid.Column="0" Grid.Row ="0" Margin="20,10,20,10" Height="20" Width="100" ></local:MealName>-->
             <!--counter-->
             <ComboBox Grid.Column="0" Grid.Row ="1" Margin="20,10,20,10" IsEditable="False" IsReadOnly="True" ItemsSource="{Binding MealQuantity}" SelectedItem="{Binding chosenQuantity}"></ComboBox>
             <!--button-->

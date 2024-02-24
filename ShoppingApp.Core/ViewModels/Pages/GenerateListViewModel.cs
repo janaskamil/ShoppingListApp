@@ -12,6 +12,7 @@ namespace ShoppingApp.Core
     public class GenerateListViewModel : BaseViewModel
     {
         public ObservableCollection<MealViewModel> MealsForShoppingList { get; set; } = new ObservableCollection<MealViewModel>();
+        public ObservableCollection<MealViewModel> MealsToChooseFrom { get; set; } = new ObservableCollection<MealViewModel>();
         public int[] MealQuantity { get; set; } = new int[] {1,2,3,4,5,6,7,8,9,10};
         //setting default quanitity to 2 (1 day for 2 people)
         public int chosenQuantity { get; set; } = 2;
@@ -22,28 +23,37 @@ namespace ShoppingApp.Core
             ReloadVMTables();
             AddMealToListCommand = new RelayCommand(AddMealToMealsForShoppingList);
             GenereteShoppingListCommand = new RelayCommand(GenerateShoppingList);
+            //create list of meals to choose from what to add into shoppinglist
+            foreach(var item in MealsList)
+            {
+                MealsToChooseFrom.Add(item);
+                item.isSelected = false;
+            }
         }
         private void AddMealToMealsForShoppingList()
-        {          
+        {        
+            var isSelectedMeal = MealsToChooseFrom.FirstOrDefault(x => x.isSelected);
             //if there is no selected meal nothing will save on the list
-            if(SelectedMeal != null)
+            if(isSelectedMeal != null)
             {    
                 //creating 1 entity with quantity of that meal to multiply ingredients later
                 for(int i = 1; i <= chosenQuantity; i++)
                 {
                     //adding count to existing meal 
-                    var temp = MealsForShoppingList.FirstOrDefault(x => x.Id == SelectedMeal.Id);
+                    var temp = MealsForShoppingList.FirstOrDefault(x => x.Id == isSelectedMeal.Id);
                     if (temp != null)
                     {                      
                         temp.MealCount++;
                     }
                     else 
                     {
-                        MealsForShoppingList.Add(SelectedMeal);
-                    }                   
-                }         
+                        MealsForShoppingList.Add(isSelectedMeal);
+                    }                
+                }
+                //unselecting meal
+                isSelectedMeal.isSelected = false;
             }
-            ReloadVMTables();
+            ReloadVMTables();           
             chosenQuantity = 2;
         }
         private void GenerateShoppingList()
