@@ -4,8 +4,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ShoppingApp">
-    <StackPanel Orientation="Horizontal">
-        <ListView ItemsSource="{Binding IngredientsToBuy}" DisplayMemberPath="IngredientName"  Height="300" Width="198"></ListView>
-        <ListView ItemsSource="{Binding IngredientsToBuy}" DisplayMemberPath="Quantity" Height="300" Width="198"></ListView>
-    </StackPanel>
+    <DataGrid ItemsSource="{Binding IngredientsToBuy}" AutoGenerateColumns="False" GridLinesVisibility="None" Width="600" Height="1000" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserAddRows="False">
+        <DataGrid.Columns>
+            <DataGridTextColumn Header="Ingredient" Binding="{Binding IngredientName}" Width="2*"></DataGridTextColumn>
+            <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity}" Width="*"></DataGridTextColumn>
+            <DataGridTextColumn Header="Unit" Binding="{Binding Unit}" Width="*"></DataGridTextColumn>
+        </DataGrid.Columns>
+    </DataGrid>
 </UserControl>
