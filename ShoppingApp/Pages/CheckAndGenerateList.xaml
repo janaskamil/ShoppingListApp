@@ -5,6 +5,17 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ShoppingApp"
              mc:Ignorable="d">
-    <local:ListOfIngredientsToBuy>
-    </local:ListOfIngredientsToBuy>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <local:ListOfIngredientsToBuy Grid.Row="0" Height="900" Width="500">
+        </local:ListOfIngredientsToBuy>
+        <StackPanel Grid.Row ="1" Width="500" Orientation ="Horizontal">
+            <Button Height="100" Width="250" Background="Green" VerticalAlignment="Center" HorizontalAlignment="Center"></Button>
+            <Button Height="100" Width="250" Background="Red" VerticalAlignment="Center" HorizontalAlignment="Center"></Button>
+        </StackPanel>
+        
+    </Grid>
 </UserControl>
