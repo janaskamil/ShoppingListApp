@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace ShoppingApp.Core
 {
     public class IngreditenViewModel : BaseViewModel
-    {
+    {       
         public bool isSelected { get; set; }
         public int Id { get; set; }
         public string Name { get; set; }

@@ -10,15 +10,12 @@ namespace ShoppingApp.Core
 {
     public class MealViewModel : BaseViewModel
     {
+        public bool isChecked { get; set; }
         public bool isSelected { get; set; }
         public int Id { get; set; }
-
         public string MealName { get; set; }
-
         public string MealRecipe { get; set; }
-
         public string MealType { get; set; }
-
         public int MealCount { get; set; } = 1;
 
     }

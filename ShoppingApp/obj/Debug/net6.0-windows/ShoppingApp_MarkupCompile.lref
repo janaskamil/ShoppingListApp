@@ -1,8 +1,9 @@
-﻿
+﻿D:\SISZARP NAUKA\ShoppingListApp\ShoppingApp\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
 FD:\SISZARP NAUKA\ShoppingListApp\ShoppingApp\App.xaml;;
 FD:\SISZARP NAUKA\ShoppingListApp\ShoppingApp\Controls\IngredientsList.xaml;;
 FD:\SISZARP NAUKA\ShoppingListApp\ShoppingApp\Controls\IngredientsToDelete.xaml;;
 FD:\SISZARP NAUKA\ShoppingListApp\ShoppingApp\Controls\IngredientsToModify.xaml;;
+FD:\SISZARP NAUKA\ShoppingListApp\ShoppingApp\Controls\ListOfIngredientsToBuy.xaml;;
 FD:\SISZARP NAUKA\ShoppingListApp\ShoppingApp\Controls\MealName.xaml;;
 FD:\SISZARP NAUKA\ShoppingListApp\ShoppingApp\Controls\MealRecipe.xaml;;
 FD:\SISZARP NAUKA\ShoppingListApp\ShoppingApp\Controls\MealsOnTheList.xaml;;
@@ -15,5 +16,4 @@ FD:\SISZARP NAUKA\ShoppingListApp\ShoppingApp\Pages\DeleteAndModifyIngredients.x
 FD:\SISZARP NAUKA\ShoppingListApp\ShoppingApp\Pages\GenerateList.xaml;;
 FD:\SISZARP NAUKA\ShoppingListApp\ShoppingApp\Pages\MainPage.xaml;;
 FD:\SISZARP NAUKA\ShoppingListApp\ShoppingApp\Styles\Buttons.xaml;;
-FD:\SISZARP NAUKA\ShoppingListApp\ShoppingApp\Controls\ListOfIngredientsToBuy.xaml;;
 

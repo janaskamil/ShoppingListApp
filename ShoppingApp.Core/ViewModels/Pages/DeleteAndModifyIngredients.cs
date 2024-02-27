@@ -100,7 +100,7 @@ namespace ShoppingApp.Core
                 var checkForExistingIngredientName = DatabaseCreationTool.MyDatabase.Ingredients.FirstOrDefault(x => x.Name.Equals(AddStringSelectedIngredient));
                 var updatedIngredient = DatabaseCreationTool.MyDatabase.Ingredients.FirstOrDefault(x => x.Id == SelectedIngredientToModify.Id);
 
-                if (checkForExistingIngredientName == null)
+                if (checkForExistingIngredientName == null && AddStringSelectedIngredient != null)
                 {            
                     updatedIngredient.Name = AddStringSelectedIngredient;
                     //save changes to the database

@@ -10,6 +10,7 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
+        <CheckBox Grid.Column="0" IsChecked="{Binding isChecked}"></CheckBox>
         <TextBlock Grid.Column="1" Text="{Binding MealName}"></TextBlock>
         <TextBox Grid.Column="2" Text="{Binding MealCount}"></TextBox>
     </Grid>

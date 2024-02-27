@@ -23,6 +23,9 @@ namespace ShoppingApp.Core
             ReloadVMTables();
             AddMealToListCommand = new RelayCommand(AddMealToMealsForShoppingList);
             GenereteShoppingListCommand = new RelayCommand(GenerateShoppingList);
+            DeleteShoppingListCommand = new RelayCommand(DeleteShoppingList);
+            DeleteShoppingListWithIngredientsCommand = new RelayCommand(DeleteShoppingListWithIngredients);
+
             //create list of meals to choose from what to add into shoppinglist
             foreach(var item in MealsList)
             {
@@ -91,6 +94,23 @@ namespace ShoppingApp.Core
                     }                                     
                 }
             }
+        }
+
+        private void DeleteShoppingListWithIngredients()
+        {
+            IngredientsToBuy.Clear();
+            MealsForShoppingList.Clear();
+            ReloadVMTables();
+        }
+
+        private void DeleteShoppingList()
+        {
+            var mealFromList = MealsForShoppingList.Where(x => x.isChecked).ToList();
+            foreach(var meals in mealFromList)
+            {
+                MealsForShoppingList.Remove(meals);
+            }
+
         }
     }
 }

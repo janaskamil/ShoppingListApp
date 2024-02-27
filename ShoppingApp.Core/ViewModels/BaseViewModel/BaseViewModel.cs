@@ -18,6 +18,8 @@ namespace ShoppingApp.Core
         public ICommand DeleteMealCommand { get; set; }
         public ICommand AddMealToListCommand { get; set; }
         public ICommand GenereteShoppingListCommand { get; set; }
+        public ICommand DeleteShoppingListCommand { get; set; }
+        public ICommand DeleteShoppingListWithIngredientsCommand { get; set; }
 
         protected void ReloadVMTables()
         {
