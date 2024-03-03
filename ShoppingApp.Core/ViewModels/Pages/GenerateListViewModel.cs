@@ -25,7 +25,6 @@ namespace ShoppingApp.Core
             GenereteShoppingListCommand = new RelayCommand(GenerateShoppingList);
             DeleteShoppingListCommand = new RelayCommand(DeleteShoppingList);
             DeleteShoppingListWithIngredientsCommand = new RelayCommand(DeleteShoppingListWithIngredients);
-
             //create list of meals to choose from what to add into shoppinglist
             foreach(var item in MealsList)
             {

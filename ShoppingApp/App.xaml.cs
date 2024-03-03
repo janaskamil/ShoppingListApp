@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using ShoppingApp.Database;
 using ShoppingApp.Core;
+using OfficeOpenXml;
 
 namespace ShoppingApp
 {
@@ -21,6 +22,8 @@ namespace ShoppingApp
             database.Database.EnsureCreated();
 
             DatabaseCreationTool.MyDatabase = database;
+
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
         }
     }
 }

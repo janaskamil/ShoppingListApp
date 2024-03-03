@@ -190,3 +190,15 @@ D:\SISZARP NAUKA\ShoppingListApp\ShoppingApp\obj\Debug\net6.0-windows\Controls\M
 D:\SISZARP NAUKA\ShoppingListApp\ShoppingApp\obj\Debug\net6.0-windows\Controls\MealsToChooseFrom.baml
 D:\SISZARP NAUKA\ShoppingListApp\ShoppingApp\obj\Debug\net6.0-windows\Controls\ListOfIngredientsToBuy.g.cs
 D:\SISZARP NAUKA\ShoppingListApp\ShoppingApp\obj\Debug\net6.0-windows\Controls\ListOfIngredientsToBuy.baml
+D:\SISZARP NAUKA\ShoppingListApp\ShoppingApp\bin\Debug\net6.0-windows\EPPlus.dll
+D:\SISZARP NAUKA\ShoppingListApp\ShoppingApp\bin\Debug\net6.0-windows\EPPlus.Interfaces.dll
+D:\SISZARP NAUKA\ShoppingListApp\ShoppingApp\bin\Debug\net6.0-windows\EPPlus.System.Drawing.dll
+D:\SISZARP NAUKA\ShoppingListApp\ShoppingApp\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.dll
+D:\SISZARP NAUKA\ShoppingListApp\ShoppingApp\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.FileExtensions.dll
+D:\SISZARP NAUKA\ShoppingListApp\ShoppingApp\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.Json.dll
+D:\SISZARP NAUKA\ShoppingListApp\ShoppingApp\bin\Debug\net6.0-windows\Microsoft.Extensions.FileProviders.Abstractions.dll
+D:\SISZARP NAUKA\ShoppingListApp\ShoppingApp\bin\Debug\net6.0-windows\Microsoft.Extensions.FileProviders.Physical.dll
+D:\SISZARP NAUKA\ShoppingListApp\ShoppingApp\bin\Debug\net6.0-windows\Microsoft.Extensions.FileSystemGlobbing.dll
+D:\SISZARP NAUKA\ShoppingListApp\ShoppingApp\bin\Debug\net6.0-windows\Microsoft.IO.RecyclableMemoryStream.dll
+D:\SISZARP NAUKA\ShoppingListApp\ShoppingApp\bin\Debug\net6.0-windows\System.Security.Cryptography.Pkcs.dll
+D:\SISZARP NAUKA\ShoppingListApp\ShoppingApp\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll

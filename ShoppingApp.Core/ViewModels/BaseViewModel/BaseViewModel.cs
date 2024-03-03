@@ -14,12 +14,16 @@ namespace ShoppingApp.Core
         public ObservableCollection<MealViewModel> MealsForShoppingList => DataStore.Instance.MealsForShoppingList;
         public ObservableCollection<IngredientsToListViewModel> IngredientsToBuy => DataStore.Instance.IngredientsToBuy;
         public virtual MealViewModel SelectedMeal { get; set; }
+        //public static string xlsFileName = string.Empty;
+        protected static string xlsFilePath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments); 
+        //public string xlsFile = Path.Combine(xlsFilePath, xlsFileName);
         public ICommand SaveMealCommand { get; set; }
         public ICommand DeleteMealCommand { get; set; }
         public ICommand AddMealToListCommand { get; set; }
         public ICommand GenereteShoppingListCommand { get; set; }
         public ICommand DeleteShoppingListCommand { get; set; }
         public ICommand DeleteShoppingListWithIngredientsCommand { get; set; }
+        public ICommand CreateXls { get; set; }
 
         protected void ReloadVMTables()
         {

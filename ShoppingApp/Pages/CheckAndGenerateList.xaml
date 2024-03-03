@@ -13,7 +13,7 @@
         <local:ListOfIngredientsToBuy Grid.Row="0" Height="900" Width="500">
         </local:ListOfIngredientsToBuy>
         <StackPanel Grid.Row ="1" Width="500" Orientation ="Horizontal">
-            <Button Height="100" Width="250" Background="Green" VerticalAlignment="Center" HorizontalAlignment="Center"></Button>
+            <Button Height="100" Width="250" Background="Green" VerticalAlignment="Center" HorizontalAlignment="Center" Command="{Binding CreateXls}"></Button>
             <Button Height="100" Width="250" Background="Red" VerticalAlignment="Center" HorizontalAlignment="Center"></Button>
         </StackPanel>
         
