@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "js5gjvoRKjpshSqDyZQWQP38nw56tGBji6U4gJg1dvlGpj9tpC1uooxdDJPySwD12ajujDLItIIHfyEuQIpmTQ==",
+  "dgSpecHash": "z1jPXFTKFeiI++OZwubTLFcr+GToPtZ29gU91BjaHyxNbgw04dRZL1O60bz0/ZHsmNCdOVSW8k1MXdpK6vv/Hw==",
   "success": true,
-  "projectFilePath": "D:\\SISZARP NAUKA\\ShoppingListApp\\ShoppingApp.Database\\ShoppingApp.Database.csproj",
+  "projectFilePath": "D:\\PROJKETY\\ShoppingListApp\\ShoppingApp.Database\\ShoppingApp.Database.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kjanas\\.nuget\\packages\\microsoft.data.sqlite.core\\7.0.5\\microsoft.data.sqlite.core.7.0.5.nupkg.sha512",
     "C:\\Users\\kjanas\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.5\\microsoft.entityframeworkcore.7.0.5.nupkg.sha512",

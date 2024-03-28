@@ -21,7 +21,8 @@ namespace ShoppingApp.Core
         private void GenerateXLS()
         {
             //declare name
-            string xlsFileName = "test.xlsx";
+            DateTime now = DateTime.Now;
+            string xlsFileName = now.ToString("yyyyMMddHHmmss") + ".xlsx";
             //declare final path
             string xlsFinalPath = Path.Combine(xlsFilePath, xlsFileName);
             int rowIngredient = 2;

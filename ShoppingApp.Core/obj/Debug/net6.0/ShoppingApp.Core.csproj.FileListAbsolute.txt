@@ -32,3 +32,20 @@ D:\SISZARP NAUKA\ShoppingListApp\ShoppingApp.Core\obj\Debug\net6.0\ShoppingApp.C
 D:\SISZARP NAUKA\ShoppingListApp\ShoppingApp.Core\obj\Debug\net6.0\refint\ShoppingApp.Core.dll
 D:\SISZARP NAUKA\ShoppingListApp\ShoppingApp.Core\obj\Debug\net6.0\ShoppingApp.Core.pdb
 D:\SISZARP NAUKA\ShoppingListApp\ShoppingApp.Core\obj\Debug\net6.0\ref\ShoppingApp.Core.dll
+D:\PROJKETY\ShoppingListApp\ShoppingApp.Core\bin\Debug\net6.0\ShoppingApp.Core.deps.json
+D:\PROJKETY\ShoppingListApp\ShoppingApp.Core\bin\Debug\net6.0\ShoppingApp.Core.dll
+D:\PROJKETY\ShoppingListApp\ShoppingApp.Core\bin\Debug\net6.0\ShoppingApp.Core.pdb
+D:\PROJKETY\ShoppingListApp\ShoppingApp.Core\bin\Debug\net6.0\ShoppingApp.Database.dll
+D:\PROJKETY\ShoppingListApp\ShoppingApp.Core\bin\Debug\net6.0\ShoppingApp.Database.pdb
+D:\PROJKETY\ShoppingListApp\ShoppingApp.Core\obj\Debug\net6.0\ShoppingApp.Core.csproj.AssemblyReference.cache
+D:\PROJKETY\ShoppingListApp\ShoppingApp.Core\obj\Debug\net6.0\ShoppingApp.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\PROJKETY\ShoppingListApp\ShoppingApp.Core\obj\Debug\net6.0\ShoppingApp.Core.AssemblyInfoInputs.cache
+D:\PROJKETY\ShoppingListApp\ShoppingApp.Core\obj\Debug\net6.0\ShoppingApp.Core.AssemblyInfo.cs
+D:\PROJKETY\ShoppingListApp\ShoppingApp.Core\obj\Debug\net6.0\ShoppingApp.Core.csproj.CoreCompileInputs.cache
+D:\PROJKETY\ShoppingListApp\ShoppingApp.Core\obj\Debug\net6.0\ShoppingApp.Core.csproj.Fody.CopyLocal.cache
+D:\PROJKETY\ShoppingListApp\ShoppingApp.Core\obj\Debug\net6.0\ShoppingApp.Core.csproj.Fody.RuntimeCopyLocal.cache
+D:\PROJKETY\ShoppingListApp\ShoppingApp.Core\obj\Debug\net6.0\ShoppingApp.Core.csproj.CopyComplete
+D:\PROJKETY\ShoppingListApp\ShoppingApp.Core\obj\Debug\net6.0\ShoppingApp.Core.dll
+D:\PROJKETY\ShoppingListApp\ShoppingApp.Core\obj\Debug\net6.0\refint\ShoppingApp.Core.dll
+D:\PROJKETY\ShoppingListApp\ShoppingApp.Core\obj\Debug\net6.0\ShoppingApp.Core.pdb
+D:\PROJKETY\ShoppingListApp\ShoppingApp.Core\obj\Debug\net6.0\ref\ShoppingApp.Core.dll

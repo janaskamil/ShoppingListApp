@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1fFnDGQtlXXOdXX/AtwAsvRO3MmcKT0BnOrzNf5LXDuhaFdQsOQXYPtui+cSeT0vwtpAHCbjnNzZFk0pkbz+OQ==",
+  "dgSpecHash": "IVZTVdl48e6uzYV5OutnIRU/ususYYMnZRLMo4pzFYc4FUjp9YOe8yGFy3PTHljxax89AAgBJweQTEBX+Hg+dw==",
   "success": true,
-  "projectFilePath": "D:\\SISZARP NAUKA\\ShoppingListApp\\ShoppingApp.Core\\ShoppingApp.Core.csproj",
+  "projectFilePath": "D:\\PROJKETY\\ShoppingListApp\\ShoppingApp.Core\\ShoppingApp.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kjanas\\.nuget\\packages\\epplus\\7.0.9\\epplus.7.0.9.nupkg.sha512",
     "C:\\Users\\kjanas\\.nuget\\packages\\epplus.interfaces\\6.1.1\\epplus.interfaces.6.1.1.nupkg.sha512",
