@@ -50,12 +50,11 @@ namespace ShoppingApp.Core
                 worksheet2.Cells[1, 3].Value = "RECIPE";
                 foreach (var meal in MealsForShoppingList)
                 {
-                    worksheet2.Cells[rowIngredient, 1].Value = meal.MealName;
-                    worksheet2.Cells[rowIngredient, 2].Value = meal.MealCount;
-                    worksheet2.Cells[rowIngredient, 3].Value = meal.MealRecipe;
+                    worksheet2.Cells[rowMeal, 1].Value = meal.MealName;
+                    worksheet2.Cells[rowMeal, 2].Value = meal.MealCount;
+                    worksheet2.Cells[rowMeal, 3].Value = meal.MealRecipe;
                     rowMeal += 1;
                 }
-
                 package.Save();
             }
 

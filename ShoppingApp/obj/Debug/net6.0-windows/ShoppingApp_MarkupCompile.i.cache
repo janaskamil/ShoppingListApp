@@ -16,5 +16,5 @@ D:\PROJKETY\ShoppingListApp\ShoppingApp\App.xaml
 2261496784377
 Controls\IngredientsList.xaml;Controls\IngredientsToDelete.xaml;Controls\IngredientsToModify.xaml;Controls\ListOfIngredientsToBuy.xaml;Controls\MealName.xaml;Controls\MealRecipe.xaml;Controls\MealsOnTheList.xaml;Controls\MealsToChooseFrom.xaml;Controls\MealType.xaml;MainWindow.xaml;Pages\AddMeal.xaml;Pages\CheckAndGenerateList.xaml;Pages\DeleteAndModifyIngredients.xaml;Pages\GenerateList.xaml;Pages\MainPage.xaml;Styles\Buttons.xaml;
 
-False
+True
 
