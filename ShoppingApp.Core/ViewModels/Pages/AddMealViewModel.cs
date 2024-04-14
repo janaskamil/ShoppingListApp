@@ -195,8 +195,8 @@ namespace ShoppingApp.Core
             }
         }
 
-        private IngreditenViewModel? selectedIngredient1ForMeal { get; set; }
-        public IngreditenViewModel SelectedIngredient1ForMeal
+        private IngredientViewModel? selectedIngredient1ForMeal { get; set; }
+        public IngredientViewModel SelectedIngredient1ForMeal
         {
             get { return selectedIngredient1ForMeal; }
             set
@@ -208,8 +208,8 @@ namespace ShoppingApp.Core
 
             }
         }
-        private IngreditenViewModel? selectedIngredient2ForMeal { get; set; }
-        public IngreditenViewModel SelectedIngredient2ForMeal
+        private IngredientViewModel? selectedIngredient2ForMeal { get; set; }
+        public IngredientViewModel SelectedIngredient2ForMeal
         {
             get { return selectedIngredient2ForMeal; }
             set
@@ -221,8 +221,8 @@ namespace ShoppingApp.Core
 
             }
         }
-        private IngreditenViewModel? selectedIngredient3ForMeal { get; set; }
-        public IngreditenViewModel SelectedIngredient3ForMeal
+        private IngredientViewModel? selectedIngredient3ForMeal { get; set; }
+        public IngredientViewModel SelectedIngredient3ForMeal
         {
             get { return selectedIngredient3ForMeal; }
             set
@@ -234,8 +234,8 @@ namespace ShoppingApp.Core
 
             }
         }
-        private IngreditenViewModel? selectedIngredient4ForMeal { get; set; }
-        public IngreditenViewModel SelectedIngredient4ForMeal
+        private IngredientViewModel? selectedIngredient4ForMeal { get; set; }
+        public IngredientViewModel SelectedIngredient4ForMeal
         {
             get { return selectedIngredient4ForMeal; }
             set
@@ -247,8 +247,8 @@ namespace ShoppingApp.Core
 
             }
         }
-        private IngreditenViewModel? selectedIngredient5ForMeal { get; set; }
-        public IngreditenViewModel SelectedIngredient5ForMeal
+        private IngredientViewModel? selectedIngredient5ForMeal { get; set; }
+        public IngredientViewModel SelectedIngredient5ForMeal
         {
             get { return selectedIngredient5ForMeal; }
             set
@@ -260,8 +260,8 @@ namespace ShoppingApp.Core
 
             }
         }
-        private IngreditenViewModel? selectedIngredient6ForMeal { get; set; }
-        public IngreditenViewModel SelectedIngredient6ForMeal
+        private IngredientViewModel? selectedIngredient6ForMeal { get; set; }
+        public IngredientViewModel SelectedIngredient6ForMeal
         {
             get { return selectedIngredient6ForMeal; }
             set
@@ -273,8 +273,8 @@ namespace ShoppingApp.Core
 
             }
         }
-        private IngreditenViewModel? selectedIngredient7ForMeal { get; set; }
-        public IngreditenViewModel SelectedIngredient7ForMeal
+        private IngredientViewModel? selectedIngredient7ForMeal { get; set; }
+        public IngredientViewModel SelectedIngredient7ForMeal
         {
             get { return selectedIngredient7ForMeal; }
             set
@@ -286,8 +286,8 @@ namespace ShoppingApp.Core
 
             }
         }
-        private IngreditenViewModel? selectedIngredient8ForMeal { get; set; }
-        public IngreditenViewModel SelectedIngredient8ForMeal
+        private IngredientViewModel? selectedIngredient8ForMeal { get; set; }
+        public IngredientViewModel SelectedIngredient8ForMeal
         {
             get { return selectedIngredient8ForMeal; }
             set
@@ -299,8 +299,8 @@ namespace ShoppingApp.Core
 
             }
         }
-        private IngreditenViewModel? selectedIngredient9ForMeal { get; set; }
-        public IngreditenViewModel SelectedIngredient9ForMeal
+        private IngredientViewModel? selectedIngredient9ForMeal { get; set; }
+        public IngredientViewModel SelectedIngredient9ForMeal
         {
             get { return selectedIngredient9ForMeal; }
             set
@@ -312,8 +312,8 @@ namespace ShoppingApp.Core
 
             }
         }
-        private IngreditenViewModel? selectedIngredient10ForMeal { get; set; }
-        public IngreditenViewModel SelectedIngredient10ForMeal
+        private IngredientViewModel? selectedIngredient10ForMeal { get; set; }
+        public IngredientViewModel SelectedIngredient10ForMeal
         {
             get { return selectedIngredient10ForMeal; }
             set
@@ -325,8 +325,8 @@ namespace ShoppingApp.Core
 
             }
         }
-        private IngreditenViewModel? selectedIngredient11ForMeal { get; set; }
-        public IngreditenViewModel SelectedIngredient11ForMeal
+        private IngredientViewModel? selectedIngredient11ForMeal { get; set; }
+        public IngredientViewModel SelectedIngredient11ForMeal
         {
             get { return selectedIngredient11ForMeal; }
             set
@@ -338,8 +338,8 @@ namespace ShoppingApp.Core
 
             }
         }
-        private IngreditenViewModel? selectedIngredient12ForMeal { get; set; }
-        public IngreditenViewModel SelectedIngredient12ForMeal
+        private IngredientViewModel? selectedIngredient12ForMeal { get; set; }
+        public IngredientViewModel SelectedIngredient12ForMeal
         {
             get { return selectedIngredient12ForMeal; }
             set
@@ -351,8 +351,8 @@ namespace ShoppingApp.Core
 
             }
         }
-        private IngreditenViewModel? selectedIngredient13ForMeal { get; set; }
-        public IngreditenViewModel SelectedIngredient13ForMeal
+        private IngredientViewModel? selectedIngredient13ForMeal { get; set; }
+        public IngredientViewModel SelectedIngredient13ForMeal
         {
             get { return selectedIngredient13ForMeal; }
             set
@@ -364,8 +364,8 @@ namespace ShoppingApp.Core
 
             }
         }
-        private IngreditenViewModel? selectedIngredient14ForMeal { get; set; }
-        public IngreditenViewModel SelectedIngredient14ForMeal
+        private IngredientViewModel? selectedIngredient14ForMeal { get; set; }
+        public IngredientViewModel SelectedIngredient14ForMeal
         {
             get { return selectedIngredient14ForMeal; }
             set
@@ -377,8 +377,8 @@ namespace ShoppingApp.Core
 
             }
         }
-        private IngreditenViewModel? selectedIngredient15ForMeal { get; set; }
-        public IngreditenViewModel SelectedIngredient15ForMeal
+        private IngredientViewModel? selectedIngredient15ForMeal { get; set; }
+        public IngredientViewModel SelectedIngredient15ForMeal
         {
             get { return selectedIngredient15ForMeal; }
             set
@@ -832,7 +832,7 @@ namespace ShoppingApp.Core
 
                     countedIngredientsInsertId += 1;
                     //adding NEW ingredient to the Ingredients local + database
-                    var newIngredient = new IngreditenViewModel
+                    var newIngredient = new IngredientViewModel
                     {
                         Id = countedIngredientsInsertId,
                         Name = saveAddString
@@ -900,7 +900,7 @@ namespace ShoppingApp.Core
 
                     countedIngredientsInsertId += 1;
 
-                    var newIngredient = new IngreditenViewModel
+                    var newIngredient = new IngredientViewModel
                     {
                         Id = countedIngredientsInsertId,
                         Name = saveAddString  
@@ -1522,7 +1522,7 @@ namespace ShoppingApp.Core
             }
         }
         //--------------------------------------------------//
-        private string? GetStringIngredientForMeal(int tempId, IngreditenViewModel selectedIngredient, string addString)
+        private string? GetStringIngredientForMeal(int tempId, IngredientViewModel selectedIngredient, string addString)
         {
             if (selectedMeal != null && selectedIngredient != null)
             {
@@ -1542,7 +1542,7 @@ namespace ShoppingApp.Core
                 return addString;
             }
         }
-        private string? SetStringIngredientForMeal(int tempId, IngreditenViewModel selectedIngredient, string addString, string value)
+        private string? SetStringIngredientForMeal(int tempId, IngredientViewModel selectedIngredient, string addString, string value)
         {
             if (selectedMeal != null)
             {
@@ -1591,7 +1591,7 @@ namespace ShoppingApp.Core
             addString = value;
             return addString;
         }
-        private double? GetQuantityIngredientForMeal(int tempId, IngreditenViewModel selectedIngredient, double? addQuantity)
+        private double? GetQuantityIngredientForMeal(int tempId, IngredientViewModel selectedIngredient, double? addQuantity)
         {
             //if there is selected meal
             if (selectedMeal != null)
@@ -1622,7 +1622,7 @@ namespace ShoppingApp.Core
             else
                 return null;
         }
-        private double? SetQuantityIngredientForMeal(int tempId, IngreditenViewModel selectedIngredient, double? addQuantity, double? value)
+        private double? SetQuantityIngredientForMeal(int tempId, IngredientViewModel selectedIngredient, double? addQuantity, double? value)
         {
             //if there is selected meal
             if (selectedMeal != null)
@@ -1649,7 +1649,7 @@ namespace ShoppingApp.Core
             }
             return null;
         }
-        private string GetUnitIngredientForMeal(int tempId, IngreditenViewModel selectedIngredient, string AddUnit)
+        private string GetUnitIngredientForMeal(int tempId, IngredientViewModel selectedIngredient, string AddUnit)
         {
             //if there is selected meal
             if (selectedMeal != null)
@@ -1681,7 +1681,7 @@ namespace ShoppingApp.Core
                 return "";
         }
 
-        private string SetUnitIngredientForMeal(int tempId, IngreditenViewModel selectedIngredient, string AddUnit, string value)
+        private string SetUnitIngredientForMeal(int tempId, IngredientViewModel selectedIngredient, string AddUnit, string value)
         {
             //if there is selected meal
             if (selectedMeal != null)

@@ -11,9 +11,9 @@ namespace ShoppingApp.Core
 {
     public class DeleteAndModifyIngredients : BaseViewModel
     {
-        public ObservableCollection<IngreditenViewModel> UnusedIngredients { get; set; } = new ObservableCollection<IngreditenViewModel>();
-        public ObservableCollection<IngreditenViewModel> UsedIngredients { get; set; } = new ObservableCollection<IngreditenViewModel>();
-        public IngreditenViewModel SelectedIngredientToModify { get; set; }
+        public ObservableCollection<IngredientViewModel> UnusedIngredients { get; set; } = new ObservableCollection<IngredientViewModel>();
+        public ObservableCollection<IngredientViewModel> UsedIngredients { get; set; } = new ObservableCollection<IngredientViewModel>();
+        public IngredientViewModel SelectedIngredientToModify { get; set; }
         public ICommand DeleteIngredients { get; set; }
         public ICommand UpdateIngredient { get; set; }
 
@@ -53,7 +53,7 @@ namespace ShoppingApp.Core
                                          select ingredient;
             foreach (var ing in unusedIngredientsQuery)
             {
-                UnusedIngredients.Add(new IngreditenViewModel
+                UnusedIngredients.Add(new IngredientViewModel
                 {
                     isSelected = false,
                     Id = ing.Id,
@@ -67,7 +67,7 @@ namespace ShoppingApp.Core
                                        select ingredient;
             foreach (var ing in usedIngredientsQuery)
             {
-                UsedIngredients.Add(new IngreditenViewModel
+                UsedIngredients.Add(new IngredientViewModel
                 {
                     isSelected = false,
                     Id = ing.Id,

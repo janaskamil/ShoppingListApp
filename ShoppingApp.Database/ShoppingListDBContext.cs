@@ -14,6 +14,7 @@ namespace ShoppingApp.Database
         public DbSet<Meal> Meals { get; set; }
         public DbSet<Ingredient> Ingredients { get; set; }
         public DbSet<IngredientForMeal> IngredientForMeal { get; set; }
+        public DbSet<Items> Items { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

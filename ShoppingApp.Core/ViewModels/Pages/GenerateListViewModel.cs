@@ -62,6 +62,13 @@ namespace ShoppingApp.Core
         {
             //declaring moment of list generation
             DateTime currentTimestamp = DateTime.Now;
+            //checking if list already exists - if not, check datetime - if it is use existing
+            if (IngredientsToBuy.Count() > 0)
+            {
+                var timeCheck = IngredientsToBuy.FirstOrDefault();
+                timeCheck.Regdate = currentTimestamp;
+            }
+            
             //adding ingredient to shopping list
             foreach (var meal in MealsForShoppingList)
             {               

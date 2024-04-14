@@ -9,7 +9,7 @@ namespace ShoppingApp.Core
     {
         public event PropertyChangedEventHandler PropertyChanged = (sender, e) => { };
         public ObservableCollection<MealViewModel> MealsList { get; set; } = new ObservableCollection<MealViewModel>();
-        public ObservableCollection<IngreditenViewModel> IngedientsListVM { get; set; } = new ObservableCollection<IngreditenViewModel>();
+        public ObservableCollection<IngredientViewModel> IngedientsListVM { get; set; } = new ObservableCollection<IngredientViewModel>();
         public ObservableCollection<IngredientForMealViewModel> IngredientsForMealVM { get; set; } = new ObservableCollection<IngredientForMealViewModel>();
         public ObservableCollection<MealViewModel> MealsForShoppingList => DataStore.Instance.MealsForShoppingList;
         public ObservableCollection<IngredientsToListViewModel> IngredientsToBuy => DataStore.Instance.IngredientsToBuy;
@@ -24,6 +24,7 @@ namespace ShoppingApp.Core
         public ICommand DeleteShoppingListCommand { get; set; }
         public ICommand DeleteShoppingListWithIngredientsCommand { get; set; }
         public ICommand CreateXls { get; set; }
+        public ICommand AddItems { get; set; }
 
         protected void ReloadVMTables()
         {
@@ -42,7 +43,7 @@ namespace ShoppingApp.Core
             }
             foreach (var ingredient in DatabaseCreationTool.MyDatabase.Ingredients.ToList())
             {
-                IngedientsListVM.Add(new IngreditenViewModel
+                IngedientsListVM.Add(new IngredientViewModel
                 {
                     Id = ingredient.Id,
                     Name = ingredient.Name

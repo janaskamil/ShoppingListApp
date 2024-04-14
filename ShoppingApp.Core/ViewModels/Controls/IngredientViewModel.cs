@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ShoppingApp.Core
 {
-    public class IngreditenViewModel : BaseViewModel
+    public class IngredientViewModel : BaseViewModel
     {       
         public bool isSelected { get; set; }
         public int Id { get; set; }

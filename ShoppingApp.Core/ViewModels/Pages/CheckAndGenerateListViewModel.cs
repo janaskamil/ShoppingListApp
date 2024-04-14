@@ -13,9 +13,32 @@ namespace ShoppingApp.Core
 {
     public class CheckAndGenerateListViewModel :BaseViewModel
     {
+        public ObservableCollection<ItemViewModel> Items { get; set; } = new ObservableCollection<ItemViewModel>();
         public CheckAndGenerateListViewModel()
         {
             CreateXls = new RelayCommand(GenerateXLS);
+            AddItems = new RelayCommand(AddItemsToList);
+        }
+
+        private void AddItemsToList()
+        {
+            //declaring moment of list generation
+            DateTime currentTimestamp = DateTime.Now;
+            //checking if list already exists 
+            if (IngredientsToBuy.Count() > 0)
+            {
+                var timeCheck = IngredientsToBuy.FirstOrDefault();
+                timeCheck.Regdate = currentTimestamp;
+            }
+            var newItemOnTheList = new IngredientsToListViewModel
+            {
+                IngredientId = -1,
+                IngredientName = "test",
+                Quantity = 1,
+                Unit = "szt",
+                Regdate = currentTimestamp
+            };
+            IngredientsToBuy.Add(newItemOnTheList);
         }
        
         private void GenerateXLS()
