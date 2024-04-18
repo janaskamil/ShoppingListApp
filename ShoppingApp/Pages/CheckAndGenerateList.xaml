@@ -6,16 +6,22 @@
              xmlns:local="clr-namespace:ShoppingApp"
              mc:Ignorable="d">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="5*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        <local:ListOfIngredientsToBuy Grid.Row="0" Height="900" Width="500">
+        <local:ListOfIngredientsToBuy Grid.Row="0" Grid.Column="0" Height="900" Width="500">
         </local:ListOfIngredientsToBuy>
         <StackPanel Grid.Row ="1" Width="500" Orientation ="Horizontal">
             <Button Height="100" Width="250" Background="Green" VerticalAlignment="Center" HorizontalAlignment="Center" Command="{Binding CreateXls}"></Button>
             <Button Height="100" Width="250" Background="Red" VerticalAlignment="Center" HorizontalAlignment="Center" Command="{Binding AddItems}"></Button>
         </StackPanel>
-        
+        <local:ItemsToAddAndModify Grid.Row="0" Grid.Column="2" Height="900" Width="300">
+        </local:ItemsToAddAndModify>
     </Grid>
 </UserControl>

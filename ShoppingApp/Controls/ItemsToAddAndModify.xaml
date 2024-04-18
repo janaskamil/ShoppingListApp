@@ -1,0 +1,13 @@
+﻿<UserControl x:Class="ShoppingApp.ItemsToAddAndModify"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ShoppingApp">
+    <DataGrid ItemsSource="{Binding Items}" AutoGenerateColumns="False" Width="350" Height="600" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserAddRows="True">
+        <DataGrid.Columns>
+            <DataGridTextColumn Width ="100" Header="Name" Binding="{Binding ItemName}"></DataGridTextColumn>
+            <DataGridCheckBoxColumn Width ="10" Header="Checkbox" Binding="{Binding isChecked}"></DataGridCheckBoxColumn>
+        </DataGrid.Columns>
+    </DataGrid>
+</UserControl>

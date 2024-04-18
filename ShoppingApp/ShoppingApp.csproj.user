@@ -13,6 +13,9 @@
     <Compile Update="Controls\IngredientsToDelete.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Controls\ItemsToAddAndModify.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Controls\ListOfIngredientsToBuy.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -49,6 +52,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Controls\IngredientsToDelete.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\ItemsToAddAndModify.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Controls\ListOfIngredientsToBuy.xaml">

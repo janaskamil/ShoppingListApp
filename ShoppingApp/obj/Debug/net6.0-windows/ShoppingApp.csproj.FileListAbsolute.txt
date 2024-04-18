@@ -316,3 +316,5 @@ D:\PROJKETY\ShoppingListApp\ShoppingApp\obj\Debug\net6.0-windows\refint\Shopping
 D:\PROJKETY\ShoppingListApp\ShoppingApp\obj\Debug\net6.0-windows\ShoppingApp.pdb
 D:\PROJKETY\ShoppingListApp\ShoppingApp\obj\Debug\net6.0-windows\ShoppingApp.genruntimeconfig.cache
 D:\PROJKETY\ShoppingListApp\ShoppingApp\obj\Debug\net6.0-windows\ref\ShoppingApp.dll
+D:\PROJKETY\ShoppingListApp\ShoppingApp\obj\Debug\net6.0-windows\Controls\ItemsToAddAndModify.g.cs
+D:\PROJKETY\ShoppingListApp\ShoppingApp\obj\Debug\net6.0-windows\Controls\ItemsToAddAndModify.baml

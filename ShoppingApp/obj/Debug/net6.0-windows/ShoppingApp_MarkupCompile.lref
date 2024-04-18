@@ -3,6 +3,7 @@ FD:\PROJKETY\ShoppingListApp\ShoppingApp\App.xaml;;
 FD:\PROJKETY\ShoppingListApp\ShoppingApp\Controls\IngredientsList.xaml;;
 FD:\PROJKETY\ShoppingListApp\ShoppingApp\Controls\IngredientsToDelete.xaml;;
 FD:\PROJKETY\ShoppingListApp\ShoppingApp\Controls\IngredientsToModify.xaml;;
+FD:\PROJKETY\ShoppingListApp\ShoppingApp\Controls\ItemsToAddAndModify.xaml;;
 FD:\PROJKETY\ShoppingListApp\ShoppingApp\Controls\ListOfIngredientsToBuy.xaml;;
 FD:\PROJKETY\ShoppingListApp\ShoppingApp\Controls\MealName.xaml;;
 FD:\PROJKETY\ShoppingListApp\ShoppingApp\Controls\MealRecipe.xaml;;
