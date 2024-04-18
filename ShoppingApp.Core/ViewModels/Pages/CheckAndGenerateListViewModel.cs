@@ -18,6 +18,7 @@ namespace ShoppingApp.Core
         {
             CreateXls = new RelayCommand(GenerateXLS);
             AddItems = new RelayCommand(AddItemsToList);
+            SaveItems = new RelayCommand(SaveItemsToDB);
         }
 
         private void AddItemsToList()
@@ -39,6 +40,13 @@ namespace ShoppingApp.Core
                 Regdate = currentTimestamp
             };
             IngredientsToBuy.Add(newItemOnTheList);
+        }
+        private void SaveItemsToDB()
+        {
+            foreach (var item in Items)
+            {
+                
+            }
         }
        
         private void GenerateXLS()

@@ -25,6 +25,7 @@ namespace ShoppingApp.Core
         public ICommand DeleteShoppingListWithIngredientsCommand { get; set; }
         public ICommand CreateXls { get; set; }
         public ICommand AddItems { get; set; }
+        public ICommand SaveItems { get; set; }
 
         protected void ReloadVMTables()
         {

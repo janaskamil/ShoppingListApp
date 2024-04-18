@@ -1,5 +1,20 @@
-﻿
-
+﻿D:\PROJKETY\ShoppingListApp\ShoppingApp\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.i.cs
+FD:\PROJKETY\ShoppingListApp\ShoppingApp\App.xaml;;
+FD:\PROJKETY\ShoppingListApp\ShoppingApp\Controls\IngredientsList.xaml;;
+FD:\PROJKETY\ShoppingListApp\ShoppingApp\Controls\IngredientsToDelete.xaml;;
+FD:\PROJKETY\ShoppingListApp\ShoppingApp\Controls\IngredientsToModify.xaml;;
 FD:\PROJKETY\ShoppingListApp\ShoppingApp\Controls\ItemsToAddAndModify.xaml;;
+FD:\PROJKETY\ShoppingListApp\ShoppingApp\Controls\ListOfIngredientsToBuy.xaml;;
+FD:\PROJKETY\ShoppingListApp\ShoppingApp\Controls\MealName.xaml;;
+FD:\PROJKETY\ShoppingListApp\ShoppingApp\Controls\MealRecipe.xaml;;
+FD:\PROJKETY\ShoppingListApp\ShoppingApp\Controls\MealsOnTheList.xaml;;
+FD:\PROJKETY\ShoppingListApp\ShoppingApp\Controls\MealsToChooseFrom.xaml;;
+FD:\PROJKETY\ShoppingListApp\ShoppingApp\Controls\MealType.xaml;;
+FD:\PROJKETY\ShoppingListApp\ShoppingApp\MainWindow.xaml;;
+FD:\PROJKETY\ShoppingListApp\ShoppingApp\Pages\AddMeal.xaml;;
 FD:\PROJKETY\ShoppingListApp\ShoppingApp\Pages\CheckAndGenerateList.xaml;;
+FD:\PROJKETY\ShoppingListApp\ShoppingApp\Pages\DeleteAndModifyIngredients.xaml;;
+FD:\PROJKETY\ShoppingListApp\ShoppingApp\Pages\GenerateList.xaml;;
+FD:\PROJKETY\ShoppingListApp\ShoppingApp\Pages\MainPage.xaml;;
+FD:\PROJKETY\ShoppingListApp\ShoppingApp\Styles\Buttons.xaml;;
 
