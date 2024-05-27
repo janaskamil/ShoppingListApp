@@ -8,7 +8,7 @@ namespace ShoppingApp.Core
 {
     public class ItemViewModel : BaseViewModel
     {
-        public bool isChecked;
+        public bool isChecked { get; set; }
         public int Id { get; set; }
         public string ItemName { get; set; }
     }

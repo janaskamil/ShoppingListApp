@@ -19,8 +19,8 @@ namespace ShoppingApp.Core
             CreateXls = new RelayCommand(GenerateXLS);
             AddItems = new RelayCommand(AddItemsToList);
             SaveItems = new RelayCommand(SaveItemsToDB);
+            PullItemsFromDB();
         }
-
         private void AddItemsToList()
         {
             //declaring moment of list generation
@@ -31,24 +31,65 @@ namespace ShoppingApp.Core
                 var timeCheck = IngredientsToBuy.FirstOrDefault();
                 timeCheck.Regdate = currentTimestamp;
             }
-            var newItemOnTheList = new IngredientsToListViewModel
+            var checkedItems = Items.Where(i=>i.isChecked).ToList();
+            foreach(var item in checkedItems)
             {
-                IngredientId = -1,
-                IngredientName = "test",
-                Quantity = 1,
-                Unit = "szt",
-                Regdate = currentTimestamp
-            };
-            IngredientsToBuy.Add(newItemOnTheList);
+                var newItemOnTheList = new IngredientsToListViewModel
+                {
+                    IngredientId = -1,
+                    IngredientName = item.ItemName,
+                    Quantity = 1,
+                    Unit = "szt",
+                    Regdate = currentTimestamp
+                };
+                IngredientsToBuy.Add(newItemOnTheList);
+            }
+            Items.Clear();
+            PullItemsFromDB();
+
         }
         private void SaveItemsToDB()
-        {
+        {   
             foreach (var item in Items)
             {
-                
-            }
+                var currentItemName = DatabaseCreationTool.MyDatabase.Items.Where(i => i.ItemName == item.ItemName).FirstOrDefault();
+                //new item
+                if(currentItemName == null)
+                {
+                    var lastItemId = DatabaseCreationTool.MyDatabase.Items.OrderByDescending(i => i.Id).FirstOrDefault();
+                    int countedLastItemToInsert = lastItemId != null ? lastItemId.Id : 0;
+                    countedLastItemToInsert += 1;
+
+                    var NewItem = new ItemViewModel
+                    {
+                        Id = countedLastItemToInsert,
+                        ItemName = item.ItemName,
+                        isChecked = true
+                    };
+                    DatabaseCreationTool.MyDatabase.Items.Add(new Items
+                    {
+                        Id = NewItem.Id,
+                        ItemName = NewItem.ItemName,
+                    });
+                    DatabaseCreationTool.MyDatabase.SaveChanges();
+                }
+                //existing item - do nothing              
+            }          
+            Items.Clear();
+            PullItemsFromDB();
         }
-       
+        private void PullItemsFromDB()
+        {
+            foreach (var item in DatabaseCreationTool.MyDatabase.Items.ToList())
+            {
+                Items.Add(new ItemViewModel
+                {
+                    Id = item.Id,
+                    ItemName = item.ItemName,
+                    isChecked = false
+                });
+            }
+        }      
         private void GenerateXLS()
         {
             //declare name
@@ -88,8 +129,6 @@ namespace ShoppingApp.Core
                 }
                 package.Save();
             }
-
         }
-
     }
 }
