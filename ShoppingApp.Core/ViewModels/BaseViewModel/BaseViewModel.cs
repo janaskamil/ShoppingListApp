@@ -26,6 +26,7 @@ namespace ShoppingApp.Core
         public ICommand CreateXls { get; set; }
         public ICommand AddItems { get; set; }
         public ICommand SaveItems { get; set; }
+        public ICommand DeleteItems { get; set; }
 
         protected void ReloadVMTables()
         {
@@ -83,6 +84,12 @@ namespace ShoppingApp.Core
                     tempId++;
                 }
             }
+        }
+        protected void DeleteShoppingListWithIngredients()
+        {
+            IngredientsToBuy.Clear();
+            MealsForShoppingList.Clear();
+            ReloadVMTables();
         }
         protected void OnPropertyChanged(string propertyName)
         {

@@ -5,15 +5,11 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ShoppingApp">
     <StackPanel>
-        <DataGrid ItemsSource="{Binding Items}" AutoGenerateColumns="False" Width="350" Height="300" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserAddRows="True">
+        <DataGrid ItemsSource="{Binding Items}" AutoGenerateColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserAddRows="True">
             <DataGrid.Columns>
-                <DataGridTextColumn Width ="100" Header="Name" Binding="{Binding ItemName}"></DataGridTextColumn>
-                <DataGridCheckBoxColumn Width ="10" Header="Checkbox" Binding="{Binding isChecked}"></DataGridCheckBoxColumn>
+                <DataGridTextColumn Width ="3*" Header="Name" Binding="{Binding ItemName}"></DataGridTextColumn>
+                <DataGridCheckBoxColumn Width ="*" Header="Checkbox" Binding="{Binding isChecked}"></DataGridCheckBoxColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Height="100" Background="Blue" Command="{Binding SaveItems}">
-
-        </Button>
     </StackPanel>
-    
 </UserControl>

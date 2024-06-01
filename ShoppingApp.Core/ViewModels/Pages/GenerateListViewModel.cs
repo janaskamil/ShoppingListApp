@@ -101,14 +101,7 @@ namespace ShoppingApp.Core
                 }
             }
         }
-
-        private void DeleteShoppingListWithIngredients()
-        {
-            IngredientsToBuy.Clear();
-            MealsForShoppingList.Clear();
-            ReloadVMTables();
-        }
-
+      
         private void DeleteShoppingList()
         {
             var mealFromList = MealsForShoppingList.Where(x => x.isChecked).ToList();

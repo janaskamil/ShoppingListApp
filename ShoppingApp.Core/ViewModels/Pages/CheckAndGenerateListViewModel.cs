@@ -1,4 +1,5 @@
-﻿using OfficeOpenXml;
+﻿using Microsoft.EntityFrameworkCore;
+using OfficeOpenXml;
 using ShoppingApp.Core.Helpers;
 using ShoppingApp.Database;
 using System;
@@ -19,6 +20,8 @@ namespace ShoppingApp.Core
             CreateXls = new RelayCommand(GenerateXLS);
             AddItems = new RelayCommand(AddItemsToList);
             SaveItems = new RelayCommand(SaveItemsToDB);
+            DeleteItems = new RelayCommand(DeleteItemsFromDB);
+            DeleteShoppingListWithIngredientsCommand = new RelayCommand(DeleteShoppingListWithIngredients);
             PullItemsFromDB();
         }
         private void AddItemsToList()
@@ -34,25 +37,52 @@ namespace ShoppingApp.Core
             var checkedItems = Items.Where(i=>i.isChecked).ToList();
             foreach(var item in checkedItems)
             {
-                var newItemOnTheList = new IngredientsToListViewModel
+                var checkForExistingItem = IngredientsToBuy.FirstOrDefault(i => i.IngredientName.Equals(item.ItemName));
+
+                if(checkForExistingItem != null)
                 {
-                    IngredientId = -1,
-                    IngredientName = item.ItemName,
-                    Quantity = 1,
-                    Unit = "szt",
-                    Regdate = currentTimestamp
-                };
-                IngredientsToBuy.Add(newItemOnTheList);
+                    IngredientsToBuy.Remove(checkForExistingItem);
+                    checkForExistingItem.Quantity += 1;
+                    IngredientsToBuy.Add(checkForExistingItem);
+                }
+                else
+                {
+                    var newItemOnTheList = new IngredientsToListViewModel
+                    {
+                        IngredientId = -1,
+                        IngredientName = item.ItemName.ToUpper(),
+                        Quantity = 1,
+                        Unit = "SZT",
+                        Regdate = currentTimestamp
+                    };
+                    IngredientsToBuy.Add(newItemOnTheList);
+                }               
             }
             Items.Clear();
             PullItemsFromDB();
 
         }
+        private void DeleteItemsFromDB()
+        {
+            var checkedItems = Items.Where(i => i.isChecked).ToList();
+            foreach(var item in checkedItems)
+            {
+                Items.Remove(item);
+                var itemToRemoveDB = DatabaseCreationTool.MyDatabase.Items.Where(i=>i.Id == item.Id).FirstOrDefault();
+                if(itemToRemoveDB != null)
+                {
+                    DatabaseCreationTool.MyDatabase.Items.Remove(itemToRemoveDB);
+                }
+            }
+            DatabaseCreationTool.MyDatabase.SaveChanges();
+            Items.Clear();
+            PullItemsFromDB();
+        }
         private void SaveItemsToDB()
         {   
             foreach (var item in Items)
             {
-                var currentItemName = DatabaseCreationTool.MyDatabase.Items.Where(i => i.ItemName == item.ItemName).FirstOrDefault();
+                var currentItemName = DatabaseCreationTool.MyDatabase.Items.Where(i => i.ItemName == item.ItemName.ToUpper()).FirstOrDefault();
                 //new item
                 if(currentItemName == null)
                 {
@@ -63,7 +93,7 @@ namespace ShoppingApp.Core
                     var NewItem = new ItemViewModel
                     {
                         Id = countedLastItemToInsert,
-                        ItemName = item.ItemName,
+                        ItemName = item.ItemName.ToUpper(),
                         isChecked = true
                     };
                     DatabaseCreationTool.MyDatabase.Items.Add(new Items
