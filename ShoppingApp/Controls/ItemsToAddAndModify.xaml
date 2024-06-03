@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ShoppingApp">
     <StackPanel>
-        <DataGrid ItemsSource="{Binding Items}" AutoGenerateColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserAddRows="True">
+        <DataGrid ItemsSource="{Binding ItemsVM}" AutoGenerateColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserAddRows="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Width ="3*" Header="Name" Binding="{Binding ItemName}"></DataGridTextColumn>
                 <DataGridCheckBoxColumn Width ="*" Header="Checkbox" Binding="{Binding isChecked}"></DataGridCheckBoxColumn>

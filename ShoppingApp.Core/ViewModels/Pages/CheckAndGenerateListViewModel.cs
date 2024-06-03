@@ -14,7 +14,7 @@ namespace ShoppingApp.Core
 {
     public class CheckAndGenerateListViewModel :BaseViewModel
     {
-        public ObservableCollection<ItemViewModel> Items { get; set; } = new ObservableCollection<ItemViewModel>();
+        
         public CheckAndGenerateListViewModel()
         {
             CreateXls = new RelayCommand(GenerateXLS);
@@ -22,7 +22,7 @@ namespace ShoppingApp.Core
             SaveItems = new RelayCommand(SaveItemsToDB);
             DeleteItems = new RelayCommand(DeleteItemsFromDB);
             DeleteShoppingListWithIngredientsCommand = new RelayCommand(DeleteShoppingListWithIngredients);
-            PullItemsFromDB();
+            ReloadVMTables();
         }
         private void AddItemsToList()
         {
@@ -34,7 +34,7 @@ namespace ShoppingApp.Core
                 var timeCheck = IngredientsToBuy.FirstOrDefault();
                 timeCheck.Regdate = currentTimestamp;
             }
-            var checkedItems = Items.Where(i=>i.isChecked).ToList();
+            var checkedItems = ItemsVM.Where(i=>i.isChecked).ToList();
             foreach(var item in checkedItems)
             {
                 var checkForExistingItem = IngredientsToBuy.FirstOrDefault(i => i.IngredientName.Equals(item.ItemName));
@@ -58,16 +58,15 @@ namespace ShoppingApp.Core
                     IngredientsToBuy.Add(newItemOnTheList);
                 }               
             }
-            Items.Clear();
-            PullItemsFromDB();
+            ReloadVMTables();
 
         }
         private void DeleteItemsFromDB()
         {
-            var checkedItems = Items.Where(i => i.isChecked).ToList();
+            var checkedItems = ItemsVM.Where(i => i.isChecked).ToList();
             foreach(var item in checkedItems)
             {
-                Items.Remove(item);
+                ItemsVM.Remove(item);
                 var itemToRemoveDB = DatabaseCreationTool.MyDatabase.Items.Where(i=>i.Id == item.Id).FirstOrDefault();
                 if(itemToRemoveDB != null)
                 {
@@ -75,12 +74,11 @@ namespace ShoppingApp.Core
                 }
             }
             DatabaseCreationTool.MyDatabase.SaveChanges();
-            Items.Clear();
-            PullItemsFromDB();
+            ReloadVMTables();
         }
         private void SaveItemsToDB()
         {   
-            foreach (var item in Items)
+            foreach (var item in ItemsVM)
             {
                 var currentItemName = DatabaseCreationTool.MyDatabase.Items.Where(i => i.ItemName == item.ItemName.ToUpper()).FirstOrDefault();
                 //new item
@@ -105,21 +103,8 @@ namespace ShoppingApp.Core
                 }
                 //existing item - do nothing              
             }          
-            Items.Clear();
-            PullItemsFromDB();
-        }
-        private void PullItemsFromDB()
-        {
-            foreach (var item in DatabaseCreationTool.MyDatabase.Items.ToList())
-            {
-                Items.Add(new ItemViewModel
-                {
-                    Id = item.Id,
-                    ItemName = item.ItemName,
-                    isChecked = false
-                });
-            }
-        }      
+            ReloadVMTables();
+        }    
         private void GenerateXLS()
         {
             //declare name
@@ -138,7 +123,11 @@ namespace ShoppingApp.Core
                 worksheet.Cells[1, 1].Value = "INGREDIENT";
                 worksheet.Cells[1, 2].Value = "QUANTITY";
                 worksheet.Cells[1, 3].Value = "UNIT";
-                foreach(var ingredient in IngredientsToBuy)
+                // set column widths
+                worksheet.Column(1).Width = 35; 
+                worksheet.Column(2).Width = 15; 
+                worksheet.Column(3).Width = 20; 
+                foreach (var ingredient in IngredientsToBuy)
                 {
                     worksheet.Cells[rowIngredient, 1].Value = ingredient.IngredientName;
                     worksheet.Cells[rowIngredient, 2].Value = ingredient.Quantity;
@@ -150,11 +139,17 @@ namespace ShoppingApp.Core
                 worksheet2.Cells[1, 1].Value = "MEAL NAME";
                 worksheet2.Cells[1, 2].Value = "QUANTITY";
                 worksheet2.Cells[1, 3].Value = "RECIPE";
+                // set column widths
+                worksheet2.Column(1).Width = 25; 
+                worksheet2.Column(2).Width = 15; 
+                worksheet2.Column(3).Width = 150;              
+                worksheet2.Column(3).Style.WrapText = true;
                 foreach (var meal in MealsForShoppingList)
                 {
                     worksheet2.Cells[rowMeal, 1].Value = meal.MealName;
                     worksheet2.Cells[rowMeal, 2].Value = meal.MealCount;
                     worksheet2.Cells[rowMeal, 3].Value = meal.MealRecipe;
+                    worksheet2.Row(rowMeal).Height = 70;
                     rowMeal += 1;
                 }
                 package.Save();

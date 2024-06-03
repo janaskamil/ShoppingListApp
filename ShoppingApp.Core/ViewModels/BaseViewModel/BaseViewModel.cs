@@ -11,6 +11,7 @@ namespace ShoppingApp.Core
         public ObservableCollection<MealViewModel> MealsList { get; set; } = new ObservableCollection<MealViewModel>();
         public ObservableCollection<IngredientViewModel> IngedientsListVM { get; set; } = new ObservableCollection<IngredientViewModel>();
         public ObservableCollection<IngredientForMealViewModel> IngredientsForMealVM { get; set; } = new ObservableCollection<IngredientForMealViewModel>();
+        public ObservableCollection<ItemViewModel> ItemsVM { get; set; } = new ObservableCollection<ItemViewModel>();
         public ObservableCollection<MealViewModel> MealsForShoppingList => DataStore.Instance.MealsForShoppingList;
         public ObservableCollection<IngredientsToListViewModel> IngredientsToBuy => DataStore.Instance.IngredientsToBuy;
         public virtual MealViewModel SelectedMeal { get; set; }
@@ -33,6 +34,7 @@ namespace ShoppingApp.Core
             MealsList.Clear();
             IngedientsListVM.Clear();
             IngredientsForMealVM.Clear();
+            ItemsVM.Clear();
             foreach (var meal in DatabaseCreationTool.MyDatabase.Meals.ToList())
             {
                 MealsList.Add(new MealViewModel
@@ -51,6 +53,15 @@ namespace ShoppingApp.Core
                     Name = ingredient.Name
                 });
 
+            }
+            foreach (var item in DatabaseCreationTool.MyDatabase.Items.ToList())
+            {
+                ItemsVM.Add(new ItemViewModel
+                {
+                    Id = item.Id,
+                    ItemName = item.ItemName,
+                    isChecked = false
+                });
             }
             foreach (var meal in MealsList)
             {
