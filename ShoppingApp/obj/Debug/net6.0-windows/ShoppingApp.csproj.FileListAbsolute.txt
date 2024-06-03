@@ -318,3 +318,5 @@ D:\PROJKETY\ShoppingListApp\ShoppingApp\obj\Debug\net6.0-windows\ShoppingApp.gen
 D:\PROJKETY\ShoppingListApp\ShoppingApp\obj\Debug\net6.0-windows\ref\ShoppingApp.dll
 D:\PROJKETY\ShoppingListApp\ShoppingApp\obj\Debug\net6.0-windows\Controls\ItemsToAddAndModify.g.cs
 D:\PROJKETY\ShoppingListApp\ShoppingApp\obj\Debug\net6.0-windows\Controls\ItemsToAddAndModify.baml
+D:\PROJKETY\ShoppingListApp\ShoppingApp\obj\Debug\net6.0-windows\Pages\Extras.g.cs
+D:\PROJKETY\ShoppingListApp\ShoppingApp\obj\Debug\net6.0-windows\Pages\Extras.baml

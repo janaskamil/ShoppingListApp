@@ -65,6 +65,7 @@
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
                 </Grid.RowDefinitions>
                 <RadioButton Grid.Row="0"
                         Content="Add Meals"
@@ -78,6 +79,9 @@
                 <RadioButton Grid.Row="3"
                         Content="Check and Generate List"
                         Command="{Binding ShowCheckAndGenerateList}"></RadioButton>
+                <RadioButton Grid.Row="4"
+                        Content="Extras"
+                        Command="{Binding ShowExtras}"></RadioButton>
             </Grid>
             <Frame
                 Grid.Row="1"

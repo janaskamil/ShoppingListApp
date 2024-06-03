@@ -27,10 +27,5 @@ namespace ShoppingApp
 
             DataContext = new GenerateListViewModel();
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }

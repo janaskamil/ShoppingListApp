@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 D:\PROJKETY\ShoppingListApp\ShoppingApp\App.xaml
-17-374643495
+18213589810
 
-20-2015170058
+21-20620232
 2261496784377
-Controls\IngredientsList.xaml;Controls\IngredientsToDelete.xaml;Controls\IngredientsToModify.xaml;Controls\ItemsToAddAndModify.xaml;Controls\ListOfIngredientsToBuy.xaml;Controls\MealName.xaml;Controls\MealRecipe.xaml;Controls\MealsOnTheList.xaml;Controls\MealsToChooseFrom.xaml;Controls\MealType.xaml;MainWindow.xaml;Pages\AddMeal.xaml;Pages\CheckAndGenerateList.xaml;Pages\DeleteAndModifyIngredients.xaml;Pages\GenerateList.xaml;Pages\MainPage.xaml;Styles\Buttons.xaml;
+Controls\IngredientsList.xaml;Controls\IngredientsToDelete.xaml;Controls\IngredientsToModify.xaml;Controls\ItemsToAddAndModify.xaml;Controls\ListOfIngredientsToBuy.xaml;Controls\MealName.xaml;Controls\MealRecipe.xaml;Controls\MealsOnTheList.xaml;Controls\MealsToChooseFrom.xaml;Controls\MealType.xaml;MainWindow.xaml;Pages\AddMeal.xaml;Pages\CheckAndGenerateList.xaml;Pages\DeleteAndModifyIngredients.xaml;Pages\Extras.xaml;Pages\GenerateList.xaml;Pages\MainPage.xaml;Styles\Buttons.xaml;
 
 True
 

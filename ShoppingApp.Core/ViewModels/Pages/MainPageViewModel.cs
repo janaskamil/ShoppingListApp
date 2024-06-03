@@ -19,6 +19,7 @@ namespace ShoppingApp.Core
         public ICommand ShowCheckAndGenerateList { get; set; }
         public ICommand ShowGenerateList { get; set; }
         public ICommand ShowDeleteUnusedIngredients { get; set; }
+        public ICommand ShowExtras { get; set; }
 
         public BaseViewModel CurrentChildView
         {
@@ -40,7 +41,8 @@ namespace ShoppingApp.Core
             ShowAddMeal = new RelayCommand(ShowAddMealViewCommand);
             ShowDeleteUnusedIngredients = new RelayCommand(ShowDeleteUnusedIngredientsCommand);
             ShowCheckAndGenerateList = new RelayCommand(ShowCheckAndGenerateViewCommand);
-            ShowGenerateList = new RelayCommand(ShowGenerateViewCommand);        
+            ShowGenerateList = new RelayCommand(ShowGenerateViewCommand);
+            ShowExtras = new RelayCommand(ShowExtrasCommand);        
         }        
         private void ShowAddMealViewCommand()
         {
@@ -58,6 +60,10 @@ namespace ShoppingApp.Core
         private void ShowDeleteUnusedIngredientsCommand()
         {
             CurrentChildView = new DeleteAndModifyIngredients();
+        }
+        private void ShowExtrasCommand()
+        {
+            CurrentChildView = new ExtrasViewModel();
         }
 
         private void CloseApplicationMainPageViewModel()
