@@ -1,0 +1,155 @@
+﻿/*ShoppingApp database backup*/
+/*----------------CREATING TABLES------------------*/
+/*
+CREATE TABLE "Ingredients" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Ingredients" PRIMARY KEY,
+    "Name" TEXT NOT NULL
+)
+CREATE TABLE "Meals" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Meals" PRIMARY KEY,
+    "MealName" TEXT NOT NULL,
+    "MealRecipe" TEXT NOT NULL,
+    "MealType" TEXT NOT NULL
+)
+CREATE TABLE "Items" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Items" PRIMARY KEY,
+    "ItemName" TEXT NOT NULL
+)
+CREATE TABLE "IngredientForMeal" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_IngredientForMeal" PRIMARY KEY,
+    "MealId" INTEGER NOT NULL,
+    "IngredientId" INTEGER NOT NULL,
+    "Quantity" REAL NOT NULL,
+    "Unit" TEXT NOT NULL
+)
+*/
+/*----------------TABLES CREATED-------------------*/
+/*--------INGREDIENTS----------*/
+INSERT INTO INGREDIENTS VALUES (1, 'MAKARON');
+INSERT INTO INGREDIENTS VALUES (2, 'MIĘSO MIELONE');
+INSERT INTO INGREDIENTS VALUES (3, 'POMIDORY KROJONE W PUSZCE');
+INSERT INTO INGREDIENTS VALUES (4, 'KONCENTRAT POMIDOROWY');
+INSERT INTO INGREDIENTS VALUES (5, 'CEBULA');
+INSERT INTO INGREDIENTS VALUES (6, 'CZOSNEK');
+INSERT INTO INGREDIENTS VALUES (7, 'TŁUSZCZ');
+INSERT INTO INGREDIENTS VALUES (8, 'OREGANO');
+INSERT INTO INGREDIENTS VALUES (9, 'BAZYLIA');
+INSERT INTO INGREDIENTS VALUES (10, 'SÓL');
+INSERT INTO INGREDIENTS VALUES (11, 'PIEPRZ');
+INSERT INTO INGREDIENTS VALUES (12, 'PIERŚ Z KURCZAKA');
+INSERT INTO INGREDIENTS VALUES (13, 'PAPRYKA');
+INSERT INTO INGREDIENTS VALUES (14, 'PIECZARKI');
+INSERT INTO INGREDIENTS VALUES (15, 'TYMIANEK');
+INSERT INTO INGREDIENTS VALUES (16, 'PAPRYCZKA CHILLI');
+INSERT INTO INGREDIENTS VALUES (17, 'FASOLA BIAŁA W PUSZCE');
+INSERT INTO INGREDIENTS VALUES (18, 'ROZMARYN');
+INSERT INTO INGREDIENTS VALUES (19, 'SOCZEWICA SUCHA');
+INSERT INTO INGREDIENTS VALUES (20, 'POR');
+INSERT INTO INGREDIENTS VALUES (21, 'BULION');
+INSERT INTO INGREDIENTS VALUES (22, 'PIERŚ Z INDYKA');
+INSERT INTO INGREDIENTS VALUES (23, 'MARCHEW');
+INSERT INTO INGREDIENTS VALUES (24, 'GROSZEK');
+INSERT INTO INGREDIENTS VALUES (25, 'FILET RYBA');
+INSERT INTO INGREDIENTS VALUES (26, 'OLIWA');
+INSERT INTO INGREDIENTS VALUES (27, 'RYŻ');
+INSERT INTO INGREDIENTS VALUES (28, 'WARZYWA NA PATELNIE');
+INSERT INTO INGREDIENTS VALUES (29, 'CYTRYNA');
+INSERT INTO INGREDIENTS VALUES (30, 'POLĘDWICA WIEPRZOWA');
+INSERT INTO INGREDIENTS VALUES (31, 'MIÓD');
+INSERT INTO INGREDIENTS VALUES (32, 'MUSZTARDA');
+INSERT INTO INGREDIENTS VALUES (33, 'OSTRA PAPRYKA');
+INSERT INTO INGREDIENTS VALUES (34, 'FRYTKI');
+INSERT INTO INGREDIENTS VALUES (35, 'MIĘSO MIELONE WOŁOWE');
+INSERT INTO INGREDIENTS VALUES (36, 'FASOLA CZERWONA W PUSZCE');
+INSERT INTO INGREDIENTS VALUES (37, 'CHILLI');
+
+/*-----------MEALS-------------*/
+INSERT INTO MEALS VALUES (1, 'Spaghetti bolognese', '70g suchego makaronu spaghetti, 130g mięsa mielonego drobiowego, pomidorów w puszce 200g, koncentrat pomidorowy (do smaku), 1/2 cebuli, 2 ząbki czosnku, 1 łyżka tłuszczu, bazylia, oregano, sól, pieprz. Makaron ugotować. Na patelni rozgrzać tłuszcz, zaszklić cebulkę, po chwili dodać czosnek, chwilę podsmażyć. Dodać mielone mięso, podsmażyć.Dodać pomidory z puszki i wymieszać, doprawić koncentratem pomidorowym i ziołami. Podawać z makaronem.', 'Dinner');
+INSERT INTO MEALS VALUES (2, 'Leczo', 'Filet z kurczaka do 150g, 0.5 cebuli, 0.5 papryki , 100 g pieczarek, 1 łyżeczka masła klarowanego lub tłuszczu kokosowego , sól, pieprz, tymianek, 0.5 papryczki chili. Mięso pokroić w kostkę i obsmażyć na rozgrzanej patelni bez dodatku tłuszczu. Cebulę posiekać, lekko podsmażyć w garnku, po czym dodać do niej pokrojone w kostkę paprykę, pomidory i pieczarki. Przyprawić, dusić około 20 min. Dusić na małym ogniu aż warzywa będą miękkie.', 'Dinner');
+INSERT INTO MEALS VALUES (3, 'Wegetariańska fasolka po bretońsku ', '200g fasoli białej z puszki, ząbek czosnku, 0.5 cebuli, 200g pomirodów krojonych z puszki, 1 łyżeczka oleju kokosowego, rozmaryn, bazylia, sól, pieprz. Cebulę i czosnek pokroić, podsmażyć, dodać pomidory z fasolką. Przyprawić do smaku. Gotować parę minut, aż sos zgęstnieje. Podać na ciepło.', 'Dinner');
+INSERT INTO MEALS VALUES (4, 'Warzywny gulasz z soczewicą', '50g suchej soczewicy, 100g pieczarek, 100g pora, 200g pomidorów z puszki, 0.5 cebuli, 1 ząbek czosnku, 1 łyżka tłuszczu kokosowego, sól, pieprz, bulion. Soczewicę ugotować. W szerokim rondlu rozgrzać tłuszcz. Podsmażyć na złoto poszatkowaną cebulę i czosnek. Dodać pokrojony por, pieczarki, pomidory i soczewicę. Całość doprawić, podlać bulionem i dusić razem około 20 minut.', 'Dinner');
+INSERT INTO MEALS VALUES (5, 'Gulasz drobiowy z groszkiem i pieczarkami', '130g piersi z indyka, 100g pieczarek, 1 marchew, 200g gorszku (puszka/mrożony - lepszy), 1 ząbek czosnku, 1 łyżka tłuszczu, sól, pieprz. Pierś, pieczarki pokroić na kawałki i podsmażyć na oleju. Dodać odsączony groszek, startą marchewkę i czosnek. Całość dusić około 10 min. Doprawić do smaku.', 'Dinner');
+INSERT INTO MEALS VALUES (6, 'Ryba w ziołowej marynacie z warzywami i ryżem ', '200g filet z białej ryby np. dorsza, mintaja, bazylia, 1 ząbek czosnku, 1 łyżeczka oliwy. Filet posolić, skropić sokiem z limonki (ew. z cytryny), pozostawić na chwilę. Z oliwy i ziół zrobić marynatę w której obtoczyć rybę. Filet piec ok 20 min. w temp 200°C. Ugotować do tego 50g suchego ryżu, a na parze zrobić 150g mieszanki warzyw.', 'Dinner');
+INSERT INTO MEALS VALUES (7, 'Polędwiczki miodowo musztardowe', 'Polędwica wieprzowa 150g, 1 łyżeczka miodu, 1 łyżka musztardy, 1 łyżeczka oliwy, szczypta ostrej papryki i suszonego tymianku, sól, pieprz. Polędwiczki pokroić na plastry grubości ok. 1,5 cm, delikatnie rozbić, oprószyć pieprzem i solą. W misce rozmieszać miód, musztardę i oliwę, dodać paprykę oraz tymianek. Powstałą mieszaniną pokry ć kawałki polędwiczek, wstawić do lodówki na minimum 2 godziny. Następnie smażyć na złoty kolor z obu stron. Do tego podawać z frytkami 150 i warzywami na patelnie 150g.', 'Dinner');
+INSERT INTO MEALS VALUES (8, 'Chilli con Carne', '120g mielonej chudej wołowiny, 0.5 puszkI pomidorów w zalewie, 1 ząbek czosnku, 0.5 czerwonej papryki, 0.5 puszki czerwonej fasoli, koncentrat pomidorowy, 1 łyżeczka oleju lub oliwy, sól, pieprz, słodka papryka, 0.5 papryki chili, oregano. Mięso podsmażyć, podlać wodą i dusić ok. 15 20 minut. W tym czasie pokroić paprykę i cebulę w kostkę. Odsączyć pomidory i fasolę. Dodać do mięsa warzywa, przeciśnięty czosnek, koncentrat pomidorowy. Doprawić solą, pieprzem, chili, ziołami prowansalskimi. Całość dusić około 30 minut na małym ogniu.', 'Dinner');
+
+/*----INGREDIENTS_FOR_MEALS----*/
+INSERT INTO INGREDIENTFORMEAL VALUES (1, 1, 1, 60, 'G');
+INSERT INTO INGREDIENTFORMEAL VALUES (2, 1, 2, 130, 'G');
+INSERT INTO INGREDIENTFORMEAL VALUES (3, 1, 3, 200, 'G');
+INSERT INTO INGREDIENTFORMEAL VALUES (4, 1, 4, 1, 'DO SMAKU');
+INSERT INTO INGREDIENTFORMEAL VALUES (5, 1, 5, 0.5, 'SZTUKI');
+INSERT INTO INGREDIENTFORMEAL VALUES (6, 1, 6, 2, 'ZĄBEK');
+INSERT INTO INGREDIENTFORMEAL VALUES (7, 1, 7, 1, 'DO SMAŻENIA');
+INSERT INTO INGREDIENTFORMEAL VALUES (8, 1, 8, 1, 'PRZYPRAWIĆ');
+INSERT INTO INGREDIENTFORMEAL VALUES (9, 1, 9, 1, 'PRZYPRAWIĆ');
+INSERT INTO INGREDIENTFORMEAL VALUES (10, 1, 10, 1, 'PRZYPRAWIĆ');
+INSERT INTO INGREDIENTFORMEAL VALUES (11, 1, 11, 1, 'PRZYPRAWIĆ');
+INSERT INTO INGREDIENTFORMEAL VALUES (12, 2, 12, 150, 'G');
+INSERT INTO INGREDIENTFORMEAL VALUES (13, 2, 5, 0.5, 'SZT');
+INSERT INTO INGREDIENTFORMEAL VALUES (14, 2, 13, 0.5, 'SZT');
+INSERT INTO INGREDIENTFORMEAL VALUES (15, 2, 14, 100, 'G');
+INSERT INTO INGREDIENTFORMEAL VALUES (16, 2, 3, 200, 'G');
+INSERT INTO INGREDIENTFORMEAL VALUES (17, 2, 7, 1, 'DO SMAŻENIA');
+INSERT INTO INGREDIENTFORMEAL VALUES (18, 2, 10, 1, 'PRZYPRAWIĆ');
+INSERT INTO INGREDIENTFORMEAL VALUES (19, 2, 11, 1, 'PRZYPRAWIĆ');
+INSERT INTO INGREDIENTFORMEAL VALUES (20, 2, 15, 1, 'PRZYPRAWIĆ');
+INSERT INTO INGREDIENTFORMEAL VALUES (21, 2, 16, 0.5, 'SZT');
+INSERT INTO INGREDIENTFORMEAL VALUES (22, 3, 17, 200, 'G');
+INSERT INTO INGREDIENTFORMEAL VALUES (23, 3, 6, 1, 'ZĄBEK');
+INSERT INTO INGREDIENTFORMEAL VALUES (24, 3, 5, 0.5, 'SZT');
+INSERT INTO INGREDIENTFORMEAL VALUES (25, 3, 3, 200, 'G');
+INSERT INTO INGREDIENTFORMEAL VALUES (26, 3, 18, 1, 'PRZYPRAWIĆ');
+INSERT INTO INGREDIENTFORMEAL VALUES (27, 3, 9, 1, 'PRZYPRAWIĆ');
+INSERT INTO INGREDIENTFORMEAL VALUES (28, 3, 10, 1, 'PRZYPRAWIĆ');
+INSERT INTO INGREDIENTFORMEAL VALUES (29, 3, 11, 1, 'PRZYPRAWIĆ');
+INSERT INTO INGREDIENTFORMEAL VALUES (30, 4, 19, 50, 'G');
+INSERT INTO INGREDIENTFORMEAL VALUES (31, 4, 3, 200, 'G');
+INSERT INTO INGREDIENTFORMEAL VALUES (32, 4, 14, 100, 'G');
+INSERT INTO INGREDIENTFORMEAL VALUES (33, 4, 20, 100, 'G');
+INSERT INTO INGREDIENTFORMEAL VALUES (34, 4, 5, 0.5, 'SZT');
+INSERT INTO INGREDIENTFORMEAL VALUES (35, 4, 6, 1, 'ZĄBEK');
+INSERT INTO INGREDIENTFORMEAL VALUES (36, 4, 7, 1, 'DO SMAŻENIA');
+INSERT INTO INGREDIENTFORMEAL VALUES (37, 4, 10, 1, 'PRZYPRAWIĆ');
+INSERT INTO INGREDIENTFORMEAL VALUES (38, 4, 11, 1, 'PRZYPRAWIĆ');
+INSERT INTO INGREDIENTFORMEAL VALUES (39, 4, 21, 200, 'ML');
+INSERT INTO INGREDIENTFORMEAL VALUES (40, 5, 22, 130, 'G');
+INSERT INTO INGREDIENTFORMEAL VALUES (41, 5, 14, 100, 'G');
+INSERT INTO INGREDIENTFORMEAL VALUES (42, 5, 23, 1, 'SZT');
+INSERT INTO INGREDIENTFORMEAL VALUES (43, 5, 24, 200, 'G');
+INSERT INTO INGREDIENTFORMEAL VALUES (44, 5, 6, 1, 'ZĄBEK');
+INSERT INTO INGREDIENTFORMEAL VALUES (45, 5, 7, 1, 'DO SMAŻENIA');
+INSERT INTO INGREDIENTFORMEAL VALUES (46, 5, 10, 1, 'PRZYPRAWIĆ');
+INSERT INTO INGREDIENTFORMEAL VALUES (47, 5, 11, 1, 'PRZYPRAWIĆ');
+INSERT INTO INGREDIENTFORMEAL VALUES (48, 6, 25, 200, 'G');
+INSERT INTO INGREDIENTFORMEAL VALUES (49, 6, 6, 1, 'ZĄBEK');
+INSERT INTO INGREDIENTFORMEAL VALUES (50, 6, 26, 1, 'DO SMAŻENIA');
+INSERT INTO INGREDIENTFORMEAL VALUES (51, 6, 27, 50, 'G');
+INSERT INTO INGREDIENTFORMEAL VALUES (52, 6, 28, 150, 'G');
+INSERT INTO INGREDIENTFORMEAL VALUES (53, 6, 29, 0.3, 'SZT');
+INSERT INTO INGREDIENTFORMEAL VALUES (54, 7, 30, 150, 'G');
+INSERT INTO INGREDIENTFORMEAL VALUES (55, 7, 31, 1, 'ŁYŻECZKA');
+INSERT INTO INGREDIENTFORMEAL VALUES (56, 7, 32, 1, 'ŁYŻKA');
+INSERT INTO INGREDIENTFORMEAL VALUES (57, 7, 26, 1, 'DO SMAŻENIA');
+INSERT INTO INGREDIENTFORMEAL VALUES (58, 7, 33, 1, 'PRZYPRAWIĆ');
+INSERT INTO INGREDIENTFORMEAL VALUES (59, 7, 15, 1, 'PRZYPRAWIĆ');
+INSERT INTO INGREDIENTFORMEAL VALUES (60, 7, 10, 1, 'PRZYPRAWIĆ');
+INSERT INTO INGREDIENTFORMEAL VALUES (61, 7, 11, 1, 'PRZYPRAWIĆ');
+INSERT INTO INGREDIENTFORMEAL VALUES (62, 7, 34, 150, 'G');
+INSERT INTO INGREDIENTFORMEAL VALUES (63, 7, 28, 150, 'G');
+INSERT INTO INGREDIENTFORMEAL VALUES (64, 8, 35, 120, 'G');
+INSERT INTO INGREDIENTFORMEAL VALUES (65, 8, 3, 200, 'G');
+INSERT INTO INGREDIENTFORMEAL VALUES (66, 8, 6, 1, 'ZĄBEK');
+INSERT INTO INGREDIENTFORMEAL VALUES (67, 8, 13, 0.5, 'SZT');
+INSERT INTO INGREDIENTFORMEAL VALUES (68, 8, 36, 200, 'G');
+INSERT INTO INGREDIENTFORMEAL VALUES (69, 8, 4, 1, 'DO SMAKU');
+INSERT INTO INGREDIENTFORMEAL VALUES (70, 8, 26, 1, 'DO SMAKU');
+INSERT INTO INGREDIENTFORMEAL VALUES (71, 8, 10, 1, 'PRZYPRAWIĆ');
+INSERT INTO INGREDIENTFORMEAL VALUES (72, 8, 11, 1, 'PRZYPRAWIĆ');
+INSERT INTO INGREDIENTFORMEAL VALUES (73, 8, 37, 0.5, 'SZT');
+INSERT INTO INGREDIENTFORMEAL VALUES (74, 8, 8, 0, 'PRZYPRAWIĆ');
+
+/*----ITEMS----*/
+INSERT INTO ITEMS VALUES (1, 'FROSZ');
+INSERT INTO ITEMS VALUES (2, 'WORKI NA ŚMIECI');
+
